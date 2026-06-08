@@ -5,6 +5,10 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="robots" content="noindex, nofollow">
 <title>2026 TDK Tokyo E-Prix｜票價 · 權益 · 購買 · 行銷 | FE14TW Reference</title>
+<script>
+  /* 關掉瀏覽器「記住上次捲動位置」的預設行為，避免每次打開停在頁面中段 */
+  if ('scrollRestoration' in history) history.scrollRestoration = 'manual';
+</script>
 <script src="https://cdn.tailwindcss.com"></script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -588,6 +592,17 @@
 </footer>
 
 <script>
+  // 載入完成後（含 CDN 樣式套用後）若網址未指定錨點，強制回到頁面頂端
+  window.addEventListener('load', () => {
+    if (!window.location.hash) {
+      const root = document.documentElement;
+      const prev = root.style.scrollBehavior;
+      root.style.scrollBehavior = 'auto';   // 暫時關閉平滑捲動，回頂端時不出現動畫
+      window.scrollTo(0, 0);
+      root.style.scrollBehavior = prev;
+    }
+  });
+
   // Nav active highlight on scroll
   const sections = ['overview', 'price', 'benefit', 'buy', 'marketing', 'takeaway'];
   const navLinks = document.querySelectorAll('.nav-link');
