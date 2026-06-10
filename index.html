@@ -5,617 +5,848 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="robots" content="noindex, nofollow">
 <title>2026 TDK Tokyo E-Prix｜票價 · 權益 · 購買 · 行銷 | FE14TW Reference</title>
-<script>
-  /* 關掉瀏覽器「記住上次捲動位置」的預設行為，避免每次打開停在頁面中段 */
-  if ('scrollRestoration' in history) history.scrollRestoration = 'manual';
-</script>
-<script src="https://cdn.tailwindcss.com"></script>
+<script>if ('scrollRestoration' in history) history.scrollRestoration = 'manual';</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;700;900&display=swap" rel="stylesheet">
 <style>
   :root {
     --bg: #070b16;
-    --bg-2: #0c1322;
+    --bg2: #0c1322;
     --card: #111a2e;
     --line: #1f2937;
     --text: #e5e7eb;
     --muted: #94a3b8;
-    --tk: #22d3ee;       /* electric cyan — FE 主色 */
-    --tk-soft: rgba(34,211,238,0.12);
-    --violet: #a78bfa;   /* night */
-    --violet-soft: rgba(167,139,250,0.12);
-    --gold: #f59e0b;     /* VIP / premium */
-    --gold-soft: rgba(245,158,11,0.12);
-    --green: #10b981;    /* free / equity */
-    --green-soft: rgba(16,185,129,0.12);
+    --tk: #22d3ee;
+    --tk-soft: rgba(34,211,238,.12);
+    --violet: #a78bfa;
+    --violet-soft: rgba(167,139,250,.12);
+    --gold: #f59e0b;
+    --gold-soft: rgba(245,158,11,.12);
+    --green: #10b981;
+    --green-soft: rgba(16,185,129,.12);
     --red: #ef4444;
-    --red-soft: rgba(239,68,68,0.12);
+    --red-soft: rgba(239,68,68,.12);
     --orange: #fb923c;
   }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
   html { scroll-behavior: smooth; }
-  body { font-family: 'Noto Sans TC', system-ui, -apple-system, sans-serif; background: var(--bg); color: var(--text); }
-  .gradient-hero { background:
-      radial-gradient(circle at 22% 18%, rgba(34,211,238,0.20), transparent 42%),
-      radial-gradient(circle at 78% 30%, rgba(167,139,250,0.18), transparent 42%),
-      radial-gradient(circle at 55% 92%, rgba(245,158,11,0.10), transparent 44%),
+  body { font-family: 'Noto Sans TC', system-ui, -apple-system, sans-serif; background: var(--bg); color: var(--text); line-height: 1.65; }
+  a { color: var(--tk); text-decoration: none; }
+  a:hover { text-decoration: underline; }
+  .wrap { max-width: 1180px; margin: 0 auto; padding: 0 20px; }
+
+  /* ---- nav ---- */
+  nav { position: sticky; top: 0; z-index: 50; backdrop-filter: blur(10px); background: rgba(7,11,22,.85); border-bottom: 1px solid var(--line); }
+  nav .wrap { display: flex; align-items: center; justify-content: space-between; gap: 10px; padding-top: 10px; padding-bottom: 10px; }
+  .nav-brand { display: flex; align-items: center; gap: 8px; font-weight: 700; font-size: 13.5px; white-space: nowrap; }
+  .nav-dot { width: 22px; height: 22px; border-radius: 999px; background: linear-gradient(135deg, var(--tk), var(--violet), var(--gold)); flex: none; }
+  .nav-links { display: flex; gap: 2px; overflow-x: auto; }
+  .nav-links a { color: var(--muted); font-size: 13px; font-weight: 500; padding: 6px 9px; border-radius: 6px; white-space: nowrap; }
+  .nav-links a:hover, .nav-links a.active { color: var(--text); background: rgba(255,255,255,.06); text-decoration: none; }
+  .print-btn { font-size: 12px; background: #1e293b; color: var(--text); border: none; padding: 7px 12px; border-radius: 6px; cursor: pointer; white-space: nowrap; }
+  .print-btn:hover { background: #334155; }
+
+  /* ---- hero ---- */
+  .hero { border-bottom: 1px solid var(--line); padding: 64px 0 48px;
+    background:
+      radial-gradient(circle at 22% 18%, rgba(34,211,238,.20), transparent 42%),
+      radial-gradient(circle at 78% 30%, rgba(167,139,250,.18), transparent 42%),
+      radial-gradient(circle at 55% 92%, rgba(245,158,11,.10), transparent 44%),
       linear-gradient(180deg, #070b16 0%, #0c1322 100%); }
-  .card { background: var(--card); border: 1px solid var(--line); }
-  .card-tk { border-top: 3px solid var(--tk); }
-  .card-gold { border-top: 3px solid var(--gold); }
-  .card-violet { border-top: 3px solid var(--violet); }
-  .card-green { border-top: 3px solid var(--green); }
-  .pill { display: inline-flex; align-items: center; padding: 4px 10px; border-radius: 999px; font-size: 0.72rem; font-weight: 500; }
+  .hero .badge-line { display: inline-block; background: rgba(255,255,255,.05); border: 1px solid rgba(255,255,255,.1); padding: 4px 12px; border-radius: 999px; font-size: 12px; color: #cbd5e1; margin-bottom: 22px; }
+  .hero h1 { font-size: clamp(30px, 5.5vw, 54px); font-weight: 900; line-height: 1.18; margin-bottom: 18px; }
+  .hero h1 .grad { background: linear-gradient(90deg, #67e8f9, #c4b5fd, #fcd34d); -webkit-background-clip: text; background-clip: text; color: transparent; }
+  .hero p.lede { font-size: 17px; color: #cbd5e1; max-width: 760px; margin-bottom: 8px; }
+  .hero p.lede2 { font-size: 15px; color: var(--muted); max-width: 760px; }
+  .em-tk { color: var(--tk); font-weight: 500; }
+  .em-vi { color: var(--violet); font-weight: 500; }
+  .em-gd { color: var(--gold); font-weight: 500; }
+
+  .stat-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 12px; margin-top: 36px; }
+  .stat { background: var(--card); border: 1px solid var(--line); border-radius: 12px; padding: 15px 16px; }
+  .stat.t-green { border-top: 3px solid var(--green); }
+  .stat.t-gold { border-top: 3px solid var(--gold); }
+  .stat.t-tk { border-top: 3px solid var(--tk); }
+  .stat.t-violet { border-top: 3px solid var(--violet); }
+  .stat .k { font-size: 12px; color: var(--muted); margin-bottom: 2px; }
+  .stat .v { font-size: 26px; font-weight: 900; }
+  .stat .v.green { color: var(--green); } .stat .v.gold { color: var(--gold); }
+  .stat .v.tk { color: var(--tk); } .stat .v.violet { color: var(--violet); }
+  .stat .s { font-size: 11.5px; color: #64748b; margin-top: 3px; }
+
+  /* ---- glance strip ---- */
+  .glance { background: #0a101f; border-bottom: 1px solid var(--line); padding: 26px 0; }
+  .glance .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 16px; font-size: 14px; }
+  .glance .k { font-size: 11.5px; color: #64748b; margin-bottom: 2px; }
+  .glance .v { font-weight: 700; }
+  .glance .s { font-size: 11.5px; color: var(--muted); font-weight: 400; }
+
+  /* ---- sections ---- */
+  section { padding: 64px 0; border-bottom: 1px solid var(--line); }
+  section.alt { background: #0a101f; }
+  .sec-tag { color: var(--tk); font-size: 13px; font-weight: 500; letter-spacing: 1.5px; margin-bottom: 8px; }
+  .sec-tag.gold { color: var(--gold); }
+  h2 { font-size: clamp(24px, 3.4vw, 34px); font-weight: 900; }
+  .sec-lead { color: var(--muted); margin-top: 10px; max-width: 800px; font-size: 14.5px; }
+  .sec-head { margin-bottom: 30px; }
+  h3 { font-size: 18px; font-weight: 700; }
+
+  .card { background: var(--card); border: 1px solid var(--line); border-radius: 14px; }
+  .pill { display: inline-flex; align-items: center; padding: 4px 10px; border-radius: 999px; font-size: 11.5px; font-weight: 500; }
   .pill-tk { background: var(--tk-soft); color: #67e8f9; }
   .pill-gold { background: var(--gold-soft); color: #fcd34d; }
   .pill-violet { background: var(--violet-soft); color: #c4b5fd; }
   .pill-green { background: var(--green-soft); color: #6ee7b7; }
   .pill-red { background: var(--red-soft); color: #fca5a5; }
-  .pill-orange { background: rgba(251,146,60,0.12); color: #fdba74; }
-  .num-tk { color: var(--tk); }
-  .num-gold { color: var(--gold); }
-  .num-violet { color: var(--violet); }
-  .num-green { color: var(--green); }
-  .num-red { color: var(--red); }
-  .num-orange { color: var(--orange); }
-  .divider-grad { height: 1px; background: linear-gradient(90deg, transparent, var(--line) 50%, transparent); }
-  .nav-link { color: var(--muted); transition: color 0.2s; }
-  .nav-link:hover, .nav-link.active { color: var(--text); }
-  .glow-tk { box-shadow: 0 0 26px rgba(34,211,238,0.20); }
-  .glow-gold { box-shadow: 0 0 32px rgba(245,158,11,0.20); }
-  .glow-violet { box-shadow: 0 0 26px rgba(167,139,250,0.20); }
+  .pill-orange { background: rgba(251,146,60,.12); color: #fdba74; }
+
+  /* ---- map ---- */
+  .map-card { overflow: hidden; }
+  .map-card img { width: 100%; display: block; background: #0d1322; }
+  .map-card .cap { padding: 10px 16px; font-size: 12px; color: var(--muted); display: flex; justify-content: space-between; flex-wrap: wrap; gap: 6px; }
+  .map-chips { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 14px; }
+  .map-chip { background: var(--card); border: 1px solid var(--line); border-radius: 999px; padding: 6px 14px; font-size: 12.5px; color: #cbd5e1; cursor: pointer; transition: border-color .15s; }
+  .map-chip:hover { border-color: var(--tk); color: var(--tk); }
+  .map-chip b { margin-right: 5px; }
+
+  /* ---- price controls ---- */
+  .ctrl-bar { display: flex; flex-wrap: wrap; align-items: center; gap: 12px; margin-bottom: 18px; }
+  .seg { display: inline-flex; background: var(--card); border: 1px solid var(--line); border-radius: 999px; padding: 3px; }
+  .seg button { border: none; background: transparent; color: var(--muted); font-size: 13px; font-weight: 700; font-family: inherit; padding: 7px 18px; border-radius: 999px; cursor: pointer; }
+  .seg button.on { background: var(--tk); color: #06121f; }
+  .chk { display: inline-flex; align-items: center; gap: 7px; background: var(--card); border: 1px solid var(--line); border-radius: 999px; padding: 8px 16px; font-size: 13px; cursor: pointer; user-select: none; }
+  .chk input { accent-color: var(--tk); width: 15px; height: 15px; cursor: pointer; }
+  .ctrl-hint { font-size: 12px; color: #64748b; }
+
+  /* ---- ladder ---- */
+  .ladder-card { padding: 22px 24px; margin-bottom: 22px; }
+  .ladder-cap { font-size: 12px; color: #64748b; margin-bottom: 16px; }
+  .lrow { display: flex; align-items: center; gap: 12px; margin-bottom: 10px; cursor: pointer; }
+  .lrow .lk { width: 42px; font-size: 12.5px; font-weight: 900; flex: none; }
+  .lrow .ltrack { flex: 1; }
+  .lrow .bar { height: 30px; border-radius: 6px; display: flex; align-items: center; justify-content: flex-end; padding-right: 10px; font-size: 12.5px; font-weight: 700; color: #06121f; white-space: nowrap; transition: width .5s ease; min-width: 86px; }
+  .lrow:hover .bar { filter: brightness(1.15); }
+  .vip-callout { margin-top: 18px; display: flex; align-items: center; gap: 12px; flex-wrap: wrap; background: linear-gradient(90deg, rgba(245,158,11,.1), transparent); border: 1px solid rgba(245,158,11,.3); border-radius: 12px; padding: 14px 16px; font-size: 13.5px; cursor: pointer; }
+  .vip-callout .big { font-weight: 900; color: var(--gold); font-size: 17px; }
+  .vip-callout .sub { color: var(--muted); }
+
+  /* ---- table ---- */
+  .tbl-card { overflow: hidden; margin-bottom: 12px; }
   .scrolling { overflow-x: auto; }
   .scrolling::-webkit-scrollbar { height: 6px; }
   .scrolling::-webkit-scrollbar-thumb { background: var(--line); border-radius: 3px; }
-  .bar { height: 30px; border-radius: 6px; display: flex; align-items: center; justify-content: flex-end; padding-right: 10px; font-size: 0.78rem; font-weight: 700; color: #06121f; white-space: nowrap; transition: width .8s ease; }
+  table.tk { width: 100%; min-width: 780px; border-collapse: collapse; }
+  table.tk th { font-weight: 500; color: var(--muted); font-size: 12px; text-align: left; padding: 11px 13px; border-bottom: 1px solid var(--line); white-space: nowrap; background: #0d1626; }
+  table.tk td { padding: 12px 13px; border-bottom: 1px solid var(--line); font-size: 13.5px; vertical-align: middle; }
+  table.tk tbody tr { cursor: pointer; transition: background .12s; }
+  table.tk tbody tr:hover { background: rgba(34,211,238,.05); }
+  table.tk tr:last-child td { border-bottom: none; }
+  .seat-key { font-weight: 900; }
+  .seat-sub { font-size: 11px; color: #64748b; }
+  .p-main { font-weight: 700; white-space: nowrap; }
+  .twd { color: #64748b; font-size: 11px; font-weight: 400; }
+  .u18mark { color: #6ee7b7; font-size: 11.5px; }
+  .half-ok { color: var(--green); font-weight: 500; }
+  .half-no { color: var(--red); font-weight: 500; }
+  .tbl-note { font-size: 12px; color: #64748b; }
+
+  /* ---- stand cards ---- */
+  .cards { display: grid; grid-template-columns: repeat(auto-fill, minmax(330px, 1fr)); gap: 18px; }
+  .scard { overflow: hidden; display: flex; flex-direction: column; scroll-margin-top: 80px; }
+  .scard img { width: 100%; height: 185px; object-fit: cover; display: block; background: #0d1322; }
+  .scard .body { padding: 16px 18px 18px; display: flex; flex-direction: column; gap: 9px; flex: 1; }
+  .scard .head { display: flex; justify-content: space-between; align-items: baseline; gap: 10px; flex-wrap: wrap; }
+  .scard h3 { font-size: 16.5px; }
+  .scard .catch { color: var(--gold); font-size: 12.5px; font-weight: 700; }
+  .pline { font-size: 13px; display: flex; justify-content: space-between; gap: 8px; border-bottom: 1px dashed var(--line); padding-bottom: 5px; }
+  .pline .p { font-weight: 800; white-space: nowrap; font-variant-numeric: tabular-nums; }
+  .points { list-style: none; display: flex; flex-direction: column; gap: 5px; margin-top: 2px; }
+  .points li { font-size: 13px; color: var(--muted); padding-left: 15px; position: relative; }
+  .points li::before { content: "▸"; color: var(--tk); position: absolute; left: 0; }
+
+  /* ---- emotion club ---- */
+  .vip-panel { border-top: 3px solid var(--gold); box-shadow: 0 0 32px rgba(245,158,11,.18); padding: 26px 28px; margin-bottom: 28px; scroll-margin-top: 80px; }
+  .vip-grid { display: grid; grid-template-columns: 280px 1fr; gap: 26px; margin-top: 16px; }
+  @media (max-width: 820px) { .vip-grid { grid-template-columns: 1fr; } }
+  .vip-grid img { width: 100%; border-radius: 10px; display: block; background: #0d1322; }
+  .vip-price-row { display: flex; justify-content: space-between; font-size: 13.5px; padding: 4px 0; }
+  .vip-price-row .p { font-weight: 700; color: var(--gold); }
+  .vip-price-row.small { font-size: 11.5px; color: #64748b; }
+  .vip-note { margin-top: 12px; font-size: 12px; color: var(--muted); background: rgba(2,6,23,.6); border: 1px solid rgba(245,158,11,.2); border-radius: 10px; padding: 12px; }
+  .perk-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 7px 22px; font-size: 13.5px; margin-top: 10px; }
+  .perk { display: flex; gap: 8px; }
+  .perk::before { content: "◆"; color: var(--gold); }
+  .vip-foot { margin-top: 16px; font-size: 12px; color: #64748b; }
+
+  /* ---- equity grid ---- */
+  .eq-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(170px, 1fr)); gap: 12px; }
+  .eq { background: var(--card); border: 1px solid var(--line); border-top: 3px solid var(--green); border-radius: 12px; padding: 14px 16px; }
+  .eq .k { font-size: 11.5px; color: var(--muted); margin-bottom: 3px; }
+  .eq .v { font-size: 22px; font-weight: 900; color: var(--green); }
+  .eq .s { font-size: 11.5px; color: #64748b; margin-top: 2px; }
+
+  /* ---- buy ---- */
+  .buy-grid { display: grid; grid-template-columns: 2fr 1fr; gap: 20px; }
+  @media (max-width: 900px) { .buy-grid { grid-template-columns: 1fr; } }
+  .timeline { padding: 24px; }
+  .tl-cap { font-size: 12px; letter-spacing: 1.5px; color: #67e8f9; text-transform: uppercase; margin-bottom: 20px; }
+  .tl-item { display: flex; gap: 16px; }
+  .tl-rail { display: flex; flex-direction: column; align-items: center; }
+  .tl-dot { width: 14px; height: 14px; border-radius: 999px; flex: none; }
+  .tl-line { width: 1px; flex: 1; background: #334155; margin: 4px 0; }
+  .tl-body { padding-bottom: 24px; }
+  .tl-body .t { font-weight: 700; display: inline-block; margin-right: 8px; }
+  .tl-body p { font-size: 13.5px; color: var(--muted); margin-top: 4px; }
+  .side-card { padding: 20px; }
+  .side-card .k { font-size: 12px; color: var(--muted); margin-bottom: 4px; }
+  .side-card code { font-size: 11.5px; background: #1e293b; padding: 2px 6px; border-radius: 4px; }
+  .risk-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 14px; margin-top: 20px; }
+  .risk { padding: 18px 20px; border-left: 4px solid var(--red); }
+  .risk.warn { border-left-color: var(--gold); }
+  .risk .t { font-weight: 700; margin-bottom: 4px; }
+  .risk.red .t { color: #fca5a5; }
+  .risk.warn .t { color: #fcd34d; }
+  .risk p { font-size: 13px; color: #cbd5e1; }
+
+  /* ---- marketing ---- */
+  .mkt-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(310px, 1fr)); gap: 16px; margin-bottom: 26px; }
+  .mkt { padding: 20px 22px; }
+  .mkt h3 { margin: 10px 0 7px; font-size: 17px; }
+  .mkt p { font-size: 13px; color: #cbd5e1; }
+  .mkt.b-violet { border-left: 4px solid var(--violet); box-shadow: 0 0 22px rgba(167,139,250,.14); }
+  .mkt.b-gold { border-left: 4px solid var(--gold); }
+  .mkt.b-pink { border-left: 4px solid #ec4899; }
+  .mkt.b-rose { border-left: 4px solid #f43f5e; }
+  .mkt.b-sky { border-left: 4px solid #38bdf8; }
+  .mkt.b-green { border-left: 4px solid var(--green); }
+  .mkt.b-orange { border-left: 4px solid var(--orange); }
+  .mkt.b-cyan { border-left: 4px solid var(--tk); }
+  .mkt.b-amber { border-left: 4px solid var(--gold); }
+
+  /* ---- takeaway ---- */
+  .tk-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 16px; }
+  .tkc { padding: 20px 22px; border-left: 4px solid var(--gold); }
+  .tkc.red { border-left-color: var(--red); }
+  .tkc h3 { margin: 10px 0 6px; font-size: 16px; }
+  .tkc p { font-size: 13px; color: var(--muted); }
+
+  /* ---- sources ---- */
   details > summary { list-style: none; cursor: pointer; }
   details > summary::-webkit-details-marker { display: none; }
-  details[open] summary .chev { transform: rotate(180deg); }
-  .chev { transition: transform 0.2s; }
-  .tl-dot { width: 14px; height: 14px; border-radius: 999px; flex: none; }
-  table.tk th { font-weight: 500; color: var(--muted); font-size: 0.74rem; text-align: left; padding: 10px 12px; border-bottom: 1px solid var(--line); white-space: nowrap; }
-  table.tk td { padding: 11px 12px; border-bottom: 1px solid var(--line); font-size: 0.86rem; vertical-align: middle; }
-  table.tk tr:last-child td { border-bottom: none; }
-  .twd { color: #64748b; font-size: 0.7rem; font-weight: 400; }
+  details[open] .chev { transform: rotate(180deg); }
+  .chev { display: inline-block; transition: transform .2s; }
+  .src-panel { padding: 22px 24px; }
+  .src-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 12px; margin-top: 16px; }
+  .src { background: #0d1626; border-radius: 10px; padding: 12px; }
+  .src .k { font-size: 11.5px; color: #64748b; margin-bottom: 3px; }
+  .src code { font-size: 11px; color: #cbd5e1; word-break: break-all; }
+  .caveat { margin-top: 14px; background: rgba(245,158,11,.05); border: 1px solid rgba(245,158,11,.2); border-radius: 10px; padding: 14px 16px; font-size: 12.5px; color: #cbd5e1; }
+  .caveat .t { color: #fcd34d; font-weight: 500; margin-bottom: 6px; }
+  .caveat ul { margin-left: 18px; display: flex; flex-direction: column; gap: 5px; }
+  .org-chips { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 10px; }
+  .org-chips span { font-size: 11.5px; background: #1e293b; padding: 4px 9px; border-radius: 5px; }
+
+  footer { padding: 36px 0 48px; text-align: center; font-size: 12px; color: #64748b; }
+
   @media print {
     body { background: white; color: black; }
-    .no-print { display: none; }
-    .card { background: white; border-color: #e5e7eb; }
-    .gradient-hero { background: white; }
+    nav, .ctrl-bar, .map-chips { display: none; }
+    .card, .stat, .eq { background: white; border-color: #e5e7eb; box-shadow: none; }
+    .hero { background: white; }
   }
 </style>
 </head>
 <body>
 
-<!-- Sticky Nav -->
-<nav class="sticky top-0 z-50 backdrop-blur bg-slate-950/80 border-b border-slate-800 no-print">
-  <div class="max-w-7xl mx-auto px-5 py-3 flex items-center justify-between">
-    <div class="flex items-center space-x-2">
-      <div class="w-7 h-7 rounded-full bg-gradient-to-br from-cyan-400 via-violet-400 to-amber-400"></div>
-      <span class="font-bold text-sm">東京 E-Prix 票務 × 行銷 · FE14TW</span>
+<!-- ===== NAV ===== -->
+<nav>
+  <div class="wrap">
+    <div class="nav-brand"><span class="nav-dot"></span><span>東京 E-Prix 票務 × 行銷 · FE14TW</span></div>
+    <div class="nav-links">
+      <a href="#overview">速覽</a>
+      <a href="#map">賽道座位</a>
+      <a href="#price">票價</a>
+      <a href="#stands">看台</a>
+      <a href="#benefit">權益</a>
+      <a href="#buy">購買</a>
+      <a href="#marketing">行銷</a>
+      <a href="#takeaway">對標</a>
     </div>
-    <div class="hidden md:flex space-x-5 text-sm">
-      <a href="#overview" class="nav-link">速覽</a>
-      <a href="#price" class="nav-link">票價</a>
-      <a href="#benefit" class="nav-link">權益</a>
-      <a href="#buy" class="nav-link">購買方式</a>
-      <a href="#marketing" class="nav-link">行銷合作</a>
-      <a href="#takeaway" class="nav-link">對標啟示</a>
-    </div>
-    <button onclick="window.print()" class="text-xs bg-slate-800 hover:bg-slate-700 px-3 py-1.5 rounded">列印</button>
+    <button class="print-btn" onclick="window.print()">列印</button>
   </div>
 </nav>
 
-<!-- Hero -->
-<header id="overview" class="gradient-hero py-20 md:py-28 border-b border-slate-800">
-  <div class="max-w-7xl mx-auto px-5">
-    <div class="inline-block bg-white/5 backdrop-blur border border-white/10 px-3 py-1 rounded-full text-xs mb-6 text-slate-300">
-      參考研究 · 資料截至 2026-06-07 · for FE Season 14 台灣大獎賽
-    </div>
-    <h1 class="text-4xl md:text-6xl font-black mb-6 leading-tight">
-      2026 TDK Tokyo E-Prix<br>
-      <span class="bg-gradient-to-r from-cyan-300 via-violet-300 to-amber-300 bg-clip-text text-transparent">票價 · 權益 · 購買 · 行銷</span>
-    </h1>
-    <p class="text-lg md:text-xl text-slate-300 max-w-3xl mb-4 leading-relaxed">
-      日本史上首場 Formula E 公道<span class="num-violet font-medium">夜間賽</span>，
-      <span class="num-tk font-medium">7/25（六）R14＋7/26（日）R15</span>，兩日當地時間 <span class="font-medium">20:00 決勝</span>起跑。
-    </p>
-    <p class="text-base md:text-lg text-slate-400 max-w-3xl leading-relaxed">
-      營運核心＝<span class="text-slate-200">稀缺驅動完售 ＋ 7 階陡峭票價金字塔 ＋ 少量超高價 VIP 拉升 ARPU ＋ 嘉年華化擴客</span>。
-    </p>
-
-    <!-- Hero Stats -->
-    <div class="grid grid-cols-2 md:grid-cols-4 gap-3 mt-12">
-      <div class="card card-green rounded-xl p-4">
-        <div class="text-xs text-slate-400 mb-1">最低入門票（GS6 1日）</div>
-        <div class="text-3xl font-black num-green">¥5,000</div>
-        <div class="text-xs text-slate-500 mt-1">約 NT$1,050 · 台場夜景席</div>
-      </div>
-      <div class="card card-gold rounded-xl p-4">
-        <div class="text-xs text-slate-400 mb-1">頂級 VIP（EMOTION CLUB 1日）</div>
-        <div class="text-3xl font-black num-gold">¥675,000</div>
-        <div class="text-xs text-slate-500 mt-1">約 NT$14.2 萬 · ≈135 張入門票</div>
-      </div>
-      <div class="card card-tk rounded-xl p-4">
-        <div class="text-xs text-slate-400 mb-1">價格帶倍率</div>
-        <div class="text-3xl font-black num-tk">135<span class="text-base font-normal ml-1">倍</span></div>
-        <div class="text-xs text-slate-500 mt-1">¥5,000 → ¥675,000</div>
-      </div>
-      <div class="card card-violet rounded-xl p-4">
-        <div class="text-xs text-slate-400 mb-1">售票通路</div>
-        <div class="text-3xl font-black num-violet">e+</div>
-        <div class="text-xs text-slate-500 mt-1">イープラス獨家 · 用戶逾 2,200 萬</div>
-      </div>
+<!-- ===== HERO ===== -->
+<header id="overview" class="hero">
+  <div class="wrap">
+    <div class="badge-line">參考研究 · 官網全文擷取 2026-06-10 ＋ 結構化筆記 batch 29–39 · for FE Season 14 台灣大獎賽</div>
+    <h1>2026 TDK Tokyo E-Prix<br><span class="grad">票價 · 權益 · 購買 · 行銷</span></h1>
+    <p class="lede">日本史上首場 Formula E 公道<span class="em-vi">夜間賽</span>，<span class="em-tk">7/25（六）R14＋7/26（日）R15</span>，兩日當地時間 <b>20:00 決勝</b>起跑。</p>
+    <p class="lede2">營運核心＝<span style="color:#e2e8f0">稀缺驅動完售 ＋ 7 階陡峭票價金字塔 ＋ 少量超高價 VIP 拉升 ARPU ＋ 嘉年華化擴客</span>。</p>
+    <div class="stat-grid">
+      <div class="stat t-green"><div class="k">最低入門票（GS6 1日）</div><div class="v green">¥5,000</div><div class="s">約 NT$1,050 · 台場夜景席 · 18 歲以下再半額</div></div>
+      <div class="stat t-gold"><div class="k">頂級 VIP（EMOTION CLUB 1日）</div><div class="v gold">¥675,000</div><div class="s">約 NT$14.2 萬 · ≈135 張入門票</div></div>
+      <div class="stat t-tk"><div class="k">價格帶倍率</div><div class="v tk">135 倍</div><div class="s">¥5,000 → ¥675,000 · 兩日通票一律 1日 ×1.6</div></div>
+      <div class="stat t-violet"><div class="k">售票通路</div><div class="v violet">e+</div><div class="s">イープラス獨家 · 用戶逾 2,200 萬</div></div>
     </div>
   </div>
 </header>
 
-<!-- Race at a glance -->
-<section class="py-14 border-b border-slate-800 bg-slate-950">
-  <div class="max-w-7xl mx-auto px-5">
-    <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4 text-sm">
-      <div><div class="text-xs text-slate-500 mb-1">賽事</div><div class="font-bold">第 14・15 戰<div class="text-xs text-slate-400 font-normal">第12季 雙場制</div></div></div>
-      <div><div class="text-xs text-slate-500 mb-1">日期</div><div class="font-bold">7/25–26<div class="text-xs text-slate-400 font-normal">六 R14＋日 R15</div></div></div>
-      <div><div class="text-xs text-slate-500 mb-1">起跑</div><div class="font-bold num-violet">20:00<div class="text-xs text-slate-400 font-normal">日本首場夜間賽</div></div></div>
-      <div><div class="text-xs text-slate-500 mb-1">場地</div><div class="font-bold">東京 Big Sight<div class="text-xs text-slate-400 font-normal">有明 · 2.582km 街道</div></div></div>
-      <div><div class="text-xs text-slate-500 mb-1">賽車</div><div class="font-bold">GEN3 Evo<div class="text-xs text-slate-400 font-normal">0–100 1.86s · 322km/h</div></div></div>
-      <div><div class="text-xs text-slate-500 mb-1">轉播</div><div class="font-bold">J SPORTS<div class="text-xs text-slate-400 font-normal">付費全場 · BSフジ免費精華</div></div></div>
+<!-- ===== GLANCE ===== -->
+<div class="glance">
+  <div class="wrap">
+    <div class="grid">
+      <div><div class="k">賽事</div><div class="v">第 14・15 戰<div class="s">第12季 雙場制</div></div></div>
+      <div><div class="k">日期</div><div class="v">7/25–26<div class="s">六 R14＋日 R15</div></div></div>
+      <div><div class="k">起跑</div><div class="v" style="color:var(--violet)">20:00<div class="s">日本首場夜間賽</div></div></div>
+      <div><div class="k">場地</div><div class="v">東京 Big Sight<div class="s">有明 · 2.582km 街道</div></div></div>
+      <div><div class="k">賽車</div><div class="v">GEN3 Evo<div class="s">0–100 1.86s · 322km/h</div></div></div>
+      <div><div class="k">轉播</div><div class="v">J SPORTS<div class="s">付費全場 · BSフジ免費精華</div></div></div>
+    </div>
+  </div>
+</div>
+
+<!-- ===== MAP ===== -->
+<section id="map">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="sec-tag">① CIRCUIT &amp; SEATING</div>
+      <h2>賽道與座位圖</h2>
+      <p class="sec-lead">官方座位配置圖（直連官網 CDN）。GS1、GS2 在主直線與頒獎台側，GS3、GS4 沿主直線往 1 號彎，GS5 在 1 號彎激戰區，GS6 在高速彎（夜景區），GS7 在最終彎。點下方膠囊可跳到該看台介紹。</p>
+    </div>
+    <div class="card map-card">
+      <img src="https://jp.mediacdn.fiaformulae.com/original/m351_0218_FE_TICKET_MAP_C.jpg" alt="東京E-Prix 座位配置圖" loading="lazy">
+      <div class="cap"><span>官方座位配置圖 · jp.fiaformulae.com</span><span>2026-06-10 擷取</span></div>
+    </div>
+    <div class="map-chips" id="mapChips">
+      <button class="map-chip" data-go="card-gs1"><b>GS1</b>主直線加速</button>
+      <button class="map-chip" data-go="card-gs2"><b>GS2</b>頒獎台正前</button>
+      <button class="map-chip" data-go="card-gs3"><b>GS3</b>車廠應援席</button>
+      <button class="map-chip" data-go="card-gs4"><b>GS4</b>行家戰略席</button>
+      <button class="map-chip" data-go="card-gs5"><b>GS5</b>1號彎激戰</button>
+      <button class="map-chip" data-go="card-gs6"><b>GS6</b>夜景入門席</button>
+      <button class="map-chip" data-go="card-gs7"><b>GS7</b>最終彎逆轉</button>
+      <button class="map-chip" data-go="card-pit"><b>PIT</b>維修區步行</button>
+      <button class="map-chip" data-go="vipPanel"><b>VIP</b>EMOTION CLUB</button>
     </div>
   </div>
 </section>
 
-<!-- ===================== 票價 ===================== -->
-<section id="price" class="py-20 border-b border-slate-800">
-  <div class="max-w-7xl mx-auto px-5">
-    <div class="mb-10">
-      <div class="text-cyan-400 text-sm font-medium mb-2 tracking-wide">① TICKET PRICING</div>
-      <h2 class="text-3xl md:text-4xl font-black">票價：7 階看台 ＋ 1 VIP ＋ 配套票</h2>
-      <p class="text-slate-400 mt-3 max-w-3xl">一般席 GS1–GS7（多數含上段／下段雙層定價，多數 18 歲以下半額）。以下為 1 日券「上段」價標頭，完整數字見表。</p>
+<!-- ===== PRICE ===== -->
+<section id="price" class="alt">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="sec-tag">② TICKET PRICING</div>
+      <h2>票價：7 階看台 ＋ 1 VIP ＋ 配套票</h2>
+      <p class="sec-lead">一般席 GS1–GS7，多數含上段／下段雙層定價，除 GS2 外 18 歲以下半額。下方控制列可切換單日／兩日、半價、台幣換算，階梯圖與表格同步更新；點任一列跳到該看台介紹。</p>
     </div>
 
-    <!-- Price ladder -->
-    <div class="card rounded-2xl p-6 mb-6">
-      <div class="text-xs text-slate-500 mb-4">價格階梯（1 日券上段，條長 ∝ 價格；EMOTION CLUB 已超出座標軸 26 倍）</div>
-      <div class="space-y-2.5">
-        <div class="flex items-center gap-3"><span class="w-12 text-xs font-bold text-amber-300">GS2</span><div class="flex-1"><div class="bar" style="width:100%;background:linear-gradient(90deg,#fbbf24,#f59e0b)">¥26,000</div></div></div>
-        <div class="flex items-center gap-3"><span class="w-12 text-xs font-bold text-cyan-300">GS1</span><div class="flex-1"><div class="bar" style="width:92%;background:linear-gradient(90deg,#67e8f9,#22d3ee)">¥24,000</div></div></div>
-        <div class="flex items-center gap-3"><span class="w-12 text-xs font-bold text-cyan-300">GS7</span><div class="flex-1"><div class="bar" style="width:77%;background:linear-gradient(90deg,#67e8f9,#22d3ee)">¥20,000</div></div></div>
-        <div class="flex items-center gap-3"><span class="w-12 text-xs font-bold text-orange-300">GS3</span><div class="flex-1"><div class="bar" style="width:54%;background:linear-gradient(90deg,#fdba74,#fb923c)">¥14,000</div></div></div>
-        <div class="flex items-center gap-3"><span class="w-12 text-xs font-bold text-sky-300">GS4</span><div class="flex-1"><div class="bar" style="width:46%;background:linear-gradient(90deg,#7dd3fc,#38bdf8)">¥12,000</div></div></div>
-        <div class="flex items-center gap-3"><span class="w-12 text-xs font-bold text-sky-300">GS5</span><div class="flex-1"><div class="bar" style="width:38%;background:linear-gradient(90deg,#7dd3fc,#38bdf8)">¥10,000</div></div></div>
-        <div class="flex items-center gap-3"><span class="w-12 text-xs font-bold text-emerald-300">GS6</span><div class="flex-1"><div class="bar" style="width:19%;background:linear-gradient(90deg,#6ee7b7,#10b981)">¥5,000</div></div></div>
+    <div class="ctrl-bar">
+      <div class="seg" id="daySeg">
+        <button data-day="1" class="on">單日券</button>
+        <button data-day="2">兩日通票</button>
       </div>
-      <div class="mt-5 flex items-center gap-3 bg-gradient-to-r from-amber-500/10 to-transparent border border-amber-500/30 rounded-xl p-4">
-        <span class="pill pill-gold">VIP · 超出座標</span>
-        <div class="text-sm"><span class="font-black num-gold text-lg">EMOTION CLUB ¥675,000</span><span class="text-slate-400 ml-2">＝最低票 135 倍 · 1 張 ≈ 135 張 GS6</span></div>
+      <label class="chk"><input type="checkbox" id="ckU18"> 18 歲以下半價</label>
+      <label class="chk"><input type="checkbox" id="ckTWD"> 顯示台幣（¥1≈NT$0.21）</label>
+      <span class="ctrl-hint">含稅 · 另收 e+ 手續費 · 兩日通票＝單日 ×1.6（VIP 為 ×1.9）</span>
+    </div>
+
+    <div class="card ladder-card">
+      <div class="ladder-cap" id="ladderCap">價格階梯（單日券上段，條長 ∝ 價格）· 點擊跳到看台介紹</div>
+      <div id="ladder"></div>
+      <div class="vip-callout" data-go="vipPanel">
+        <span class="pill pill-gold">VIP · 超出座標 26 倍</span>
+        <span><span class="big" id="vipLadderPrice">EMOTION CLUB ¥675,000</span><span class="sub" id="vipLadderSub">　＝最低票 135 倍 · 1 張 ≈ 135 張 GS6</span></span>
       </div>
     </div>
 
-    <!-- Full price table -->
-    <div class="card rounded-2xl overflow-hidden mb-5">
+    <div class="card tbl-card">
       <div class="scrolling">
-        <table class="tk w-full min-w-[760px]">
-          <thead><tr>
-            <th>席種</th><th>位置特性</th><th>1 日券（上／下段）</th><th>2 日通票（上／下段）</th><th>18 歲以下</th>
-          </tr></thead>
-          <tbody>
-            <tr>
-              <td><span class="font-bold num-gold">GS2</span><div class="text-xs text-slate-500">最上級</div></td>
-              <td class="text-slate-300">控制線正側、頒獎台正前方</td>
-              <td class="font-bold">¥26,000／¥24,000<div class="twd">約 NT$5,460／5,040</div></td>
-              <td>¥41,600／¥38,400</td>
-              <td><span class="num-red">無半額</span><div class="text-xs text-slate-500">唯一純成人溢價席</div></td>
-            </tr>
-            <tr>
-              <td><span class="font-bold num-tk">GS1</span></td>
-              <td class="text-slate-300">主直線、1 號彎長視野</td>
-              <td class="font-bold">¥24,000／¥22,000<div class="twd">約 NT$5,040／4,620</div></td>
-              <td>¥38,400／¥35,200</td>
-              <td><span class="num-green">半額</span></td>
-            </tr>
-            <tr>
-              <td><span class="font-bold num-tk">GS7</span></td>
-              <td class="text-slate-300">最終彎逆轉劇場（週日設家庭席）</td>
-              <td class="font-bold">¥20,000／¥18,000<div class="twd">約 NT$4,200／3,780</div></td>
-              <td>¥32,000／¥28,800</td>
-              <td><span class="num-green">半額</span></td>
-            </tr>
-            <tr>
-              <td><span class="font-bold num-orange">GS3</span><div class="text-xs text-slate-500">應援席</div></td>
-              <td class="text-slate-300">主直線中央 · 六日產／日 Yamaha · 附應援物＋伴手禮</td>
-              <td class="font-bold">¥14,000（單一）<div class="twd">約 NT$2,940</div></td>
-              <td>¥22,400（單一）</td>
-              <td><span class="num-green">半額</span></td>
-            </tr>
-            <tr>
-              <td><span class="font-bold text-sky-300">GS4</span></td>
-              <td class="text-slate-300">戰略與極速交錯的「行家席」</td>
-              <td class="font-bold">¥12,000／¥10,000<div class="twd">約 NT$2,520／2,100</div></td>
-              <td>¥19,200／¥16,000</td>
-              <td><span class="num-green">半額</span></td>
-            </tr>
-            <tr>
-              <td><span class="font-bold text-sky-300">GS5</span></td>
-              <td class="text-slate-300">1 號彎激戰區</td>
-              <td class="font-bold">¥10,000／¥8,000<div class="twd">約 NT$2,100／1,680</div></td>
-              <td>¥16,000／¥12,800</td>
-              <td><span class="num-green">半額</span></td>
-            </tr>
-            <tr>
-              <td><span class="font-bold num-green">GS6</span><div class="text-xs text-slate-500">最低價</div></td>
-              <td class="text-slate-300">高速彎、台場夜景背景</td>
-              <td class="font-bold">¥5,000（單一）<div class="twd">約 NT$1,050</div></td>
-              <td>¥8,000（單一）</td>
-              <td><span class="num-green">半額</span></td>
-            </tr>
-            <tr>
-              <td><span class="font-bold num-gold">EMOTION<br>CLUB</span><div class="text-xs text-slate-500">VIP 款待</div></td>
-              <td class="text-slate-300">露台觀賽 · 全套款待（見「權益」）</td>
-              <td class="font-bold num-gold">¥675,000<div class="twd">約 NT$14.2 萬 · US$3,988</div></td>
-              <td class="num-gold">¥1,282,500<div class="twd">約 NT$26.9 萬 · 省 ≈5%</div></td>
-              <td>—</td>
-            </tr>
-            <tr>
-              <td><span class="font-bold">車椅子席</span><div class="text-xs text-slate-500">輪椅</div></td>
-              <td class="text-slate-300">GS1–GS7 最前排逾 50 席、附陪同席</td>
-              <td>各看台下段價</td>
-              <td>各看台下段價</td>
-              <td>—</td>
-            </tr>
-            <tr>
-              <td><span class="font-bold num-violet">Pit Walk</span><div class="text-xs text-slate-500">配套</div></td>
-              <td class="text-slate-300">維修區步行、近看 600kW 超充與技師作業</td>
-              <td class="font-bold num-violet">¥4,000<div class="twd">約 NT$840</div></td>
-              <td>—</td>
-              <td>—</td>
-            </tr>
-          </tbody>
+        <table class="tk">
+          <thead><tr><th>席種</th><th>位置特性</th><th>單日券（上／下段）</th><th>兩日通票（上／下段）</th><th>18 歲以下</th></tr></thead>
+          <tbody id="priceBody"></tbody>
         </table>
       </div>
     </div>
-    <p class="text-xs text-slate-500">資料：イープラス／jp.fiaformulae.com，2026-02-25 更新；含稅、另收手續費（2024/25 EMOTION CLUB 約 ¥3,300）。逐年微漲：2025 最高一般席 ¥24,000 → 2026 GS2 ¥26,000；無需求連動動態定價。</p>
+    <p class="tbl-note">資料：イープラス／jp.fiaformulae.com（官網 2026-06-10 擷取 ＋ 報告 31/38/39）。含稅、另收手續費（2024/25 EMOTION CLUB 約 ¥3,300）。逐年微漲：2025 最高一般席 ¥24,000 → 2026 GS2 ¥26,000；無需求連動動態定價。</p>
   </div>
 </section>
 
-<!-- ===================== 權益 ===================== -->
-<section id="benefit" class="py-20 border-b border-slate-800 bg-slate-950">
-  <div class="max-w-7xl mx-auto px-5">
-    <div class="mb-10">
-      <div class="text-cyan-400 text-sm font-medium mb-2 tracking-wide">② BENEFITS & PERKS</div>
-      <h2 class="text-3xl md:text-4xl font-black">權益：每階看台「賣的是視角與體驗」</h2>
-      <p class="text-slate-400 mt-3 max-w-3xl">定價哲學＝<span class="text-amber-300">以頂端資本補貼底層推廣</span>。全票皆可進免費粉絲村；中價位靠贈品、底層靠折扣擴客、頂層靠款待溢價。</p>
+<!-- ===== STANDS ===== -->
+<section id="stands">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="sec-tag">③ GRANDSTANDS</div>
+      <h2>七大看台＋配套票：賣的是視角與體驗</h2>
+      <p class="sec-lead">官方圖＋日文主題標語＋重點整理。定價哲學＝<span style="color:#fcd34d">以頂端資本補貼底層推廣</span>：中價位靠贈品、底層靠折扣擴客、頂層靠款待溢價，全票皆可進免費粉絲村。</p>
     </div>
+    <div class="cards">
 
-    <!-- Seat value grid -->
-    <div class="grid md:grid-cols-3 lg:grid-cols-4 gap-4 mb-8">
-      <div class="card rounded-xl p-5 border-l-4 border-amber-500">
-        <div class="flex justify-between items-center mb-2"><span class="font-black num-gold">GS2</span><span class="text-xs text-slate-500">¥26,000</span></div>
-        <div class="text-sm text-slate-300">頒獎台正前方、控制線正側。純成人導向，<span class="text-amber-200">唯一不打折</span>。</div>
-      </div>
-      <div class="card rounded-xl p-5 border-l-4 border-cyan-500">
-        <div class="flex justify-between items-center mb-2"><span class="font-black num-tk">GS1</span><span class="text-xs text-slate-500">¥24,000</span></div>
-        <div class="text-sm text-slate-300">主直線「異次元加速」、可見 1 號彎長視野。</div>
-      </div>
-      <div class="card rounded-xl p-5 border-l-4 border-cyan-500">
-        <div class="flex justify-between items-center mb-2"><span class="font-black num-tk">GS7</span><span class="text-xs text-slate-500">¥20,000</span></div>
-        <div class="text-sm text-slate-300">最終彎戲劇張力，逆轉好發地。週日設<span class="text-cyan-200">家庭席</span>。</div>
-      </div>
-      <div class="card rounded-xl p-5 border-l-4 border-orange-500">
-        <div class="flex justify-between items-center mb-2"><span class="font-black num-orange">GS3</span><span class="text-xs text-slate-500">¥14,000</span></div>
-        <div class="text-sm text-slate-300">日本車廠應援席，<span class="text-orange-200">附應援物＋來場伴手禮</span>，DJ・MC 帶氣氛。</div>
-      </div>
-      <div class="card rounded-xl p-5 border-l-4 border-sky-500">
-        <div class="flex justify-between items-center mb-2"><span class="font-black text-sky-300">GS4</span><span class="text-xs text-slate-500">¥12,000</span></div>
-        <div class="text-sm text-slate-300">戰略與極速交錯的「行家席」。</div>
-      </div>
-      <div class="card rounded-xl p-5 border-l-4 border-sky-500">
-        <div class="flex justify-between items-center mb-2"><span class="font-black text-sky-300">GS5</span><span class="text-xs text-slate-500">¥10,000</span></div>
-        <div class="text-sm text-slate-300">1 號彎激戰區，超車與卡位熱點。</div>
-      </div>
-      <div class="card rounded-xl p-5 border-l-4 border-emerald-500">
-        <div class="flex justify-between items-center mb-2"><span class="font-black num-green">GS6</span><span class="text-xs text-slate-500">¥5,000</span></div>
-        <div class="text-sm text-slate-300">入門引流席，高速彎搭<span class="text-emerald-200">台場夜景</span>背景。</div>
-      </div>
-      <div class="card rounded-xl p-5 border-l-4 border-violet-500">
-        <div class="flex justify-between items-center mb-2"><span class="font-black num-violet">Pit Walk</span><span class="text-xs text-slate-500">¥4,000</span></div>
-        <div class="text-sm text-slate-300">獨立加價：維修區步行、近看 600kW 超充與技師作業。</div>
-      </div>
-    </div>
-
-    <!-- EMOTION CLUB feature -->
-    <div class="card card-gold rounded-2xl p-6 md:p-8 glow-gold mb-8">
-      <div class="flex flex-wrap items-center gap-3 mb-4">
-        <span class="pill pill-gold">★ 頂級款待 · 全球統一品牌</span>
-        <span class="text-xs text-slate-500">相當於 F1 Paddock Club · 東京僅引進此單一款待層級</span>
-      </div>
-      <div class="grid md:grid-cols-3 gap-6">
-        <div>
-          <h3 class="text-2xl font-black mb-1">EMOTION CLUB</h3>
-          <div class="text-sm text-slate-400 mb-4">エモーションクラブ</div>
-          <div class="space-y-2">
-            <div class="flex justify-between text-sm"><span class="text-slate-400">1 日券</span><span class="font-bold num-gold">¥675,000</span></div>
-            <div class="flex justify-between text-sm"><span class="text-slate-400">2 日通票</span><span class="font-bold num-gold">¥1,282,500</span></div>
-            <div class="flex justify-between text-xs text-slate-500"><span>美金約</span><span>US$3,988／7,172</span></div>
-            <div class="flex justify-between text-xs text-slate-500"><span>台幣約</span><span>NT$14.2 萬／26.9 萬</span></div>
-          </div>
-          <div class="mt-4 text-xs text-slate-400 bg-slate-900/60 rounded-lg p-3 border border-amber-500/20">定位＝B2B／ESG「社交場」。歐洲創業圈有「在 EMOTION CLUB 見」的說法；百萬日圓票價＝綠色科技與資本交匯圈的入場費。</div>
-        </div>
-        <div class="md:col-span-2">
-          <div class="text-xs uppercase tracking-wider text-amber-300 mb-3">含括權益</div>
-          <div class="grid sm:grid-cols-2 gap-x-6 gap-y-2.5 text-sm">
-            <div class="flex gap-2"><span class="num-gold">◆</span>專屬室內 lounge ＋ 戶外觀賽露台</div>
-            <div class="flex gap-2"><span class="num-gold">◆</span>VIP 落客區 ＋ 高爾夫球車接駁</div>
-            <div class="flex gap-2"><span class="num-gold">◆</span>米其林級餐飲、日本料理</div>
-            <div class="flex gap-2"><span class="num-gold">◆</span>無限香檳、特製雞尾酒、咖啡吧台</div>
-            <div class="flex gap-2"><span class="num-gold">◆</span>每日兩次 VIP Pit Lane Walk</div>
-            <div class="flex gap-2"><span class="num-gold">◆</span>車手私密見面會</div>
-            <div class="flex gap-2"><span class="num-gold">◆</span>賽車模擬器、空檔 DJ Live</div>
-            <div class="flex gap-2"><span class="num-gold">◆</span>精美禮品（premium gift）</div>
-            <div class="flex gap-2"><span class="num-gold">◆</span>萬全保安、專用入場</div>
-            <div class="flex gap-2"><span class="num-gold">◆</span>餐具採回收材質、備素食</div>
-          </div>
-          <div class="mt-4 text-xs text-slate-500">海外對照（Seat Unique）：柏林 EMOTION CLUB 約 €3,424／日、入門款待 Electric Lounge 約 €664／日；倫敦 EMOTION CLUB 約 £3,240 起。東京以「極少枚數限定一般發售」對大眾開放少量名額，強化稀缺與身份象徵。</div>
-        </div>
-      </div>
-    </div>
-
-    <!-- Discounts & equity -->
-    <div class="mb-4"><h3 class="text-xl font-bold">綁定折扣與平權設計</h3><p class="text-sm text-slate-400 mt-1">以「家庭客群」與「多日停留」為綁定主軸，非價格手段擴大客群基數。</p></div>
-    <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
-      <div class="card card-green rounded-xl p-4"><div class="text-xs text-slate-400 mb-1">2 日通票</div><div class="text-2xl font-black num-green">省 5%</div><div class="text-xs text-slate-500 mt-1">較買兩張 1 日券</div></div>
-      <div class="card card-green rounded-xl p-4"><div class="text-xs text-slate-400 mb-1">GS7 家庭席（限週日）</div><div class="text-2xl font-black num-green">15% 折</div><div class="text-xs text-slate-500 mt-1">大人 1＋兒童 1 名以上</div></div>
-      <div class="card card-green rounded-xl p-4"><div class="text-xs text-slate-400 mb-1">18 歲以下</div><div class="text-2xl font-black num-green">半額</div><div class="text-xs text-slate-500 mt-1">除 GS2 外全看台</div></div>
-      <div class="card card-green rounded-xl p-4"><div class="text-xs text-slate-400 mb-1">Fan Village</div><div class="text-2xl font-black num-green">免費</div><div class="text-xs text-slate-500 mt-1">無票亦可入體驗區</div></div>
-      <div class="card card-green rounded-xl p-4"><div class="text-xs text-slate-400 mb-1">Girls on Track</div><div class="text-2xl font-black num-green">免費</div><div class="text-xs text-slate-500 mt-1">12–25 歲女性 · 7/24（五）</div></div>
-      <div class="card card-green rounded-xl p-4"><div class="text-xs text-slate-400 mb-1">車椅子席</div><div class="text-2xl font-black num-green">50+</div><div class="text-xs text-slate-500 mt-1">下段價＋陪同席 · 全無障礙</div></div>
-    </div>
-  </div>
-</section>
-
-<!-- ===================== 購買方式 ===================== -->
-<section id="buy" class="py-20 border-b border-slate-800">
-  <div class="max-w-7xl mx-auto px-5">
-    <div class="mb-10">
-      <div class="text-cyan-400 text-sm font-medium mb-2 tracking-wide">③ HOW TO BUY</div>
-      <h2 class="text-3xl md:text-4xl font-black">購買方式：單一平台獨家 ＋ 兩階段釋出</h2>
-      <p class="text-slate-400 mt-3 max-w-3xl">イープラス（e+）唯一官方授權，未用 ぴあ／Lawson／Rakuten——集中控管數據與防黃牛。國內外皆可購。</p>
-    </div>
-
-    <div class="grid lg:grid-cols-3 gap-6">
-      <!-- Timeline -->
-      <div class="lg:col-span-2 card rounded-2xl p-6">
-        <div class="text-xs uppercase tracking-wider text-cyan-300 mb-5">2026 銷售時程（僅兩階段）</div>
-        <div class="space-y-0">
-          <div class="flex gap-4">
-            <div class="flex flex-col items-center"><span class="tl-dot" style="background:var(--tk)"></span><span class="w-px flex-1 bg-slate-700 my-1"></span></div>
-            <div class="pb-6"><div class="flex items-center gap-2 flex-wrap"><span class="font-bold">先行予約（抽選 Lottery）</span><span class="pill pill-tk">4/11 10:00 – 4/20 23:59</span></div><p class="text-sm text-slate-400 mt-1">e+ 特設站申請，抽籤決定購買權；國內外皆可。倍率高、非先到先得。</p></div>
-          </div>
-          <div class="flex gap-4">
-            <div class="flex flex-col items-center"><span class="tl-dot" style="background:var(--gold)"></span><span class="w-px flex-1 bg-slate-700 my-1"></span></div>
-            <div class="pb-6"><div class="flex items-center gap-2 flex-wrap"><span class="font-bold">一般販售（先着 First-come）</span><span class="pill pill-gold">5/1 10:00 起</span></div><p class="text-sm text-slate-400 mt-1">先到先得；<span class="text-amber-200">EMOTION CLUB 此階段才開賣</span>。熱門席（GS2、GS3）開賣後 <span class="num-red font-medium">3–20 分鐘秒殺</span>。</p></div>
-          </div>
-          <div class="flex gap-4">
-            <div class="flex flex-col items-center"><span class="tl-dot" style="background:var(--violet)"></span></div>
-            <div><div class="flex items-center gap-2 flex-wrap"><span class="font-bold">取票與付款</span></div><p class="text-sm text-slate-400 mt-1">信用卡最快，支援 PayPay、超商付款；近年以スマチケ（QR 電子票）為主。國際站 eplus.tickets/en 全英文、宣稱 2 分鐘完成。</p></div>
-          </div>
-        </div>
-      </div>
-
-      <!-- Channels -->
-      <div class="space-y-4">
-        <div class="card card-violet rounded-2xl p-5">
-          <div class="text-xs text-slate-400 mb-1">官方通路</div>
-          <div class="font-bold mb-2">イープラス（e+）獨家</div>
-          <div class="space-y-1.5 text-sm text-slate-300">
-            <div>國內：<code class="text-xs bg-slate-800 px-1.5 py-0.5 rounded">eplus.jp/fiaformulae/</code></div>
-            <div>國際：<code class="text-xs bg-slate-800 px-1.5 py-0.5 rounded">eplus.tickets/en</code></div>
-            <div class="text-xs text-slate-500 mt-2">日文官站 jp.fiaformulae.com 僅作導流</div>
-          </div>
-        </div>
-        <div class="card rounded-2xl p-5">
-          <div class="text-xs text-slate-400 mb-2">早鳥誘因</div>
-          <p class="text-sm text-slate-300">無直接折扣，靠「会員お気に入り登録（加入追蹤）」取得先行通知與抽選優先權；藉此蒐集 CRM 名單。</p>
-        </div>
-      </div>
-    </div>
-
-    <!-- Refund & anti-fraud -->
-    <div class="grid md:grid-cols-3 gap-4 mt-6">
-      <div class="card rounded-2xl p-5 border-l-4 border-red-500">
-        <div class="font-semibold mb-1 text-red-300">退票政策</div>
-        <p class="text-sm text-slate-300">原則不接受「自己都合」退票，僅賽事中止／延期才退。盜刷依 e+ 服務條款第 7 條無條件免退並移交警方（反洗錢）。</p>
-      </div>
-      <div class="card rounded-2xl p-5 border-l-4 border-red-500">
-        <div class="font-semibold mb-1 text-red-300">防黃牛／二級市場</div>
-        <p class="text-sm text-slate-300">單一平台集中控管。慎用二級市場（如 Ticket Jam）；2025 曾現 2 日通票每張掛價約 ¥80,000 轉售。e+ 設官方「定価リセール」。</p>
-      </div>
-      <div class="card rounded-2xl p-5 border-l-4 border-amber-500">
-        <div class="font-semibold mb-1 text-amber-300">秒殺與民怨</div>
-        <p class="text-sm text-slate-300">場場完售（2025 付費約 1 萬人）。社群批反黃牛法規不足、流傳「外國觀光客優先」陰謀論——稀缺是設計，也是公關風險。</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ===================== 行銷合作 ===================== -->
-<section id="marketing" class="py-20 border-b border-slate-800 bg-slate-950">
-  <div class="max-w-7xl mx-auto px-5">
-    <div class="mb-10">
-      <div class="text-cyan-400 text-sm font-medium mb-2 tracking-wide">④ MARKETING COLLABORATIONS</div>
-      <h2 class="text-3xl md:text-4xl font-black">有趣的行銷合作：把賽事變科技嘉年華</h2>
-      <p class="text-slate-400 mt-3 max-w-3xl">夜間賽轉型為核心敘事，疊加冠名 B2B 展演、網紅試駕、車廠遊戲化、政府政策行銷——層層綿密、半年發稿。</p>
-    </div>
-
-    <!-- Feature collab cards -->
-    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-5 mb-8">
-      <div class="card card-violet rounded-2xl p-6 glow-violet">
-        <span class="pill pill-violet mb-3">主敘事</span>
-        <h3 class="text-xl font-bold mb-2">夜間賽轉型「Into the night」</h3>
-        <p class="text-sm text-slate-300 leading-relaxed">移至 7 月下旬夜間（練習 21:30／排位 23:40／20:05 起跑），規避酷暑熱失控，綁定東京夜經濟。Reddit 壓倒性正評，期待 Eurobeat／《頭文字 D》文化共鳴。</p>
-      </div>
-      <div class="card rounded-2xl p-6">
-        <span class="pill pill-gold mb-3">冠名贊助</span>
-        <h3 class="text-xl font-bold mb-2">TDK 冠名 · 活體實驗室</h3>
-        <p class="text-sm text-slate-300 leading-relaxed">總部在東京的電子零件巨頭首度冠名，自我定位「即時研發實驗室（Live R&D Lab）／AI 生態系」，口號「In Everything, Better」，亦為 Porsche FE 技術夥伴。</p>
-      </div>
-      <div class="card rounded-2xl p-6 border-l-4 border-pink-500">
-        <span class="pill" style="background:rgba(236,72,153,0.12);color:#f9a8d4;">創作者經濟</span>
-        <h3 class="text-xl font-bold mb-2 mt-3">Evo Sessions 網紅試駕</h3>
-        <p class="text-sm text-slate-300 leading-relaxed">把 12 位網紅塞進 322km/h 的 Gen3 Evo，分 Senor Frogs／Quickstar 兩隊代表 10 車隊（Vikkstar、Cleo Abrams、Supercar Blondie…）。吉達站隔日辦、YouTube 直播。Izzy Hammond 撞牆登頭條；硬核車迷批浪費賽道，價值觀兩極。</p>
-      </div>
-      <div class="card rounded-2xl p-6 border-l-4 border-rose-500">
-        <span class="pill pill-red mb-3">破壞式年輕化</span>
-        <h3 class="text-xl font-bold mb-2">Feastables（MrBeast）</h3>
-        <p class="text-sm text-slate-300 leading-relaxed">官方合作夥伴，藉創作者經濟把傳統車迷拓展至 Z／Alpha 世代數位原住民。</p>
-      </div>
-      <div class="card rounded-2xl p-6 border-l-4 border-sky-500">
-        <span class="pill pill-tk mb-3">在地車廠 · 主場</span>
-        <h3 class="text-xl font-bold mb-2">Nissan 8-bit 遊戲 ＋ 銀座策展</h3>
-        <p class="text-sm text-slate-300 leading-relaxed">與 Dark Horses＋插畫家 Kentaro 推復古街機遊戲「NISMO Electric Racer Tokyo」（櫻花塗裝）；NISSAN CROSSING 銀座實體展把 Gen3 Evo 與市售車並陳。</p>
-      </div>
-      <div class="card rounded-2xl p-6 border-l-4 border-emerald-500">
-        <span class="pill pill-green mb-3">政府政策行銷</span>
-        <h3 class="text-xl font-bold mb-2">TOKYO GX ACTION</h3>
-        <p class="text-sm text-slate-300 leading-relaxed">東京都把碳中和政策包進電動競速：小池百合子 4/14 都廳記者會；賽期同辦「GX ACTION MUSEUM」（GX FOOD／ART&FASHION／LAB／DRIVE）；專屬帳號 @tokyo_gx_action。</p>
-      </div>
-      <div class="card rounded-2xl p-6 border-l-4 border-orange-500">
-        <span class="pill pill-orange mb-3">在地化 PR</span>
-        <h3 class="text-xl font-bold mb-2">Jaguar × Juju Noda</h3>
-        <p class="text-sm text-slate-300 leading-relaxed">綁東京出身、Super Formula 史上首位女車手野田樹潤；參與官方 Women's Test、出席都廳記者會，搶下日媒大篇幅正面報導。</p>
-      </div>
-      <div class="card rounded-2xl p-6 border-l-4 border-cyan-500">
-        <span class="pill pill-tk mb-3">看台動員</span>
-        <h3 class="text-xl font-bold mb-2">GS3 車廠應援席</h3>
-        <p class="text-sm text-slate-300 leading-relaxed">週六「日産応援席」、週日「ヤマハ発動機応援席」，DJ・MC＋巨型應援旗＋車手到看台訪問，把品牌忠誠轉為現場狂熱。</p>
-      </div>
-      <div class="card rounded-2xl p-6 border-l-4 border-amber-500">
-        <span class="pill pill-gold mb-3">名人勝過音樂巨星</span>
-        <h3 class="text-xl font-bold mb-2">Sung Kang（歷屆實績）</h3>
-        <p class="text-sm text-slate-300 leading-relaxed">《玩命關頭》「Han」連兩年出席、揮旗、脫口秀＋職涯講座，進駐 CUPRA KIRO 車庫——「汽車文化名人×賽車」精準綁定，成本與話題效益高於請音樂巨星。</p>
-      </div>
-    </div>
-
-    <!-- Sponsor matrix -->
-    <div class="card rounded-2xl overflow-hidden mb-6">
-      <div class="p-5 border-b border-slate-800"><h3 class="font-bold">聯名品牌矩陣：各打各的受眾</h3></div>
-      <div class="scrolling">
-        <table class="tk w-full min-w-[680px]">
-          <thead><tr><th>品牌</th><th>產業</th><th>戰略定位</th><th>觸及點</th></tr></thead>
-          <tbody>
-            <tr><td class="font-bold num-gold">TDK</td><td class="text-slate-400">電子零組件</td><td class="text-slate-300">冠名 · AI／電氣化活體實驗室</td><td class="text-slate-400">「In Everything, Better」· Porsche 技術交流</td></tr>
-            <tr><td class="font-bold">Julius Baer</td><td class="text-slate-400">私人銀行</td><td class="text-slate-300">財富管理 × 永續前瞻</td><td class="text-slate-400">EMOTION CLUB 高淨值 B2B 社交</td></tr>
-            <tr><td class="font-bold">Allianz</td><td class="text-slate-400">金融保險</td><td class="text-slate-300">社群參與 · 家庭友善</td><td class="text-slate-400">冠名 Fan Village（電競區、兒童區）</td></tr>
-            <tr><td class="font-bold">Hankook</td><td class="text-slate-400">輪胎</td><td class="text-slate-300">全天候抓地 · 回收材料</td><td class="text-slate-400">獨家輪胎 · Girls on Track 冠名</td></tr>
-            <tr><td class="font-bold">Alpine Tech</td><td class="text-slate-400">軟體／區塊鏈</td><td class="text-slate-300">極限環境數據處理</td><td class="text-slate-400">Nissan 車隊塗裝／賽車服曝光</td></tr>
-            <tr><td class="font-bold num-red">Feastables</td><td class="text-slate-400">快消（MrBeast）</td><td class="text-slate-300">破壞式年輕化</td><td class="text-slate-400">創作者經濟綁定 Z／Alpha 世代</td></tr>
-          </tbody>
-        </table>
-      </div>
-    </div>
-
-    <!-- Entertainment positioning note -->
-    <div class="card rounded-2xl p-6 border-l-4 border-cyan-500">
-      <h3 class="font-bold mb-2 text-cyan-200">娛樂定位：免費粉絲村的「配角」</h3>
-      <p class="text-sm text-slate-300 leading-relaxed">音樂以 J-pop／搖滾／R&B／和太鼓為主，<span class="text-cyan-100">從未用 K-pop 或偶像團體當頭牌</span>；2024 票秒殺後 Fan Village 全面免費（無票也能看演出）。截至 2026/6 初，<span class="num-red">2026 現場藝人陣容、日產夜賽塗裝、聯名周邊均尚未公布</span>（官方僅稱「著名アーティスト · 近日公開」）。賽事另綑綁「Change. Accelerated. Live」思想領導峰會（FE 主辦、TDK 官方夥伴）。</p>
-    </div>
-  </div>
-</section>
-
-<!-- ===================== 對標啟示 ===================== -->
-<section id="takeaway" class="py-20 border-b border-slate-800">
-  <div class="max-w-7xl mx-auto px-5">
-    <div class="mb-10">
-      <div class="text-amber-400 text-sm font-medium mb-2 tracking-wide">★ FE14TW / WONDER CHARGE 對標</div>
-      <h2 class="text-3xl md:text-4xl font-black">五點可移植的營運邏輯</h2>
-      <p class="text-slate-400 mt-3 max-w-3xl">東京模式＝「稀缺保證完售 ＋ 陡峭金字塔篩出高消費客 ＋ 少量超高 VIP 拉 ARPU ＋ 節慶化擴客」。對「賽車 Showrun＋K-pop」的複合定位高度適配。</p>
-    </div>
-    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-5">
-      <div class="card rounded-2xl p-6 glow-gold border-l-4 border-amber-500"><div class="pill pill-gold mb-3">價格分層</div><h3 class="font-bold mb-2">設 5–8 階票，入門壓低、頂層拉高</h3><p class="text-sm text-slate-400">入門票衝人數與聲量；頂層 1–2 款超高 VIP（賽車 Pit＋藝人見面）拉至入門 15–30 倍 ARPU。</p></div>
-      <div class="card rounded-2xl p-6 border-l-4 border-amber-500"><div class="pill pill-gold mb-3">稀缺驅動</div><h3 class="font-bold mb-2">限量釋出＋公開完售進度</h3><p class="text-sm text-slate-400">複製「残りわずか」訊號製造緊迫，特別適合 K-pop 粉絲經濟。</p></div>
-      <div class="card rounded-2xl p-6 border-l-4 border-amber-500"><div class="pill pill-gold mb-3">通路集中</div><h3 class="font-bold mb-2">單一主力平台＋官方轉售</h3><p class="text-sm text-slate-400">對標 e+ 獨家：台灣可評估拓元／KKTIX／ibon，集中數據、防黃牛、保留定價轉售。</p></div>
-      <div class="card rounded-2xl p-6 border-l-4 border-amber-500"><div class="pill pill-gold mb-3">免費引流</div><h3 class="font-bold mb-2">免費體驗村導入付費</h3><p class="text-sm text-slate-400">板橋場周邊設免費區（模擬器、Showrun 觀賞、品牌互動），把免費客群導入演唱會與論壇。</p></div>
-      <div class="card rounded-2xl p-6 border-l-4 border-amber-500"><div class="pill pill-gold mb-3">政府綁定</div><h3 class="font-bold mb-2">城市行銷換公部門支持</h3><p class="text-sm text-slate-400">對標東京都 GX：與新北市綁永續／城市行銷，換場地、交通、宣傳；論壇對標「Change. Accelerated. Live」招商。</p></div>
-      <div class="card rounded-2xl p-6 border-l-4 border-red-500"><div class="pill pill-red mb-3">⚠ 需升級</div><h3 class="font-bold mb-2">卡司咖位與公布時程</h3><p class="text-sm text-slate-400">東京到賽前一個多月仍未公布藝人，對「演唱會為主秀」過慢。K-pop 頭牌應於開賣前 3–6 個月鎖定。</p></div>
-    </div>
-  </div>
-</section>
-
-<!-- Sources -->
-<section class="py-12 border-b border-slate-800 bg-slate-950">
-  <div class="max-w-7xl mx-auto px-5">
-    <details class="card rounded-2xl p-6">
-      <summary class="flex items-center justify-between">
-        <span class="font-bold">資料來源、口徑與注意事項 <span class="chev inline-block ml-2">▾</span></span>
-        <span class="text-xs text-slate-500">點擊展開</span>
-      </summary>
-      <div class="mt-5 space-y-4 text-sm">
-        <div class="grid md:grid-cols-2 gap-4">
-          <div class="bg-slate-900 rounded-lg p-3"><div class="text-xs text-slate-500 mb-1">結構化筆記（票務／成本／治理）</div><code class="text-xs text-slate-300 break-all">03_structured_notes/FE14TW_batch_29-31_東京FE治理成本票務_20260607_notes.md</code></div>
-          <div class="bg-slate-900 rounded-lg p-3"><div class="text-xs text-slate-500 mb-1">結構化筆記（行銷／娛樂）</div><code class="text-xs text-slate-300 break-all">03_structured_notes/FE14TW_batch_32-33_東京FE行銷與娛樂_20260607_notes.md</code></div>
-          <div class="bg-slate-900 rounded-lg p-3"><div class="text-xs text-slate-500 mb-1">結構化筆記（宣傳／票務補充）</div><code class="text-xs text-slate-300 break-all">03_structured_notes/FE14TW_batch_37-39_東京FE宣傳與票務_20260607_notes.md</code></div>
-          <div class="bg-slate-900 rounded-lg p-3"><div class="text-xs text-slate-500 mb-1">原始報告（票價全表／行銷全景／娛樂）</div><code class="text-xs text-slate-300 break-all">02_raw_reports/FE14TW_31 · 37 · 33 · 38 · 39_20260607</code></div>
-        </div>
-        <div class="divider-grad my-2"></div>
-        <div class="bg-amber-500/5 border border-amber-500/20 rounded-lg p-4 text-xs text-slate-300 leading-relaxed">
-          <div class="text-amber-300 font-medium mb-2">⚠ 口徑與時效</div>
-          <ul class="space-y-1.5 list-disc ml-4">
-            <li><span class="text-slate-200">EMOTION CLUB 票價</span>採 ¥675,000／¥1,282,500（報告 31／38／39 三份交叉一致）；報告 37 另載「110,000 日圓起跳」，數量級不符，以專門票務報告為準。</li>
-            <li>金額為 JPY 原始定價；<span class="text-slate-200">台幣換算為參考估算（¥1 ≈ NT$0.21）</span>，匯率每日波動，正式提案請查當日匯率。</li>
-            <li>手續費官方未逐項公布（僅註「另收」）；2026 銷售僅見 4/11 抽選與 5/1 一般兩階段，未見 2025 年式 12 月「超最速先行」。</li>
-            <li>2026 現場藝人陣容、日產夜賽塗裝、聯名周邊截至 2026/6 初<span class="text-slate-200">尚未公布</span>，7 月賽前可能更新。觀眾數為估計（2024 約 2 萬含免費粉絲村、2025 付費約 1 萬）。</li>
+      <div class="card scard" id="card-gs2">
+        <img src="https://jp.mediacdn.fiaformulae.com/original/m254_tickets-image-g2.jpg" alt="GS2" loading="lazy">
+        <div class="body">
+          <div class="head"><h3>GS2 グランドスタンド２</h3><span class="catch">贅沢な最上級席</span></div>
+          <div class="pline"><span>上段</span><span class="p">¥26,000 / 兩日 ¥41,600</span></div>
+          <div class="pline"><span>下段</span><span class="p">¥24,000 / 兩日 ¥38,400</span></div>
+          <div><span class="pill pill-gold">最上級</span> <span class="pill pill-red">唯一無半額（純成人溢價席）</span></div>
+          <ul class="points">
+            <li>控制線正側方、頒獎台正前方</li>
+            <li>賽前儀式、名人雲集的發車格、香檳慶祝全程盡收眼底</li>
+            <li>一天完整賽事故事線的沉浸式頂級體驗</li>
           </ul>
         </div>
+      </div>
+
+      <div class="card scard" id="card-gs1">
+        <img src="https://jp.mediacdn.fiaformulae.com/original/m250_tickets-image.jpg" alt="GS1" loading="lazy">
+        <div class="body">
+          <div class="head"><h3>GS1 グランドスタンド１</h3><span class="catch">異次元の加速を体感</span></div>
+          <div class="pline"><span>上段</span><span class="p">¥24,000 / 兩日 ¥38,400</span></div>
+          <div class="pline"><span>下段</span><span class="p">¥22,000 / 兩日 ¥35,200</span></div>
+          <div><span class="pill pill-green">18 歲以下半額</span></div>
+          <ul class="points">
+            <li>主直線旁，近距離感受 GEN3 Evo 全功率加速（0–100 僅 1.86 秒）</li>
+            <li>起跑前可看到發車格的緊張氣氛</li>
+            <li>直視 1 號彎長視野，終盤纏鬥可能在眼前收尾</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="card scard" id="card-gs7">
+        <img src="https://jp.mediacdn.fiaformulae.com/original/m270_tickets-image-g7.jpg" alt="GS7" loading="lazy">
+        <div class="body">
+          <div class="head"><h3>GS7 グランドスタンド７</h3><span class="catch">大逆転劇</span></div>
+          <div class="pline"><span>上段</span><span class="p">¥20,000 / 兩日 ¥32,000</span></div>
+          <div class="pline"><span>下段</span><span class="p">¥18,000 / 兩日 ¥28,800</span></div>
+          <div><span class="pill pill-green">18 歲以下半額</span> <span class="pill pill-tk">週日家庭席 15% 折</span></div>
+          <ul class="points">
+            <li>最終彎，歷年多次上演翻盤戲碼的「魔物」彎角</li>
+            <li>進彎硬碰硬、出彎強力加速、直衝方格旗</li>
+            <li>週日場設家庭席：大人 1＋兒童 1 名以上享 15% 折扣</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="card scard" id="card-gs3">
+        <img src="https://jp.mediacdn.fiaformulae.com/original/m257_tickets-image-g3.jpg" alt="GS3" loading="lazy">
+        <div class="body">
+          <div class="head"><h3>GS3 グランドスタンド３</h3><span class="catch">日本にエールを</span></div>
+          <div class="pline"><span>單一價</span><span class="p">¥14,000 / 兩日 ¥22,400</span></div>
+          <div><span class="pill pill-green">18 歲以下半額</span> <span class="pill pill-orange">應援席 · 附應援物＋伴手禮</span></div>
+          <ul class="points">
+            <li>7/25（六）日産応援席、7/26（日）ヤマハ発動機応援席</li>
+            <li>DJ・MC 帶氣氛＋巨型應援旗＋車手到看台訪問，品牌忠誠轉現場狂熱</li>
+            <li>主直線中央：尾流爭奪與 Attack Mode 超車正面上演</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="card scard" id="card-gs4">
+        <img src="https://jp.mediacdn.fiaformulae.com/original/m259_tickets-image-g4.jpg" alt="GS4" loading="lazy">
+        <div class="body">
+          <div class="head"><h3>GS4 グランドスタンド４</h3><span class="catch">玄人好み（行家之選）</span></div>
+          <div class="pline"><span>上段</span><span class="p">¥12,000 / 兩日 ¥19,200</span></div>
+          <div class="pline"><span>下段</span><span class="p">¥10,000 / 兩日 ¥16,000</span></div>
+          <div><span class="pill pill-green">18 歲以下半額</span></div>
+          <ul class="points">
+            <li>觀察「頭腦戰」：Undercut、節能滑行（lift &amp; coast）、重煞車</li>
+            <li>適合研究各隊策略與軟體模式切換的老手</li>
+            <li>同時是極速區間</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="card scard" id="card-gs5">
+        <img src="https://jp.mediacdn.fiaformulae.com/original/m262_tickets-image-g5.jpg" alt="GS5" loading="lazy">
+        <div class="body">
+          <div class="head"><h3>GS5 グランドスタンド５</h3><span class="catch">激戦区</span></div>
+          <div class="pline"><span>上段</span><span class="p">¥10,000 / 兩日 ¥16,000</span></div>
+          <div class="pline"><span>下段</span><span class="p">¥8,000 / 兩日 ¥12,800</span></div>
+          <div><span class="pill pill-green">18 歲以下半額</span> <span class="pill pill-red">纏鬥熱區</span></div>
+          <ul class="points">
+            <li>1 號彎進彎互插、零車距攻防的主戰場</li>
+            <li>下坡迴旋段（corkscrew）到 3 號彎的搶位一覽無遺</li>
+            <li>官方定位：全場最熱血的看台</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="card scard" id="card-gs6">
+        <img src="https://jp.mediacdn.fiaformulae.com/original/m266_tickets-image-g6.jpg" alt="GS6" loading="lazy">
+        <div class="body">
+          <div class="head"><h3>GS6 グランドスタンド６</h3><span class="catch">息をのむ美しさ</span></div>
+          <div class="pline"><span>單一價</span><span class="p">¥5,000 / 兩日 ¥8,000</span></div>
+          <div><span class="pill pill-green">18 歲以下半額</span> <span class="pill pill-green">全場最低價 · 引流席</span></div>
+          <ul class="points">
+            <li>賽車衝出窄彎後全油門掠過，再消失於高速彎</li>
+            <li>以台場夜景為背景，尾燈如流星劃過（夜間賽招牌畫面）</li>
+            <li>入門首選，價格只有 GS2 上段的 1/5</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="card scard" id="card-pit">
+        <img src="https://jp.mediacdn.fiaformulae.com/original/m273_tickets-image-g8.jpg" alt="Pit Lane Walk" loading="lazy">
+        <div class="body">
+          <div class="head"><h3>Pit Lane Walk 券</h3><span class="catch">舞台裏</span></div>
+          <div class="pline"><span>單日（獨立加價）</span><span class="p">¥4,000</span></div>
+          <div><span class="pill pill-violet">配套票</span> <span class="pill pill-red">枚數限定</span></div>
+          <ul class="points">
+            <li>近看拆裝狀態的賽車與 600kW 快充設備</li>
+            <li>技師整備實況，有機會遇到車手本人</li>
+            <li>需另持觀賽票，官方建議盡早確保</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="card scard" id="card-wheel">
+        <img src="https://jp.mediacdn.fiaformulae.com/original/m284_tickets-image-g10.jpg" alt="車椅子席" loading="lazy">
+        <div class="body">
+          <div class="head"><h3>輪椅席（車椅子席）</h3><span class="catch">最前列の迫力</span></div>
+          <div class="pline"><span>票價</span><span class="p">依各看台下段席價</span></div>
+          <div><span class="pill pill-green">GS1–GS7 全看台設置</span></div>
+          <ul class="points">
+            <li>七個看台最前排共 50 席以上</li>
+            <li>陪同者座位安排在正旁邊</li>
+            <li>官方強調全無障礙動線</li>
+          </ul>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ===== BENEFIT ===== -->
+<section id="benefit" class="alt">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="sec-tag">④ VIP &amp; EQUITY</div>
+      <h2>頂級款待與平權設計</h2>
+      <p class="sec-lead">頂層一款超高 VIP 拉 ARPU，底層用半價、免費區、無障礙擴大客群基數，以「家庭客群」與「多日停留」為綁定主軸。</p>
+    </div>
+
+    <div class="card vip-panel" id="vipPanel">
+      <div style="display:flex;flex-wrap:wrap;gap:10px;align-items:center">
+        <span class="pill pill-gold">★ 頂級款待 · 全球統一品牌</span>
+        <span style="font-size:12px;color:#64748b">相當於 F1 Paddock Club · 東京僅引進此單一款待層級 · 極少枚數限定一般發售</span>
+      </div>
+      <div class="vip-grid">
         <div>
-          <div class="text-xs text-slate-500 mb-2">報告引用機構（原文）</div>
-          <div class="flex flex-wrap gap-1.5">
-            <span class="text-xs bg-slate-800 px-2 py-1 rounded">FIA Formula E (FEO)</span>
-            <span class="text-xs bg-slate-800 px-2 py-1 rounded">イープラス e+</span>
-            <span class="text-xs bg-slate-800 px-2 py-1 rounded">東京都 / TOKYO GX ACTION</span>
-            <span class="text-xs bg-slate-800 px-2 py-1 rounded">TDK</span>
-            <span class="text-xs bg-slate-800 px-2 py-1 rounded">Nissan / NISMO</span>
-            <span class="text-xs bg-slate-800 px-2 py-1 rounded">Jaguar TCS Racing</span>
-            <span class="text-xs bg-slate-800 px-2 py-1 rounded">The Race</span>
-            <span class="text-xs bg-slate-800 px-2 py-1 rounded">Japan Times</span>
-            <span class="text-xs bg-slate-800 px-2 py-1 rounded">PR TIMES</span>
-            <span class="text-xs bg-slate-800 px-2 py-1 rounded">Reddit r/FormulaE</span>
+          <img src="https://jp.mediacdn.fiaformulae.com/original/m279_tickets-image-g9-8.jpg" alt="EMOTION CLUB" loading="lazy">
+          <h3 style="font-size:22px;margin-top:14px">EMOTION CLUB</h3>
+          <div style="font-size:12.5px;color:var(--muted);margin-bottom:10px">エモーションクラブ · 大人の社交場</div>
+          <div class="vip-price-row"><span style="color:var(--muted)">1 日券</span><span class="p">¥675,000</span></div>
+          <div class="vip-price-row"><span style="color:var(--muted)">2 日通票</span><span class="p">¥1,282,500（省 ≈5%）</span></div>
+          <div class="vip-price-row small"><span>美金約</span><span>US$3,988／7,172</span></div>
+          <div class="vip-price-row small"><span>台幣約</span><span>NT$14.2 萬／26.9 萬</span></div>
+          <div class="vip-note">定位＝B2B／ESG「社交場」。歐洲創業圈有「在 EMOTION CLUB 見」的說法；百萬日圓票價＝綠色科技與資本交匯圈的入場費。</div>
+        </div>
+        <div>
+          <div style="font-size:12px;letter-spacing:1.5px;color:#fcd34d;text-transform:uppercase">含括權益</div>
+          <div class="perk-grid">
+            <div class="perk">專屬室內 lounge ＋ 戶外觀賽露台</div>
+            <div class="perk">VIP 落客區 ＋ 高爾夫球車接駁</div>
+            <div class="perk">米其林級餐飲、日本料理</div>
+            <div class="perk">無限香檳、特製雞尾酒、咖啡吧台</div>
+            <div class="perk">每日兩次 VIP Pit Lane Walk</div>
+            <div class="perk">車手私密見面會</div>
+            <div class="perk">賽車模擬器、空檔 DJ Live</div>
+            <div class="perk">精美禮品（premium gift）</div>
+            <div class="perk">萬全保安、專用入場</div>
+            <div class="perk">餐具採回收材質、備素食</div>
           </div>
+          <div class="vip-foot">海外對照（Seat Unique）：柏林 EMOTION CLUB 約 €3,424／日、入門款待 Electric Lounge 約 €664／日；倫敦約 £3,240 起。東京以極少量一般發售強化稀缺與身份象徵。</div>
+        </div>
+      </div>
+    </div>
+
+    <div style="margin-bottom:16px"><h3 style="font-size:19px">綁定折扣與平權設計</h3><p style="font-size:13.5px;color:var(--muted);margin-top:4px">非價格手段擴大客群基數。</p></div>
+    <div class="eq-grid">
+      <div class="eq"><div class="k">2 日通票</div><div class="v">省 5%</div><div class="s">較買兩張 1 日券（×1.6/天 ×2）</div></div>
+      <div class="eq"><div class="k">GS7 家庭席（限週日）</div><div class="v">15% 折</div><div class="s">大人 1＋兒童 1 名以上</div></div>
+      <div class="eq"><div class="k">18 歲以下</div><div class="v">半額</div><div class="s">除 GS2 外全看台</div></div>
+      <div class="eq"><div class="k">Fan Village</div><div class="v">免費</div><div class="s">無票亦可入體驗區</div></div>
+      <div class="eq"><div class="k">Girls on Track</div><div class="v">免費</div><div class="s">12–25 歲女性 · 7/24（五）</div></div>
+      <div class="eq"><div class="k">車椅子席</div><div class="v">50+</div><div class="s">下段價＋陪同席 · 全無障礙</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== BUY ===== -->
+<section id="buy">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="sec-tag">⑤ HOW TO BUY</div>
+      <h2>購買方式：單一平台獨家 ＋ 兩階段釋出</h2>
+      <p class="sec-lead">イープラス（e+）唯一官方授權，未用 ぴあ／Lawson／Rakuten：集中控管數據與防黃牛。國內外皆可購。</p>
+    </div>
+    <div class="buy-grid">
+      <div class="card timeline">
+        <div class="tl-cap">2026 銷售時程（僅兩階段）</div>
+        <div class="tl-item">
+          <div class="tl-rail"><span class="tl-dot" style="background:var(--tk)"></span><span class="tl-line"></span></div>
+          <div class="tl-body"><span class="t">先行予約（抽選 Lottery）</span><span class="pill pill-tk">4/11 10:00 – 4/20 23:59</span><p>e+ 特設站申請，抽籤決定購買權；國內外皆可。倍率高、非先到先得。</p></div>
+        </div>
+        <div class="tl-item">
+          <div class="tl-rail"><span class="tl-dot" style="background:var(--gold)"></span><span class="tl-line"></span></div>
+          <div class="tl-body"><span class="t">一般販售（先着 First-come）</span><span class="pill pill-gold">5/1 10:00 起</span><p>先到先得；<span style="color:#fcd34d">EMOTION CLUB 此階段才開賣</span>。熱門席（GS2、GS3）開賣後 <span style="color:#fca5a5;font-weight:700">3–20 分鐘秒殺</span>。</p></div>
+        </div>
+        <div class="tl-item">
+          <div class="tl-rail"><span class="tl-dot" style="background:var(--violet)"></span></div>
+          <div class="tl-body"><span class="t">取票與付款</span><p>信用卡最快，支援 PayPay、超商付款；近年以スマチケ（QR 電子票）為主。國際站 eplus.tickets/en 全英文、宣稱 2 分鐘完成。</p></div>
+        </div>
+      </div>
+      <div style="display:flex;flex-direction:column;gap:14px">
+        <div class="card side-card" style="border-top:3px solid var(--violet)">
+          <div class="k">官方通路</div>
+          <div style="font-weight:700;margin-bottom:8px">イープラス（e+）獨家</div>
+          <div style="font-size:13.5px;display:flex;flex-direction:column;gap:6px">
+            <div>國內：<code>eplus.jp/fiaformulae/</code></div>
+            <div>2026 售票頁：<a href="https://eplus.jp/sf/word/0000162334" target="_blank" rel="noopener"><code>eplus.jp/sf/word/0000162334</code></a></div>
+            <div>國際：<code>eplus.tickets/en</code></div>
+            <div style="font-size:11.5px;color:#64748b;margin-top:4px">日文官站 jp.fiaformulae.com 僅作導流</div>
+          </div>
+        </div>
+        <div class="card side-card">
+          <div class="k">早鳥誘因</div>
+          <p style="font-size:13.5px;color:#cbd5e1">無直接折扣，靠「会員お気に入り登録（加入追蹤）」取得先行通知與抽選優先權；藉此蒐集 CRM 名單。</p>
+        </div>
+      </div>
+    </div>
+    <div class="risk-grid">
+      <div class="card risk red"><div class="t">退票政策</div><p>原則不接受「自己都合」退票，僅賽事中止／延期才退。盜刷依 e+ 服務條款第 7 條無條件免退並移交警方（反洗錢）。</p></div>
+      <div class="card risk red"><div class="t">防黃牛／二級市場</div><p>單一平台集中控管。慎用二級市場（如 Ticket Jam）；2025 曾現 2 日通票每張掛價約 ¥80,000 轉售。e+ 設官方「定価リセール」。</p></div>
+      <div class="card risk warn"><div class="t">秒殺與民怨</div><p>場場完售（2025 付費約 1 萬人）。社群批反黃牛法規不足、流傳「外國觀光客優先」陰謀論：稀缺是設計，也是公關風險。</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== MARKETING ===== -->
+<section id="marketing" class="alt">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="sec-tag">⑥ MARKETING COLLABORATIONS</div>
+      <h2>有趣的行銷合作：把賽事變科技嘉年華</h2>
+      <p class="sec-lead">夜間賽轉型為核心敘事，疊加冠名 B2B 展演、網紅試駕、車廠遊戲化、政府政策行銷，層層綿密、半年發稿。</p>
+    </div>
+    <div class="mkt-grid">
+      <div class="card mkt b-violet"><span class="pill pill-violet">主敘事</span><h3>夜間賽轉型「Into the night」</h3><p>移至 7 月下旬夜間（練習 21:30／排位 23:40／20:05 起跑），規避酷暑熱失控，綁定東京夜經濟。Reddit 壓倒性正評，期待 Eurobeat／《頭文字 D》文化共鳴。</p></div>
+      <div class="card mkt b-gold"><span class="pill pill-gold">冠名贊助</span><h3>TDK 冠名 · 活體實驗室</h3><p>總部在東京的電子零件巨頭首度冠名，自我定位「即時研發實驗室（Live R&amp;D Lab）／AI 生態系」，口號「In Everything, Better」，亦為 Porsche FE 技術夥伴。</p></div>
+      <div class="card mkt b-pink"><span class="pill" style="background:rgba(236,72,153,.12);color:#f9a8d4">創作者經濟</span><h3>Evo Sessions 網紅試駕</h3><p>把 12 位網紅塞進 322km/h 的 Gen3 Evo，分兩隊代表 10 車隊（Vikkstar、Cleo Abrams、Supercar Blondie…）。吉達站隔日辦、YouTube 直播。Izzy Hammond 撞牆登頭條；硬核車迷批浪費賽道，價值觀兩極。</p></div>
+      <div class="card mkt b-rose"><span class="pill pill-red">破壞式年輕化</span><h3>Feastables（MrBeast）</h3><p>官方合作夥伴，藉創作者經濟把傳統車迷拓展至 Z／Alpha 世代數位原住民。</p></div>
+      <div class="card mkt b-sky"><span class="pill pill-tk">在地車廠 · 主場</span><h3>Nissan 8-bit 遊戲 ＋ 銀座策展</h3><p>與 Dark Horses＋插畫家 Kentaro 推復古街機遊戲「NISMO Electric Racer Tokyo」（櫻花塗裝）；NISSAN CROSSING 銀座實體展把 Gen3 Evo 與市售車並陳。</p></div>
+      <div class="card mkt b-green"><span class="pill pill-green">政府政策行銷</span><h3>TOKYO GX ACTION</h3><p>東京都把碳中和政策包進電動競速：小池百合子 4/14 都廳記者會；賽期同辦「GX ACTION MUSEUM」（GX FOOD／ART&amp;FASHION／LAB／DRIVE）；專屬帳號 @tokyo_gx_action。</p></div>
+      <div class="card mkt b-orange"><span class="pill pill-orange">在地化 PR</span><h3>Jaguar × Juju Noda</h3><p>綁東京出身、Super Formula 史上首位女車手野田樹潤；參與官方 Women's Test、出席都廳記者會，搶下日媒大篇幅正面報導。</p></div>
+      <div class="card mkt b-cyan"><span class="pill pill-tk">看台動員</span><h3>GS3 車廠應援席</h3><p>週六「日産応援席」、週日「ヤマハ発動機応援席」，DJ・MC＋巨型應援旗＋車手到看台訪問，把品牌忠誠轉為現場狂熱。</p></div>
+      <div class="card mkt b-amber"><span class="pill pill-gold">名人勝過音樂巨星</span><h3>Sung Kang（歷屆實績）</h3><p>《玩命關頭》「Han」連兩年出席、揮旗、脫口秀＋職涯講座，進駐 CUPRA KIRO 車庫。「汽車文化名人×賽車」精準綁定，成本與話題效益高於請音樂巨星。</p></div>
+    </div>
+
+    <div class="card tbl-card">
+      <div style="padding:18px 22px;border-bottom:1px solid var(--line)"><h3>聯名品牌矩陣：各打各的受眾</h3></div>
+      <div class="scrolling">
+        <table class="tk" style="min-width:680px">
+          <thead><tr><th>品牌</th><th>產業</th><th>戰略定位</th><th>觸及點</th></tr></thead>
+          <tbody>
+            <tr style="cursor:default"><td class="seat-key" style="color:var(--gold)">TDK</td><td style="color:var(--muted)">電子零組件</td><td>冠名 · AI／電氣化活體實驗室</td><td style="color:var(--muted)">「In Everything, Better」· Porsche 技術交流</td></tr>
+            <tr style="cursor:default"><td class="seat-key">Julius Baer</td><td style="color:var(--muted)">私人銀行</td><td>財富管理 × 永續前瞻</td><td style="color:var(--muted)">EMOTION CLUB 高淨值 B2B 社交</td></tr>
+            <tr style="cursor:default"><td class="seat-key">Allianz</td><td style="color:var(--muted)">金融保險</td><td>社群參與 · 家庭友善</td><td style="color:var(--muted)">冠名 Fan Village（電競區、兒童區）</td></tr>
+            <tr style="cursor:default"><td class="seat-key">Hankook</td><td style="color:var(--muted)">輪胎</td><td>全天候抓地 · 回收材料</td><td style="color:var(--muted)">獨家輪胎 · Girls on Track 冠名</td></tr>
+            <tr style="cursor:default"><td class="seat-key">Alpine Tech</td><td style="color:var(--muted)">軟體／區塊鏈</td><td>極限環境數據處理</td><td style="color:var(--muted)">Nissan 車隊塗裝／賽車服曝光</td></tr>
+            <tr style="cursor:default"><td class="seat-key" style="color:var(--red)">Feastables</td><td style="color:var(--muted)">快消（MrBeast）</td><td>破壞式年輕化</td><td style="color:var(--muted)">創作者經濟綁定 Z／Alpha 世代</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <div class="card mkt b-cyan" style="margin-top:20px">
+      <h3 style="color:#a5f3fc;margin-top:0">娛樂定位：免費粉絲村的「配角」</h3>
+      <p>音樂以 J-pop／搖滾／R&amp;B／和太鼓為主，<span style="color:#cffafe">從未用 K-pop 或偶像團體當頭牌</span>；2024 票秒殺後 Fan Village 全面免費（無票也能看演出）。截至 2026/6 初，<span style="color:#fca5a5">2026 現場藝人陣容、日產夜賽塗裝、聯名周邊均尚未公布</span>（官方僅稱「著名アーティスト · 近日公開」）。賽事另綑綁「Change. Accelerated. Live」思想領導峰會（FE 主辦、TDK 官方夥伴）。</p>
+    </div>
+  </div>
+</section>
+
+<!-- ===== TAKEAWAY ===== -->
+<section id="takeaway">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="sec-tag gold">★ FE14TW / WONDER CHARGE 對標</div>
+      <h2>五點可移植的營運邏輯</h2>
+      <p class="sec-lead">東京模式＝「稀缺保證完售 ＋ 陡峭金字塔篩出高消費客 ＋ 少量超高 VIP 拉 ARPU ＋ 節慶化擴客」。對「賽車 Showrun＋K-pop」的複合定位高度適配。</p>
+    </div>
+    <div class="tk-grid">
+      <div class="card tkc"><span class="pill pill-gold">價格分層</span><h3>設 5–8 階票，入門壓低、頂層拉高</h3><p>入門票衝人數與聲量；頂層 1–2 款超高 VIP（賽車 Pit＋藝人見面）拉至入門 15–30 倍 ARPU。</p></div>
+      <div class="card tkc"><span class="pill pill-gold">稀缺驅動</span><h3>限量釋出＋公開完售進度</h3><p>複製「残りわずか」訊號製造緊迫，特別適合 K-pop 粉絲經濟。</p></div>
+      <div class="card tkc"><span class="pill pill-gold">通路集中</span><h3>單一主力平台＋官方轉售</h3><p>對標 e+ 獨家：台灣可評估拓元／KKTIX／ibon，集中數據、防黃牛、保留定價轉售。</p></div>
+      <div class="card tkc"><span class="pill pill-gold">免費引流</span><h3>免費體驗村導入付費</h3><p>板橋場周邊設免費區（模擬器、Showrun 觀賞、品牌互動），把免費客群導入演唱會與論壇。</p></div>
+      <div class="card tkc"><span class="pill pill-gold">政府綁定</span><h3>城市行銷換公部門支持</h3><p>對標東京都 GX：與新北市綁永續／城市行銷，換場地、交通、宣傳；論壇對標「Change. Accelerated. Live」招商。</p></div>
+      <div class="card tkc red"><span class="pill pill-red">⚠ 需升級</span><h3>卡司咖位與公布時程</h3><p>東京到賽前一個多月仍未公布藝人，對「演唱會為主秀」過慢。K-pop 頭牌應於開賣前 3–6 個月鎖定。</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== SOURCES ===== -->
+<section class="alt" id="sources" style="padding:44px 0">
+  <div class="wrap">
+    <details class="card src-panel">
+      <summary style="display:flex;justify-content:space-between;align-items:center">
+        <span style="font-weight:700">資料來源、口徑與注意事項 <span class="chev">▾</span></span>
+        <span style="font-size:12px;color:#64748b">點擊展開</span>
+      </summary>
+      <div class="src-grid">
+        <div class="src"><div class="k">官網全文擷取（票價／看台文案／圖片）</div><code>jp.fiaformulae.com/tickets · 2026-06-10 擷取 · 圖片直連官網 CDN 未重製</code></div>
+        <div class="src"><div class="k">結構化筆記（票務／成本／治理）</div><code>03_structured_notes/FE14TW_batch_29-31_東京FE治理成本票務_20260607_notes.md</code></div>
+        <div class="src"><div class="k">結構化筆記（行銷／娛樂）</div><code>03_structured_notes/FE14TW_batch_32-33_東京FE行銷與娛樂_20260607_notes.md</code></div>
+        <div class="src"><div class="k">結構化筆記（宣傳／票務補充）</div><code>03_structured_notes/FE14TW_batch_37-39_東京FE宣傳與票務_20260607_notes.md</code></div>
+        <div class="src"><div class="k">原始報告（票價全表／行銷全景／娛樂）</div><code>02_raw_reports/FE14TW_31 · 37 · 33 · 38 · 39_20260607</code></div>
+      </div>
+      <div class="caveat">
+        <div class="t">⚠ 口徑與時效</div>
+        <ul>
+          <li><span style="color:#e2e8f0">EMOTION CLUB 票價</span>採 ¥675,000／¥1,282,500（官網 2026-06-10 擷取與報告 31/38/39 四方一致）；報告 37 另載「110,000 日圓起跳」，數量級不符，不採用。</li>
+          <li>金額為 JPY 原始定價；<span style="color:#e2e8f0">台幣換算為參考估算（¥1 ≈ NT$0.21）</span>，匯率每日波動，正式提案請查當日匯率。</li>
+          <li>手續費官方未逐項公布（僅註「另收」，2024/25 EMOTION CLUB 約 ¥3,300）；2026 銷售僅見 4/11 抽選與 5/1 一般兩階段。</li>
+          <li>2026 現場藝人陣容、日產夜賽塗裝、聯名周邊截至 2026/6 初尚未公布，7 月賽前可能更新。觀眾數為估計（2024 約 2 萬含免費粉絲村、2025 付費約 1 萬）。</li>
+        </ul>
+      </div>
+      <div style="margin-top:14px">
+        <div style="font-size:12px;color:#64748b;margin-bottom:6px">報告引用機構（原文）</div>
+        <div class="org-chips">
+          <span>FIA Formula E (FEO)</span><span>イープラス e+</span><span>東京都 / TOKYO GX ACTION</span><span>TDK</span><span>Nissan / NISMO</span><span>Jaguar TCS Racing</span><span>The Race</span><span>Japan Times</span><span>PR TIMES</span><span>Reddit r/FormulaE</span>
         </div>
       </div>
     </details>
   </div>
 </section>
 
-<!-- Footer -->
-<footer class="py-10 text-center text-xs text-slate-500">
-  <div>FE14TW Reference · 2026 TDK Tokyo E-Prix 票價 · 權益 · 購買 · 行銷視覺化 · 2026-06-08</div>
-  <div class="mt-1">資料來源：結構化筆記 batch 29-31 / 32-33 / 37-39 · 原報告 FE14TW_31 / 33 / 37 / 38 / 39</div>
+<footer>
+  <div>FE14TW Reference · 2026 TDK Tokyo E-Prix 票價 · 權益 · 購買 · 行銷視覺化</div>
+  <div style="margin-top:4px">v2.0 / 2026-06-10：合併官網全文擷取版（圖＋座位圖＋看台文案）與分析版（權益／購買／行銷／對標）；新增單日／兩日、半價、台幣互動切換</div>
 </footer>
 
 <script>
-  // 載入完成後（含 CDN 樣式套用後）若網址未指定錨點，強制回到頁面頂端
-  window.addEventListener('load', () => {
-    if (!window.location.hash) {
-      const root = document.documentElement;
-      const prev = root.style.scrollBehavior;
-      root.style.scrollBehavior = 'auto';   // 暫時關閉平滑捲動，回頂端時不出現動畫
-      window.scrollTo(0, 0);
-      root.style.scrollBehavior = prev;
-    }
-  });
+/* ===== 票價資料（單一事實來源，階梯與表格共用） ===== */
+const RATE = 0.21;
+const ROWS = [
+  { key:'GS2', sub:'最上級', color:'#f59e0b', grad:'linear-gradient(90deg,#fbbf24,#f59e0b)', pos:'控制線正側、頒獎台正前方', up:26000, down:24000, half:false, halfNote:'唯一純成人溢價席', card:'card-gs2' },
+  { key:'GS1', sub:'', color:'#22d3ee', grad:'linear-gradient(90deg,#67e8f9,#22d3ee)', pos:'主直線、1 號彎長視野', up:24000, down:22000, half:true, card:'card-gs1' },
+  { key:'GS7', sub:'家庭席', color:'#22d3ee', grad:'linear-gradient(90deg,#67e8f9,#22d3ee)', pos:'最終彎逆轉劇場（週日設家庭席 15% 折）', up:20000, down:18000, half:true, card:'card-gs7' },
+  { key:'GS3', sub:'應援席', color:'#fb923c', grad:'linear-gradient(90deg,#fdba74,#fb923c)', pos:'主直線中央 · 六日產／日 Yamaha · 附應援物＋伴手禮', up:14000, down:null, half:true, card:'card-gs3' },
+  { key:'GS4', sub:'', color:'#38bdf8', grad:'linear-gradient(90deg,#7dd3fc,#38bdf8)', pos:'戰略與極速交錯的「行家席」', up:12000, down:10000, half:true, card:'card-gs4' },
+  { key:'GS5', sub:'', color:'#38bdf8', grad:'linear-gradient(90deg,#7dd3fc,#38bdf8)', pos:'1 號彎激戰區', up:10000, down:8000, half:true, card:'card-gs5' },
+  { key:'GS6', sub:'最低價', color:'#10b981', grad:'linear-gradient(90deg,#6ee7b7,#10b981)', pos:'高速彎、台場夜景背景', up:5000, down:null, half:true, card:'card-gs6' },
+];
+const VIP = { d1:675000, d2:1282500 };
 
-  // Nav active highlight on scroll
-  const sections = ['overview', 'price', 'benefit', 'buy', 'marketing', 'takeaway'];
-  const navLinks = document.querySelectorAll('.nav-link');
-  window.addEventListener('scroll', () => {
-    let current = sections[0];
-    sections.forEach(id => {
-      const el = document.getElementById(id);
-      if (el && window.scrollY >= el.offsetTop - 120) current = id;
-    });
-    navLinks.forEach(link => {
-      link.classList.toggle('active', link.getAttribute('href') === '#' + current);
-    });
+const state = { day:1, u18:false, twd:false };
+const yen = n => '¥' + n.toLocaleString('ja-JP');
+const twd = n => '約 NT$' + Math.round(n * RATE).toLocaleString('zh-TW');
+const d2 = v => v * 1.6;
+const adj = (r, v) => (state.u18 && r.half) ? v / 2 : v;   // 半價只對適用席種生效
+
+function priceCell(r, day) {
+  const base = day === 2 ? [d2(r.up), r.down !== null ? d2(r.down) : null] : [r.up, r.down];
+  const vals = [adj(r, base[0]), base[1] !== null ? adj(r, base[1]) : null];
+  let html = '<span class="p-main">' + yen(vals[0]) + (vals[1] !== null ? '／' + yen(vals[1]) : '（單一）') + '</span>';
+  if (state.u18 && r.half) html += ' <span class="u18mark">半價中</span>';
+  if (state.twd) html += '<div class="twd">' + twd(vals[0]) + (vals[1] !== null ? '／' + Math.round(vals[1] * RATE).toLocaleString('zh-TW') : '') + '</div>';
+  return html;
+}
+
+function renderTable() {
+  const tb = document.getElementById('priceBody');
+  let html = '';
+  for (const r of ROWS) {
+    html += '<tr data-go="' + r.card + '">'
+      + '<td><span class="seat-key" style="color:' + r.color + '">' + r.key + '</span>' + (r.sub ? '<div class="seat-sub">' + r.sub + '</div>' : '') + '</td>'
+      + '<td style="color:#cbd5e1">' + r.pos + '</td>'
+      + '<td>' + priceCell(r, 1) + '</td>'
+      + '<td>' + priceCell(r, 2) + '</td>'
+      + '<td>' + (r.half ? '<span class="half-ok">半額</span>' : '<span class="half-no">無半額</span>' + (r.halfNote ? '<div class="seat-sub">' + r.halfNote + '</div>' : '')) + '</td>'
+      + '</tr>';
+  }
+  html += '<tr data-go="vipPanel">'
+    + '<td><span class="seat-key" style="color:var(--gold)">EMOTION<br>CLUB</span><div class="seat-sub">VIP 款待</div></td>'
+    + '<td style="color:#cbd5e1">露台觀賽 · 全套款待（見「權益」）</td>'
+    + '<td><span class="p-main" style="color:var(--gold)">' + yen(VIP.d1) + '</span>' + (state.twd ? '<div class="twd">' + twd(VIP.d1) + ' · US$3,988</div>' : '') + '</td>'
+    + '<td><span class="p-main" style="color:var(--gold)">' + yen(VIP.d2) + '</span>' + (state.twd ? '<div class="twd">' + twd(VIP.d2) + ' · 省 ≈5%</div>' : '') + '</td>'
+    + '<td>—</td></tr>';
+  html += '<tr data-go="card-wheel">'
+    + '<td><span class="seat-key">車椅子席</span><div class="seat-sub">輪椅</div></td>'
+    + '<td style="color:#cbd5e1">GS1–GS7 最前排逾 50 席、附陪同席</td>'
+    + '<td>各看台下段價</td><td>各看台下段價</td><td>—</td></tr>';
+  html += '<tr data-go="card-pit">'
+    + '<td><span class="seat-key" style="color:var(--violet)">Pit Walk</span><div class="seat-sub">配套</div></td>'
+    + '<td style="color:#cbd5e1">維修區步行、近看 600kW 超充與技師作業</td>'
+    + '<td><span class="p-main" style="color:var(--violet)">' + yen(4000) + '</span>' + (state.twd ? '<div class="twd">' + twd(4000) + '</div>' : '') + '</td>'
+    + '<td>—</td><td>—</td></tr>';
+  tb.innerHTML = html;
+}
+
+function renderLadder() {
+  const el = document.getElementById('ladder');
+  const vals = ROWS.map(r => adj(r, state.day === 2 ? d2(r.up) : r.up));
+  const max = Math.max(...vals);
+  el.innerHTML = ROWS.map((r, i) => {
+    const v = vals[i];
+    const w = Math.max(18, v / max * 100);
+    let label = yen(v);
+    if (state.twd) label += ' (' + twd(v).replace('約 ', '') + ')';
+    return '<div class="lrow" data-go="' + r.card + '">'
+      + '<span class="lk" style="color:' + r.color + '">' + r.key + '</span>'
+      + '<div class="ltrack"><div class="bar" style="width:' + w + '%;background:' + r.grad + '">' + label + '</div></div></div>';
+  }).join('');
+  document.getElementById('ladderCap').textContent =
+    '價格階梯（' + (state.day === 2 ? '兩日通票' : '單日券') + '上段' + (state.u18 ? '，18 歲以下半價已套用（GS2 除外）' : '') + '，條長 ∝ 價格）· 點擊跳到看台介紹';
+  const vp = state.day === 2 ? VIP.d2 : VIP.d1;
+  document.getElementById('vipLadderPrice').textContent = 'EMOTION CLUB ' + yen(vp);
+  const ratio = Math.round(vp / Math.min(...vals));
+  document.getElementById('vipLadderSub').textContent = '　＝目前最低票 ' + ratio + ' 倍' + (state.twd ? ' · ' + twd(vp) : '');
+}
+
+function renderAll() { renderTable(); renderLadder(); }
+
+/* ===== 控制列 ===== */
+document.querySelectorAll('#daySeg button').forEach(b => b.addEventListener('click', () => {
+  document.querySelectorAll('#daySeg button').forEach(x => x.classList.remove('on'));
+  b.classList.add('on');
+  state.day = Number(b.dataset.day);
+  renderAll();
+}));
+document.getElementById('ckU18').addEventListener('change', e => { state.u18 = e.target.checked; renderAll(); });
+document.getElementById('ckTWD').addEventListener('change', e => { state.twd = e.target.checked; renderAll(); });
+
+/* ===== 點擊跳轉（階梯、表格列、地圖膠囊、VIP callout） ===== */
+document.addEventListener('click', e => {
+  const t = e.target.closest('[data-go]');
+  if (!t) return;
+  const dest = document.getElementById(t.dataset.go);
+  if (dest) dest.scrollIntoView({ behavior: 'smooth', block: 'start' });
+});
+
+/* ===== 載入回頂 ＋ nav scroll spy ===== */
+window.addEventListener('load', () => {
+  if (!window.location.hash) {
+    const root = document.documentElement;
+    const prev = root.style.scrollBehavior;
+    root.style.scrollBehavior = 'auto';
+    window.scrollTo(0, 0);
+    root.style.scrollBehavior = prev;
+  }
+});
+const SECTIONS = ['overview', 'map', 'price', 'stands', 'benefit', 'buy', 'marketing', 'takeaway'];
+const navLinks = document.querySelectorAll('.nav-links a');
+window.addEventListener('scroll', () => {
+  let cur = SECTIONS[0];
+  SECTIONS.forEach(id => {
+    const el = document.getElementById(id);
+    if (el && window.scrollY >= el.offsetTop - 130) cur = id;
   });
+  navLinks.forEach(l => l.classList.toggle('active', l.getAttribute('href') === '#' + cur));
+});
+
+renderAll();
 </script>
 
 </body>
