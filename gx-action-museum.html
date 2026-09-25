@@ -87,6 +87,15 @@
   .zone .where { font-size: 12px; color: var(--dim); }
 
   footer { padding: 32px 0 44px; text-align: center; font-size: 12px; color: var(--dim); }
+
+  /* 照片：直連新聞稿平台原圖，不另存 */
+  figure { margin: 0; }
+  figure img { width: 100%; display: block; border-radius: 10px; background: #0d1322; }
+  figcaption { font-size: 12px; color: var(--dim); margin-top: 6px; }
+  .hero-img { margin-top: 26px; }
+  .zone img { aspect-ratio: 16 / 9; object-fit: cover; margin: -18px -20px 12px; width: calc(100% + 40px); max-width: none; border-radius: 14px 14px 0 0; }
+  .gallery { display: flex; flex-direction: column; gap: 18px; margin-top: 16px; }
+  .gallery .pair { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 18px; }
 </style>
 </head>
 <body>
@@ -117,6 +126,10 @@
       <div class="stat" style="border-top-color:var(--tk)"><div class="k">入場</div><div class="v">免費</div><div class="s">不用買賽事門票</div></div>
       <div class="stat" style="border-top-color:var(--gold)"><div class="k">來場數</div><div class="v">未公布</div><div class="s">規格書目標：兩天全館 9 萬人以上</div></div>
     </div>
+    <figure class="hero-img">
+      <img src="https://prcdn.freetls.fastly.net/release_image/179510/4/179510-4-731070e1b7ac1721e6c0604eaa56eddf-3900x2200.jpg?width=1200&quality=85" alt="TOKYO GX ACTION MUSEUM 主視覺：都民ひとりひとりのGX ACTION" loading="lazy">
+      <figcaption>主視覺，標語「都民ひとりひとりのGX ACTION」（每一位都民的 GX 行動）。圖：TOKYO GX ACTION PR 事務局 2026-06-10 新聞稿</figcaption>
+    </figure>
   </div>
 </header>
 
@@ -180,6 +193,10 @@
         <div class="src">都議會令和 8 年預算特別委員會第 4 號（2026-03-13）；看台上限見主頁「賽後」段</div>
       </div>
     </div>
+    <figure style="margin-top:16px;max-width:560px">
+      <img src="https://prcdn.freetls.fastly.net/release_image/179510/4/179510-4-4704a194d80a5e50bec55c5a64a4d4a9-1191x842.jpg" alt="2026 TDK Tokyo E-Prix 夜間賽海報：夜遊びしよう" loading="lazy">
+      <figcaption>2026 TDK Tokyo E-Prix 海報，標語「夜遊びしよう。」（一起來玩夜晚）。圖：TOKYO GX ACTION PR 事務局 2026-06-10 新聞稿</figcaption>
+    </figure>
   </div>
 </section>
 
@@ -215,12 +232,32 @@
       <p class="sec-lead">活動報告：展出者 73 家，其中 29 家用「デカボスコア」（減碳分數）標示商品或服務；工作坊 21 場，當天在 Peatix 報名。</p>
     </div>
     <div class="grid3">
-      <div class="card zone"><h3>GX LAB</h3><div class="where">西 2 館</div><p style="margin-top:6px">製造、材料、能源企業的技術展示，例如岩谷産業、カネカ、三井化學、TOPPAN、日本航空、三菱 UFJ 銀行，也有旭川市與旭山動物園。</p></div>
-      <div class="card zone"><h3>GX DRIVE</h3><div class="where">西 1 館</div><p style="margin-top:6px">次世代移動：日產 LEAF、Toyota bZ4X、燃料電池堆高機、EV 消防泵浦車、Mazda、五十鈴，以及宣傳 Rally Japan 的愛知縣。</p></div>
-      <div class="card zone"><h3>GX ART &amp; FASHION</h3><div class="where">西 2 館</div><p style="margin-top:6px">服飾與資源循環：URBAN RESEARCH、京都紋付、サラヤ、J-WAVE、東急不動產等。</p></div>
-      <div class="card zone"><h3>GX FOOD</h3><div class="where">西 4 館</div><p style="margin-top:6px">食品企業（味の素 AGF、オタフクソース、森永乳業等），加上 8 家店的「GX ラーメンストリート」限定拉麵。</p></div>
-      <div class="card zone"><h3>GX STAGE</h3><div class="where">西 3 館</div><p style="margin-top:6px">7/25 J-WAVE 節目公開錄音、偶像團體 SWEET STEADY、學生脫碳提案賽；7/26 J-WAVE 播客公開錄音（小澤征悅、大塚愛）、DECA!BEAT。前方 500 席與站位 2,000〜2,500 名要事先抽免費券。</p></div>
+      <div class="card zone"><img src="https://prcdn.freetls.fastly.net/release_image/179510/4/179510-4-ccdec9ef6272547daa228dd09d0a15c2-3900x2200.jpg?width=800&quality=80" alt="GX LAB 分區主題圖" loading="lazy"><h3>GX LAB</h3><div class="where">西 2 館</div><p style="margin-top:6px">製造、材料、能源企業的技術展示，例如岩谷産業、カネカ、三井化學、TOPPAN、日本航空、三菱 UFJ 銀行，也有旭川市與旭山動物園。</p></div>
+      <div class="card zone"><img src="https://prcdn.freetls.fastly.net/release_image/179510/4/179510-4-fb213b27206dbdf9c73a50cf71d9a261-3900x2200.jpg?width=800&quality=80" alt="GX DRIVE 分區主題圖" loading="lazy"><h3>GX DRIVE</h3><div class="where">西 1 館</div><p style="margin-top:6px">次世代移動：日產 LEAF、Toyota bZ4X、燃料電池堆高機、EV 消防泵浦車、Mazda、五十鈴，以及宣傳 Rally Japan 的愛知縣。</p></div>
+      <div class="card zone"><img src="https://prcdn.freetls.fastly.net/release_image/179510/4/179510-4-d3e52474b846dc353403e8a4b4c9f1cd-3900x2200.jpg?width=800&quality=80" alt="GX ART & FASHION 分區主題圖" loading="lazy"><h3>GX ART &amp; FASHION</h3><div class="where">西 2 館</div><p style="margin-top:6px">服飾與資源循環：URBAN RESEARCH、京都紋付、サラヤ、J-WAVE、東急不動產等。</p></div>
+      <div class="card zone"><img src="https://prcdn.freetls.fastly.net/release_image/179510/4/179510-4-bae7a26b0cd3021507e17fcb880c849b-3900x2200.jpg?width=800&quality=80" alt="GX FOOD 分區主題圖" loading="lazy"><h3>GX FOOD</h3><div class="where">西 4 館</div><p style="margin-top:6px">食品企業（味の素 AGF、オタフクソース、森永乳業等），加上 8 家店的「GX ラーメンストリート」限定拉麵。</p></div>
+      <div class="card zone"><img src="https://prcdn.freetls.fastly.net/release_image/179510/4/179510-4-4106e2ab0280099b66903a7047dcf7ca-3900x2200.jpg?width=800&quality=80" alt="GX STAGE 分區主題圖" loading="lazy"><h3>GX STAGE</h3><div class="where">西 3 館</div><p style="margin-top:6px">7/25 J-WAVE 節目公開錄音、偶像團體 SWEET STEADY、學生脫碳提案賽；7/26 J-WAVE 播客公開錄音（小澤征悅、大塚愛）、DECA!BEAT。前方 500 席與站位 2,000〜2,500 名要事先抽免費券。</p></div>
       <div class="card zone" style="border-top-color:var(--tk)"><h3>GX LOUNGE ＋ 集章</h3><div class="where">中庭 · 跨館</div><p style="margin-top:6px">中庭展示 Nissan Formula E GEN3 Evo 賽車。3 月起的手機集章收錄 50 項日常 GX 行動，抽 FE 全體車手簽名會、搭東京都交通局氫燃料巴士繞賽道一圈；賽事兩天另有跨東西兩館的集章。</p></div>
+    </div>
+    <figure style="margin-top:14px">
+      <img src="https://prcdn.freetls.fastly.net/release_image/179510/4/179510-4-b6bfe24fa207737901a8a72bf5b0f83c-3190x1793.jpg?width=1200&quality=85" alt="會場入口示意圖" loading="lazy">
+      <figcaption>事前公布的會場入口示意圖：GX DRIVE、GX LAB、GX ART &amp; FASHION 的入口並排。圖：TOKYO GX ACTION PR 事務局 2026-06-10 新聞稿</figcaption>
+    </figure>
+    <h3 style="margin-top:28px">現場照片</h3>
+    <p class="src" style="margin-top:0">圖：TOKYO GX ACTION PR 事務局 2026-08-07 活動報告新聞稿，每張原圖是三張照片拼成的橫幅。</p>
+    <div class="gallery">
+      <figure><img src="https://prcdn.freetls.fastly.net/release_image/179510/10/179510-10-c391adf70f03d4698089c41959a2f607-1582x437.png" alt="GX FOOD 的「GX ラーメンストリート」" loading="lazy"><figcaption>GX FOOD 的「GX ラーメンストリート」：攤位前排隊，右圖是吃完的碗分類回收。</figcaption></figure>
+      <figure><img src="https://prcdn.freetls.fastly.net/release_image/179510/10/179510-10-4082c2e3dbcc3efb0c03f865dc4439a8-2411x454.png" alt="左" loading="lazy"><figcaption>左：VR 防災體驗車；中：VR 體驗座位；右：工作坊區。</figcaption></figure>
+      <figure><img src="https://prcdn.freetls.fastly.net/release_image/179510/10/179510-10-d2fa9c315a05167f4c97314c78f7c69e-2373x522.png" alt="左" loading="lazy"><figcaption>左：FIA Girls on Track 的舞台活動；中：發光座椅休息區；右：兒童 EV 卡丁車場。</figcaption></figure>
+      <figure><img src="https://prcdn.freetls.fastly.net/release_image/179510/10/179510-10-4d86bfaf719fcf06204ebbb0a084f51f-2389x451.png" alt="各展位的親子工作坊與展示解說。" loading="lazy"><figcaption>各展位的親子工作坊與展示解說。</figcaption></figure>
+      <figure><img src="https://prcdn.freetls.fastly.net/release_image/179510/10/179510-10-cc8dad7fbf949217a958c6f5607e35ae-2389x446.png" alt="左" loading="lazy"><figcaption>左：小型電動載具試乘；中、右：工作坊與展示。</figcaption></figure>
+      <div class="pair">
+      <figure><img src="https://prcdn.freetls.fastly.net/release_image/179510/10/179510-10-78613ecad362d55034d80e8b63c8c247-1575x519.png" alt="GX STAGE" loading="lazy"><figcaption>GX STAGE：SWEET STEADY Special Live。</figcaption></figure>
+      <figure><img src="https://prcdn.freetls.fastly.net/release_image/179510/10/179510-10-91884fb6216ca7bcb03035875984a308-1575x520.png" alt="GX STAGE" loading="lazy"><figcaption>GX STAGE：DECA!BEAT 演出與訪談。</figcaption></figure>
+      <figure><img src="https://prcdn.freetls.fastly.net/release_image/179510/10/179510-10-8ba0ae6bf6e9ee8b8b63aca40b257fe9-1732x571.png" alt="學生脫碳提案賽「デカボチャレンジ」" loading="lazy"><figcaption>學生脫碳提案賽「デカボチャレンジ」：學生隊伍上台提案 GX 宣傳策略。</figcaption></figure>
+      <figure><img src="https://prcdn.freetls.fastly.net/release_image/179510/10/179510-10-03e66e05ec641c70d45bc1a4e1b6bea9-2381x534.png" alt="左" loading="lazy"><figcaption>左：舞台致詞；中：來場者寫下 GX 行動的簽名牆；右：舞台演出。</figcaption></figure>
+      </div>
+      <figure><img src="https://prcdn.freetls.fastly.net/release_image/179510/10/179510-10-f1ca96cc6e6484ce3e057e36f1a097a9-1530x857.jpg" alt="閉幕合照" loading="lazy"><figcaption>演出者與主持人在簽名牆前合照。</figcaption></figure>
     </div>
     <div class="card" style="margin-top:14px">
       <h3>東京都在規格書裡要求營運方做到的事（2025-11-25）</h3>
