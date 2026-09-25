@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="robots" content="noindex, nofollow">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>TOKYO GX ACTION MUSEUM｜東京都在 E-Prix 旁辦的 GX 展 | FE14TW Reference</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700;900&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #070b16; --bg2: #0a101f; --card: #111a2e; --line: #1f2937;
+    --text: #e5e7eb; --muted: #94a3b8; --dim: #64748b;
+    --tk: #22d3ee; --violet: #a78bfa; --gold: #f59e0b; --green: #10b981; --red: #ef4444;
+    --green-soft: rgba(16,185,129,.12); --gold-soft: rgba(245,158,11,.12); --tk-soft: rgba(34,211,238,.12); --violet-soft: rgba(167,139,250,.12);
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body { font-family: 'Noto Sans TC', system-ui, -apple-system, sans-serif; background: var(--bg); color: var(--text); line-height: 1.7; }
+  a { color: var(--tk); text-decoration: none; }
+  a:hover { text-decoration: underline; }
+  .wrap { max-width: 1080px; margin: 0 auto; padding: 0 16px; }
+
+  nav { position: sticky; top: 0; z-index: 50; backdrop-filter: blur(10px); background: rgba(7,11,22,.88); border-bottom: 1px solid var(--line); }
+  nav .wrap { display: flex; align-items: center; justify-content: space-between; gap: 10px; padding-top: 10px; padding-bottom: 10px; }
+  .back { font-size: 13px; font-weight: 700; white-space: nowrap; }
+  .nav-links { display: flex; gap: 2px; overflow-x: auto; }
+  .nav-links a { color: var(--muted); font-size: 13px; padding: 6px 9px; border-radius: 6px; white-space: nowrap; }
+  .nav-links a:hover { color: var(--text); background: rgba(255,255,255,.06); text-decoration: none; }
+
+  .hero { padding: 52px 0 40px; border-bottom: 1px solid var(--line);
+    background: radial-gradient(circle at 20% 20%, rgba(16,185,129,.18), transparent 45%), radial-gradient(circle at 80% 30%, rgba(34,211,238,.14), transparent 45%), linear-gradient(180deg, #070b16, #0c1322); }
+  .badge-line { display: inline-block; background: rgba(255,255,255,.05); border: 1px solid rgba(255,255,255,.1); padding: 4px 12px; border-radius: 999px; font-size: 12px; color: #cbd5e1; margin-bottom: 18px; }
+  h1 { font-size: clamp(28px, 5vw, 48px); font-weight: 900; line-height: 1.2; margin-bottom: 14px; }
+  h1 .sub { display: block; font-size: clamp(17px, 2.6vw, 24px); color: #6ee7b7; font-weight: 700; margin-top: 6px; }
+  .lede { font-size: 16px; color: #cbd5e1; max-width: 780px; }
+  .stat-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 12px; margin-top: 28px; }
+  .stat { background: var(--card); border: 1px solid var(--line); border-top: 3px solid var(--green); border-radius: 12px; padding: 14px 16px; }
+  .stat .k { font-size: 12px; color: var(--muted); }
+  .stat .v { font-size: 21px; font-weight: 900; margin-top: 2px; }
+  .stat .s { font-size: 11.5px; color: var(--dim); margin-top: 3px; }
+
+  section { padding: 52px 0; border-bottom: 1px solid var(--line); scroll-margin-top: 56px; }
+  section.alt { background: var(--bg2); }
+  .sec-tag { color: var(--green); font-size: 13px; font-weight: 500; letter-spacing: 1.5px; margin-bottom: 6px; }
+  h2 { font-size: clamp(22px, 3.2vw, 30px); font-weight: 900; }
+  .sec-lead { color: var(--muted); margin-top: 8px; max-width: 800px; font-size: 14.5px; }
+  .sec-head { margin-bottom: 24px; }
+  h3 { font-size: 16.5px; font-weight: 700; margin-bottom: 8px; }
+  p, li { font-size: 14px; }
+  .card { background: var(--card); border: 1px solid var(--line); border-radius: 14px; padding: 18px 20px; }
+  .grid2 { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 14px; }
+  .grid3 { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 14px; }
+  .card ul { margin-left: 18px; display: flex; flex-direction: column; gap: 5px; color: #cbd5e1; }
+  .card p { color: #cbd5e1; }
+  .src { font-size: 11.5px; color: var(--dim); margin-top: 10px; }
+  .pill { display: inline-block; padding: 3px 10px; border-radius: 999px; font-size: 11.5px; font-weight: 500; margin-bottom: 8px; }
+  .p-green { background: var(--green-soft); color: #6ee7b7; }
+  .p-gold { background: var(--gold-soft); color: #fcd34d; }
+  .p-tk { background: var(--tk-soft); color: #67e8f9; }
+  .p-violet { background: var(--violet-soft); color: #c4b5fd; }
+  .quote { border-left: 3px solid var(--green); padding: 6px 12px; margin: 10px 0; color: #cbd5e1; font-size: 13.5px; background: rgba(16,185,129,.05); }
+  .quote .ja { color: var(--muted); font-size: 12.5px; display: block; margin-bottom: 2px; }
+
+  .scrolling { overflow-x: auto; }
+  table { width: 100%; min-width: 680px; border-collapse: collapse; }
+  th { font-weight: 500; color: var(--muted); font-size: 12px; text-align: left; padding: 10px 12px; border-bottom: 1px solid var(--line); background: #0d1626; white-space: nowrap; }
+  td { padding: 11px 12px; border-bottom: 1px solid var(--line); font-size: 13.5px; vertical-align: top; color: #cbd5e1; }
+  tr:last-child td { border-bottom: none; }
+  td b { color: var(--text); }
+  .tbl { padding: 0; overflow: hidden; }
+
+  /* 金流圖 */
+  .flow { display: grid; grid-template-columns: 1fr; gap: 10px; }
+  .flow .node { background: #0d1626; border: 1px solid var(--line); border-radius: 10px; padding: 12px 14px; }
+  .flow .node .t { font-weight: 700; }
+  .flow .node .d { font-size: 12.5px; color: var(--muted); margin-top: 2px; }
+  .flow .arrow { text-align: center; color: var(--dim); font-size: 12.5px; }
+  .flow .split { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 10px; }
+  .flow .amt { font-size: 20px; font-weight: 900; margin-top: 4px; font-variant-numeric: tabular-nums; }
+  .amt.gold { color: var(--gold); } .amt.tk { color: var(--tk); } .amt.violet { color: var(--violet); }
+  .node.gov { border-top: 3px solid var(--green); }
+  .node.com { border-top: 3px solid var(--gold); }
+
+  .zone { border-top: 3px solid var(--green); }
+  .zone .where { font-size: 12px; color: var(--dim); }
+
+  footer { padding: 32px 0 44px; text-align: center; font-size: 12px; color: var(--dim); }
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="wrap">
+    <a class="back" href="./">← 東京 E-Prix 票務頁</a>
+    <div class="nav-links">
+      <a href="#what">是什麼</a>
+      <a href="#why">前因</a>
+      <a href="#history">三屆沿革</a>
+      <a href="#content">2026 內容</a>
+      <a href="#money">分工與金流</a>
+      <a href="#result">結果</a>
+      <a href="#tw">對台灣</a>
+    </div>
+  </div>
+</nav>
+
+<header class="hero">
+  <div class="wrap">
+    <div class="badge-line">東京都報道發表、GX 執行委員會議事資料、委託規格書、都議會會議錄 · 查證至 2026-09-25</div>
+    <h1>TOKYO GX ACTION MUSEUM<span class="sub">東京都在 E-Prix 旁邊辦的免費 GX 體驗展</span></h1>
+    <p class="lede">2026 年 7 月 25、26 日，賽道旁的東京 Big Sight 同時開兩個場：東館是 Formula E 主辦的 Fan Village（粉絲村），西館是東京都辦的 TOKYO GX ACTION MUSEUM。東京都為這個週末付了兩筆錢：委託博報堂辦西館與全年宣傳，另外付給 Formula E 營運公司兩筆，買粉絲村合辦與賽道上的東京標誌廣告。</p>
+    <div class="stat-grid">
+      <div class="stat"><div class="k">日期</div><div class="v">7/25–26</div><div class="s">11:00–20:00，比粉絲村早 2 小時收</div></div>
+      <div class="stat"><div class="k">會場</div><div class="v">西 1〜4 館＋中庭</div><div class="s">粉絲村在東 1〜3 館</div></div>
+      <div class="stat" style="border-top-color:var(--tk)"><div class="k">入場</div><div class="v">免費</div><div class="s">不用買賽事門票</div></div>
+      <div class="stat" style="border-top-color:var(--gold)"><div class="k">來場數</div><div class="v">未公布</div><div class="s">規格書目標：兩天全館 9 萬人以上</div></div>
+    </div>
+  </div>
+</header>
+
+<!-- 一 -->
+<section id="what">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="sec-tag">① 名詞</div>
+      <h2>GX 與 TOKYO GX ACTION 是什麼</h2>
+    </div>
+    <div class="grid2">
+      <div class="card">
+        <span class="pill p-green">GX</span>
+        <h3>Green Transformation（綠色轉型）</h3>
+        <p>日本政府與企業的用語：把以化石燃料為主的產業與生活，轉成以潔淨能源為主。東京都的版本叫「ゼロエミッション東京」（零排放東京），目標有兩種寫法並存：</p>
+        <ul style="margin-top:8px">
+          <li>2030 年碳排減半、2050 年碳中和（2024 年啟動稿、2026 委託規格書）</li>
+          <li>2035 年前溫室氣體比 2000 年減 60% 以上、2050 年零排放東京（2026 年 7 月的報道發表與活動報告）</li>
+        </ul>
+      </div>
+      <div class="card">
+        <span class="pill p-tk">TOKYO GX ACTION</span>
+        <h3>東京都產業勞動局的全年宣傳活動</h3>
+        <ul>
+          <li>2024-09-20 發起，目的是讓都民理解 GX、改變日常行為；第一場活動是 2024-10 在東京國際論壇的 BEGINNING。</li>
+          <li>前身是 2023-05-26 同一個課發起的 TOKYO ZEV ACTION（ZEV＝零排放車輛）。官方沒有寫前者取代後者。</li>
+          <li>主管單位是產業勞動局 產業・能源政策部 計畫課。每年設一個「執行委員會」實際辦事：委員長是產業勞動局長，委員有東京都環境公社、東京 Big Sight、臨海副都心城市營造協議會，江東區是觀察員。</li>
+          <li>錢的路線：東京都以「負担金」撥給執行委員會，委員會再對外發包；委員會解散時剩下的錢退回東京都。</li>
+        </ul>
+        <div class="src">官網 tokyo-gx-action.jp · 社群帳號 @tokyo_gx_action</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 二 -->
+<section id="why" class="alt">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="sec-tag">② 前因</div>
+      <h2>東京都為什麼把 GX 展放在 E-Prix 旁邊</h2>
+      <p class="sec-lead">東京都把 Formula E 當成推動零排放車與脫碳的宣傳場合，賽事本身由 Formula E 主辦，東京都在旁邊辦自己的活動，並付錢把政策名稱放進賽事。</p>
+    </div>
+    <div class="grid2">
+      <div class="card">
+        <h3>政策定位</h3>
+        <ul>
+          <li>2022 年 10 月 FEO（Formula E 營運公司）與東京都簽主辦合約，2024 首辦。</li>
+          <li>知事小池百合子 2024-02-20 施政方針：</li>
+        </ul>
+        <div class="quote"><span class="ja">「フォーミュラＥ東京大会を追い風に、モビリティーの脱炭素化を推し進めます」</span>要趁 Formula E 東京大會的聲勢，推動交通工具脫碳。</div>
+        <ul>
+          <li>知事 2024-05、2025-06 兩次所信表明都把 FE 綁在零排放車與脫碳；2026-09-18 的所信表明沒有提到 FE。</li>
+        </ul>
+        <div class="src">東京都議會會議錄（2024-02-20、2024-05-29、2025-06-02）；東京週報 2026-09-25 期</div>
+      </div>
+      <div class="card">
+        <h3>議員問的是「票買不到的人怎麼辦」</h3>
+        <p>2026-03-13 預算特別委員會，議員指出 FE 一般知名度不高，問怎麼觸及持票者以外的都民。產業勞動局長回答：同期辦兩天宣傳活動，走賽道與公眾觀賽免費。</p>
+        <p style="margin-top:8px">看台約 1 萬席、票很快賣完，東京都的答法是在同一個會場另辦不用門票的活動。2026 年的規格書把這件事寫成目標：兩天全館集客 9 萬人以上。</p>
+        <div class="src">都議會令和 8 年預算特別委員會第 4 號（2026-03-13）；看台上限見主頁「賽後」段</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 三 -->
+<section id="history">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="sec-tag">③ 三屆沿革</div>
+      <h2>每一屆 E-Prix 旁邊都有一個東京都的活動，名字年年換</h2>
+    </div>
+    <div class="card tbl">
+      <div class="scrolling">
+        <table>
+          <thead><tr><th>年</th><th>活動名稱</th><th>會場</th><th>全年營運委託</th><th>來場數</th></tr></thead>
+          <tbody>
+            <tr><td><b>2024</b><br>3/30–31</td><td>E-Tokyo Festival 2024<br><span style="color:var(--dim);font-size:12px">TOKYO ZEV ACTION 第 3 場</span></td><td>東 1〜3、西 1〜4、西中庭</td><td>電通 Live，金額查不到</td><td>約 5.6 萬人<br><span style="color:var(--dim);font-size:12px">只有媒體轉述，官方數字查不到</span></td></tr>
+            <tr><td><b>2025</b><br>5/17–18</td><td>TOKYO GX ACTION CHANGING<br><span style="color:var(--dim);font-size:12px">未来を変える脱炭素アクション</span></td><td>東 1〜3、南 1〜4，免費</td><td>讀賣新聞東京本社<br><b>1,104,972,000 円</b></td><td>約 6 萬人（局長議會答辯）<br>約 6.5 萬人（主辦方新聞稿）<br><span style="color:var(--dim);font-size:12px">兩個說法都來自主辦方，未解</span></td></tr>
+            <tr><td><b>2026</b><br>7/25–26</td><td>TOKYO GX ACTION MUSEUM</td><td>西 1〜4、中庭，免費</td><td>博報堂<br><b>621,500,000 円</b></td><td>未公布</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+    <p class="src">這些是東京都自辦活動的人數，不是賽事觀眾數。2025 年常被引用的「約 9 萬人」就是賽事看台人數加上這個活動的人數，兩者不能相加當成賽事規模。全年營運委託的範圍不只賽事週末的活動，也含全年宣傳與官網。</p>
+  </div>
+</section>
+
+<!-- 四 -->
+<section id="content" class="alt">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="sec-tag">④ 2026 內容</div>
+      <h2>五個分區，主題是「從各自喜歡的事開始 GX」</h2>
+      <p class="sec-lead">活動報告：展出者 73 家，其中 29 家用「デカボスコア」（減碳分數）標示商品或服務；工作坊 21 場，當天在 Peatix 報名。</p>
+    </div>
+    <div class="grid3">
+      <div class="card zone"><h3>GX LAB</h3><div class="where">西 2 館</div><p style="margin-top:6px">製造、材料、能源企業的技術展示，例如岩谷産業、カネカ、三井化學、TOPPAN、日本航空、三菱 UFJ 銀行，也有旭川市與旭山動物園。</p></div>
+      <div class="card zone"><h3>GX DRIVE</h3><div class="where">西 1 館</div><p style="margin-top:6px">次世代移動：日產 LEAF、Toyota bZ4X、燃料電池堆高機、EV 消防泵浦車、Mazda、五十鈴，以及宣傳 Rally Japan 的愛知縣。</p></div>
+      <div class="card zone"><h3>GX ART &amp; FASHION</h3><div class="where">西 2 館</div><p style="margin-top:6px">服飾與資源循環：URBAN RESEARCH、京都紋付、サラヤ、J-WAVE、東急不動產等。</p></div>
+      <div class="card zone"><h3>GX FOOD</h3><div class="where">西 4 館</div><p style="margin-top:6px">食品企業（味の素 AGF、オタフクソース、森永乳業等），加上 8 家店的「GX ラーメンストリート」限定拉麵。</p></div>
+      <div class="card zone"><h3>GX STAGE</h3><div class="where">西 3 館</div><p style="margin-top:6px">7/25 J-WAVE 節目公開錄音、偶像團體 SWEET STEADY、學生脫碳提案賽；7/26 J-WAVE 播客公開錄音（小澤征悅、大塚愛）、DECA!BEAT。前方 500 席與站位 2,000〜2,500 名要事先抽免費券。</p></div>
+      <div class="card zone" style="border-top-color:var(--tk)"><h3>GX LOUNGE ＋ 集章</h3><div class="where">中庭 · 跨館</div><p style="margin-top:6px">中庭展示 Nissan Formula E GEN3 Evo 賽車。3 月起的手機集章收錄 50 項日常 GX 行動，抽 FE 全體車手簽名會、搭東京都交通局氫燃料巴士繞賽道一圈；賽事兩天另有跨東西兩館的集章。</p></div>
+    </div>
+    <div class="card" style="margin-top:14px">
+      <h3>東京都在規格書裡要求營運方做到的事（2025-11-25）</h3>
+      <ul>
+        <li>兩天 Big Sight 全館集客 9 萬人以上；官網瀏覽量 50 萬以上。</li>
+        <li>在東 1〜3 館與 Formula E 合辦活動；兩天賽後辦走賽道活動。</li>
+        <li>設免費臨時托兒區；推嬰兒車與輪椅也能順暢移動的動線；酷暑對策。</li>
+      </ul>
+      <div class="src">委託規格書 2025-11-25；東京都報道發表 2026-06-10、07-01、07-10；官方活動報告 2026-08-07</div>
+    </div>
+  </div>
+</section>
+
+<!-- 五 -->
+<section id="money">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="sec-tag">⑤ 分工與金流</div>
+      <h2>東館歸 FE，西館歸東京都，錢從東京都流向兩邊</h2>
+      <p class="sec-lead">三筆契約都依執行委員會財務規程以「特命隨意契約」簽訂（指名，不經一般競標）；博報堂那筆先經四家比稿審查。</p>
+    </div>
+    <div class="grid2">
+      <div class="card">
+        <div class="flow">
+          <div class="node gov"><div class="t">東京都</div><div class="d">以負担金撥給執行委員會，金額查不到</div></div>
+          <div class="arrow">↓</div>
+          <div class="node gov"><div class="t">TOKYO GX ACTION2026 執行委員會</div><div class="d">委員長：產業勞動局長</div></div>
+          <div class="arrow">↓ 2026 年度委託（含稅）</div>
+          <div class="split">
+            <div class="node com"><div class="t">博報堂</div><div class="d">MUSEUM、全年宣傳、官網</div><div class="amt gold">6.215 億円</div></div>
+            <div class="node com"><div class="t">FEO 日本支店</div><div class="d">Fan Village 合辦 GX 宣傳</div><div class="amt tk">4.2 億円</div></div>
+            <div class="node com"><div class="t">FEO 日本支店</div><div class="d">賽道與轉播上的東京標誌廣告</div><div class="amt violet">2 億円</div></div>
+          </div>
+        </div>
+        <div class="src">另有一筆博報堂 Japan Mobility Show 2025 參展 7,150 萬円，四筆合計 13.13 億円。第 2、4、5 回執行委員會資料（2025-09-17、2025-12-24、2026-06-08）</div>
+      </div>
+      <div class="card">
+        <h3>付給 FE 的 6.2 億円買了什麼</h3>
+        <ul>
+          <li><b>4.2 億円</b>：在東館 FE 主辦的 Fan Village 合辦 GX 活動，對為 FE 而來的觀眾宣傳都政策。項目含與 FIA Girls on Track 合辦的女性活躍介紹、TOKYO GX ACTION 標誌布置、ZEV 內容（江戶工藝加 EV 輔助的「ツナグルマ」花車）、給水站與環保杯。粉絲村 2026 年從「Allianz Fan Village」改名「FORMULA E x TOKYO GX ACTION FAN VILLAGE」就是這筆的內容。</li>
+          <li><b>2 億円</b>：「TOKYO TOKYO」城市標誌刊在 19 面煞車區看板、GS1 看台背面 23.35m×4m 布幕、起跑門架電子看板、賽事轉播畫面。</li>
+          <li>公開的新聞稿只寫「連携企画」（合作企劃），沒有金額；金額只出現在執行委員會的議事資料。</li>
+        </ul>
+        <div class="quote"><span class="ja">「東京都のGX推進プロジェクト『TOKYO GX ACTION』との連携企画として」</span>作為與東京都 GX 推進專案 TOKYO GX ACTION 的合作企劃。FEO 與東京都 2026-07-01 同時發布</div>
+      </div>
+    </div>
+    <div class="card" style="margin-top:14px">
+      <h3>同一個會場的兩個場</h3>
+      <div class="scrolling">
+        <table style="min-width:560px">
+          <thead><tr><th></th><th>FORMULA E x TOKYO GX ACTION FAN VILLAGE</th><th>TOKYO GX ACTION MUSEUM</th></tr></thead>
+          <tbody>
+            <tr><td><b>主辦</b></td><td>Formula E 營運公司</td><td>TOKYO GX ACTION2026 執行委員會（東京都）</td></tr>
+            <tr><td><b>場館</b></td><td>東 1〜3 館</td><td>西 1〜4 館＋中庭</td></tr>
+            <tr><td><b>時間</b></td><td>14:00–22:00</td><td>11:00–20:00</td></tr>
+            <tr><td><b>內容</b></td><td>GEN4 實車、模擬器、Fan Store、主舞台、室內 Live Viewing</td><td>五分區展示、工作坊、GX STAGE、拉麵街</td></tr>
+            <tr><td><b>東京都的錢</b></td><td>4.2 億円委託給 FEO</td><td>6.215 億円委託給博報堂（含全年宣傳）</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="src">兩館都免費。西館 20:00 收、東館 22:00 收，散場人潮分成兩波；官方沒有說明這是刻意安排。</p>
+    </div>
+  </div>
+</section>
+
+<!-- 六 -->
+<section id="result" class="alt">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="sec-tag">⑥ 結果</div>
+      <h2>辦完了，人數沒有公布，錢不在預算書裡</h2>
+    </div>
+    <div class="grid2">
+      <div class="card">
+        <h3>公布了什麼</h3>
+        <ul>
+          <li>官方活動報告（2026-08-07）只寫展出 73 家、29 家標減碳分數、工作坊 21 場。</li>
+          <li>來場數至 2026-09-25 沒有公布，9 萬人目標有沒有達成無從判斷。執行委員會預定 8 月開會做活動實施報告，那次的資料沒有公開。</li>
+          <li>取得管道：執行委員會事務局，或向東京都提出資訊公開請求。</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h3>錢在哪裡看得到</h3>
+        <ul>
+          <li>都議會 2024 年起 18 則提到 FE 的發言、2026-09 公布的都年度決算與監查報告，都沒有 FE 相關金額。</li>
+          <li>付給 FEO 的 6.2 億円只在執行委員會第 5 回資料裡，這份 PDF 在官網上沒有頁面連結，是依前幾回的網址規則找到的。</li>
+          <li>東京都撥給執行委員會的負担金總額查不到：令和 6 年度產業勞動局預算要求列「GX 實現宣傳活動」9.84 億円（要求額），令和 7、8 年度的同類文件無法讀取。</li>
+          <li>FE 共同創辦人 Longo 說東京站收支未轉正；他的說法有沒有算進東京都這 6.2 億円，查不到。</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 七 -->
+<section id="tw">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="sec-tag">⑦ 對台灣辦賽</div>
+      <h2>三件可以直接拿來談的事</h2>
+    </div>
+    <div class="grid3">
+      <div class="card" style="border-left:4px solid var(--gold)"><h3>政府的錢可以用「委託」與「廣告」的名目進來</h3><p>東京都付給 FE 的錢不叫補助，叫宣傳委託與廣告刊登，交付項逐條寫在契約裡。台灣站跟中央或地方談合作時，可以把粉絲區冠名、賽道廣告位做成可驗收的交付清單，向對方的宣傳預算收費。</p></div>
+      <div class="card" style="border-left:4px solid var(--green)"><h3>政府另辦的免費展要跟賽事分開算</h3><p>東京都在旁邊自辦的展，人數與成本都是政府的，不能加進賽事觀眾數或賽事收支。台灣若採同樣結構，合約要寫明兩邊各自公布什麼數字。</p></div>
+      <div class="card" style="border-left:4px solid var(--tk)"><h3>揭露要綁在付款文件上</h3><p>東京的金額只出現在執行委員會資料，預算書、議會、決算都看不到。台灣若有公帑，預算書要有獨立科目，契約金額與交付成果要在固定時點公開。</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="alt" style="padding:36px 0">
+  <div class="wrap">
+    <div class="card">
+      <h3>資料來源</h3>
+      <ul style="font-size:12.5px">
+        <li>TOKYO GX ACTION2026 執行委員會 第 1、2、4、5 回議事資料（2025-08-21、2025-09-17、2025-12-24、2026-06-08），tokyo-gx-action.jp</li>
+        <li>產業勞動局「GX 実現に向けた機運醸成に係る企画運営業務委託」公募與委託規格書（2025-11-25、2025-11-26）</li>
+        <li>東京都報道發表：2023-05-26（ZEV ACTION）、2024-02-19（E-Tokyo Festival）、2024-09-20（GX ACTION 啟動）、2025-03-07（CHANGING）、2026-06-10、2026-07-01、2026-07-10（MUSEUM）</li>
+        <li>PR TIMES：TOKYO GX ACTION PR 事務局 2026-06-10、2026-08-07；FEO 2026-07-01</li>
+        <li>官方活動報告 PDF（2026-08-07）；官網各分區頁</li>
+        <li>東京都議會會議錄：2024-10-31 環境・建設委員會、2025-11-14 決算特別委員會、2026-03-13 預算特別委員會等</li>
+        <li>2025 年度委託結果（讀賣新聞東京本社）：官網委託結果頁 Wayback 封存版與產業勞動局 2024-07-11 公告</li>
+        <li>2024 E-Tokyo Festival 5.6 萬人：motorsport.com 日本版 2024-07-19</li>
+      </ul>
+      <p class="src">全部原檔已存成位元組快照（FE14TW 報告 70）。日圓金額皆含稅。</p>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div>FE14TW Reference · TOKYO GX ACTION MUSEUM 背景說明 · 2026-09-25</div>
+  <div style="margin-top:4px"><a href="./">回到 2026 TDK Tokyo E-Prix 票價 · 權益 · 購買 · 行銷 · 賽後</a></div>
+</footer>
+
+<!--mv-pagecount v1-->
+<script>(function(){try{var K="mv_device_id",i=localStorage.getItem(K);if(!i){i=(window.crypto&&crypto.randomUUID)?crypto.randomUUID():String(Date.now())+Math.random().toString(36).slice(2);localStorage.setItem(K,i);}var u="https://mv-count.tatujinx.workers.dev/hit?p=FE-Tokyo-ticketing-.&d="+encodeURIComponent(i);if(navigator.sendBeacon){navigator.sendBeacon(u);}else{fetch(u,{mode:"no-cors",keepalive:true});}}catch(e){}})();</script>
+</body>
+</html>
