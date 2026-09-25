@@ -2,8 +2,8 @@
 <html lang="zh-TW">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="robots" content="noindex, nofollow">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>2026 TDK Tokyo E-Prix｜票價 · 權益 · 購買 · 行銷 | FE14TW Reference</title>
 <script>if ('scrollRestoration' in history) history.scrollRestoration = 'manual';</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -178,6 +178,16 @@
   .perk { display: flex; gap: 8px; }
   .perk::before { content: "◆"; color: var(--gold); }
   .vip-foot { margin-top: 16px; font-size: 12px; color: #64748b; }
+  .sched { display: flex; flex-direction: column; gap: 5px; margin-top: 10px; font-size: 13px; color: #cbd5e1; }
+  .sched b { display: inline-block; min-width: 92px; color: var(--gold); font-weight: 700; font-variant-numeric: tabular-nums; }
+
+  /* ---- after-race ---- */
+  .after-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 16px; margin-top: 16px; }
+  .after { padding: 20px 22px; }
+  .after h3 { margin: 8px 0 8px; font-size: 16.5px; }
+  .after p, .after li { font-size: 13px; color: #cbd5e1; }
+  .after ul { margin-left: 18px; display: flex; flex-direction: column; gap: 5px; }
+  .after .src-line { font-size: 11.5px; color: #64748b; margin-top: 10px; }
 
   /* ---- equity grid ---- */
   .eq-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(170px, 1fr)); gap: 12px; }
@@ -271,7 +281,9 @@
       <a href="#benefit">權益</a>
       <a href="#buy">購買</a>
       <a href="#marketing">行銷</a>
+      <a href="#after">賽後</a>
       <a href="#takeaway">對標</a>
+      <a href="gx-action-museum.html" style="color:#6ee7b7">GX 展 ↗</a>
     </div>
     <button class="print-btn" onclick="window.print()">列印</button>
   </div>
@@ -280,13 +292,14 @@
 <!-- ===== HERO ===== -->
 <header id="overview" class="hero">
   <div class="wrap">
-    <div class="badge-line">參考研究 · 官網全文擷取 2026-06-10 ＋ 結構化筆記 batch 29–39 · for FE Season 14 台灣大獎賽</div>
-    <h1>2026 TDK Tokyo E-Prix<br><span class="grad">票價 · 權益 · 購買 · 行銷</span></h1>
-    <p class="lede">日本史上首場 Formula E 公道<span class="em-vi">夜間賽</span>，<span class="em-tk">7/25（六）R14＋7/26（日）R15</span>，兩日當地時間 <b>20:00 決勝</b>起跑。</p>
+    <div class="badge-line">參考研究 · 官網全文擷取 2026-06-10 ＋ 售票機制調查 2026-06-25 ＋ EMOTION CLUB 官方指南 2026-07-24 ＋ 賽後追蹤至 2026-09-25 · for FE Season 14 台灣大獎賽</div>
+    <h1>2026 TDK Tokyo E-Prix<br><span class="grad">票價 · 權益 · 購買 · 行銷 · 賽後</span></h1>
+    <p class="lede">日本史上首場 Formula E 公道<span class="em-vi">夜間賽</span>，<span class="em-tk">7/25（六）R14＋7/26（日）R15</span>，兩日當地時間 <b>20:05 決勝</b>起跑（e+ 售票頁標 20:00，實際 20:05）。</p>
     <p class="lede2">營運核心＝<span style="color:#e2e8f0">稀缺驅動完售 ＋ 7 階陡峭票價金字塔 ＋ 少量超高價 VIP 拉升 ARPU ＋ 嘉年華化擴客</span>。</p>
+    <p class="lede2" style="margin-top:6px">賽後：週六完売、週日若干残；主辦方至 2026-09-25 未公布觀眾數，FE 共同創辦人 Longo 承認東京站收支未轉正。下一屆 2027-07-24／25 為賽季最終戰，票務未公布。</p>
     <div class="stat-grid">
-      <div class="stat t-green"><div class="k">最低入門票（GS6 1日）</div><div class="v green">¥5,000</div><div class="s">約 NT$1,050 · 台場夜景席 · 18 歲以下再半額</div></div>
-      <div class="stat t-gold"><div class="k">頂級 VIP（EMOTION CLUB 1日）</div><div class="v gold">¥675,000</div><div class="s">約 NT$14.2 萬 · ≈135 張入門票</div></div>
+      <div class="stat t-green"><div class="k">最低入門票（GS6 1日）</div><div class="v green">¥5,000</div><div class="s">約 NT$<span class="fx" data-jpy="5000"></span> · 台場夜景席 · 18 歲以下再半額</div></div>
+      <div class="stat t-gold"><div class="k">頂級 VIP（EMOTION CLUB 1日）</div><div class="v gold">¥675,000</div><div class="s">約 NT$<span class="fx" data-jpy="675000"></span> · ≈135 張入門票</div></div>
       <div class="stat t-tk"><div class="k">價格帶倍率</div><div class="v tk">135 倍</div><div class="s">¥5,000 → ¥675,000 · 兩日通票一律 1日 ×1.6</div></div>
       <div class="stat t-violet"><div class="k">售票通路</div><div class="v violet">e+</div><div class="s">イープラス獨家 · 用戶逾 2,200 萬</div></div>
     </div>
@@ -299,8 +312,8 @@
     <div class="grid">
       <div><div class="k">賽事</div><div class="v">第 14・15 戰<div class="s">第12季 雙場制</div></div></div>
       <div><div class="k">日期</div><div class="v">7/25–26<div class="s">六 R14＋日 R15</div></div></div>
-      <div><div class="k">起跑</div><div class="v" style="color:var(--violet)">20:00<div class="s">日本首場夜間賽</div></div></div>
-      <div><div class="k">場地</div><div class="v">東京 Big Sight<div class="s">有明 · 2.582km 街道</div></div></div>
+      <div><div class="k">起跑</div><div class="v" style="color:var(--violet)">20:05<div class="s">日本首場夜間賽</div></div></div>
+      <div><div class="k">場地</div><div class="v">東京 Big Sight<div class="s">有明 · 約 2.58km 街道</div></div></div>
       <div><div class="k">賽車</div><div class="v">GEN3 Evo<div class="s">0–100 1.86s · 322km/h</div></div></div>
       <div><div class="k">轉播</div><div class="v">J SPORTS<div class="s">付費全場 · BSフジ免費精華</div></div></div>
     </div>
@@ -348,7 +361,7 @@
         <button data-day="2">兩日通票</button>
       </div>
       <label class="chk"><input type="checkbox" id="ckU18"> 18 歲以下半價</label>
-      <label class="chk"><input type="checkbox" id="ckTWD"> 顯示台幣（¥1≈NT$0.21）</label>
+      <label class="chk"><input type="checkbox" id="ckTWD"> 顯示台幣（<span id="fxLabel"></span>）</label>
       <span class="ctrl-hint">含稅 · 另收 e+ 手續費 · 兩日通票＝單日 ×1.6（VIP 為 ×1.9）</span>
     </div>
 
@@ -370,6 +383,24 @@
       </div>
     </div>
     <p class="tbl-note">資料：イープラス／jp.fiaformulae.com（官網 2026-06-10 擷取 ＋ 報告 31/38/39）。含稅、另收手續費（2024/25 EMOTION CLUB 約 ¥3,300）。逐年微漲：2025 最高一般席 ¥24,000 → 2026 GS2 ¥26,000；無需求連動動態定價。</p>
+
+    <div class="card" style="margin-top:18px;padding:20px 24px">
+      <div style="font-size:12px;letter-spacing:1.5px;color:#67e8f9;text-transform:uppercase;margin-bottom:14px">票種逐年演進（2024 → 2026）· 逐年細分與升級</div>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:14px">
+        <div style="background:#0d1626;border-radius:10px;padding:14px 16px">
+          <div style="font-weight:800;margin-bottom:6px">2024 首屆 · 單日（第5戰）</div>
+          <div style="font-size:13px;color:#cbd5e1">Category 制 6 種，¥6,000～¥84,500；U24／U15 分級。約 8,500 席，一般席開賣約 <span style="color:#fca5a5">3 分鐘售罄</span>，3/1 追加席數十秒完售。</div>
+        </div>
+        <div style="background:#0d1626;border-radius:10px;padding:14px 16px">
+          <div style="font-weight:800;margin-bottom:6px">2025 · 雙日（R8&amp;9）</div>
+          <div style="font-size:13px;color:#cbd5e1">Grandstand A／B／C ＋ A プレミアム ¥110,000 ＋ EMOTION CLUB ¥670,000，共 5 種；仍用 U24／U15 分級。</div>
+        </div>
+        <div style="background:#0d1626;border-radius:10px;padding:14px 16px;border:1px solid rgba(34,211,238,.3)">
+          <div style="font-weight:800;margin-bottom:6px">2026 · 雙日夜間賽（R14&amp;15）</div>
+          <div style="font-size:13px;color:#cbd5e1">細分 GS1～GS7（上／下段）＋ Pit Walk ＋ EMOTION CLUB ¥675,000；改 <span style="color:#6ee7b7">18 歲以下半額</span>、新增週日家庭席、主打夜景。</div>
+        </div>
+      </div>
+    </div>
   </div>
 </section>
 
@@ -539,23 +570,38 @@
           <div style="font-size:12.5px;color:var(--muted);margin-bottom:10px">エモーションクラブ · 大人の社交場</div>
           <div class="vip-price-row"><span style="color:var(--muted)">1 日券</span><span class="p">¥675,000</span></div>
           <div class="vip-price-row"><span style="color:var(--muted)">2 日通票</span><span class="p">¥1,282,500（省 ≈5%）</span></div>
-          <div class="vip-price-row small"><span>美金約</span><span>US$3,988／7,172</span></div>
-          <div class="vip-price-row small"><span>台幣約</span><span>NT$14.2 萬／26.9 萬</span></div>
-          <div class="vip-note">定位＝B2B／ESG「社交場」。歐洲創業圈有「在 EMOTION CLUB 見」的說法；百萬日圓票價＝綠色科技與資本交匯圈的入場費。</div>
+          <div class="vip-price-row small"><span>美金約</span><span>US$<span class="fx" data-jpy="675000" data-cur="USD"></span>／<span class="fx" data-jpy="1282500" data-cur="USD"></span></span></div>
+          <div class="vip-price-row small"><span>台幣約</span><span>NT$<span class="fx" data-jpy="675000"></span>／<span class="fx" data-jpy="1282500"></span></span></div>
+          <div class="vip-note">定位＝B2B／ESG「社交場」。歐洲創業圈有「在 EMOTION CLUB 見」的說法；百萬日圓票價＝綠色科技與資本交匯圈的入場費。主辦方把款待產品本身做成永續產品：自 Season 7 起設永續營運準則，對接聯合國永續發展目標（SDGs）。</div>
         </div>
         <div>
-          <div style="font-size:12px;letter-spacing:1.5px;color:#fcd34d;text-transform:uppercase">含括權益</div>
+          <div style="font-size:12px;letter-spacing:1.5px;color:#fcd34d;text-transform:uppercase">官方交付清單（主辦方發給賓客的款待指南，2026-07-24）</div>
           <div class="perk-grid">
-            <div class="perk">專屬室內 lounge ＋ 戶外觀賽露台</div>
-            <div class="perk">VIP 落客區 ＋ 高爾夫球車接駁</div>
-            <div class="perk">米其林級餐飲、日本料理</div>
-            <div class="perk">無限香檳、特製雞尾酒、咖啡吧台</div>
-            <div class="perk">每日兩次 VIP Pit Lane Walk</div>
-            <div class="perk">車手私密見面會</div>
-            <div class="perk">賽車模擬器、空檔 DJ Live</div>
-            <div class="perk">精美禮品（premium gift）</div>
-            <div class="perk">萬全保安、專用入場</div>
-            <div class="perk">餐具採回收材質、備素食</div>
+            <div class="perk">高級交誼空間與 lounge</div>
+            <div class="perk">專屬觀賽露台</div>
+            <div class="perk">VIP 落客區通行（電子票第 2 頁為通行證）</div>
+            <div class="perk">車手與車隊人員現身 *</div>
+            <div class="perk">Pit Lane Walk</div>
+            <div class="perk">品牌大使與管家</div>
+            <div class="perk">開放式吧檯：手沖咖啡、啤酒、葡萄酒、招牌調酒</div>
+            <div class="perk">全日在地與國際餐飲</div>
+            <div class="perk">座位至少供 70% 賓客 *</div>
+            <div class="perk">現場 DJ 與表演</div>
+            <div class="perk">車隊與贊助商的現場活動</div>
+            <div class="perk">DVOX 英日雙語賽事播報（自備手機＋耳機連 Wi-Fi）</div>
+          </div>
+          <div class="vip-foot">* 官方註明可能變動。研究報告另載的米其林級餐飲、無限香檳、每日兩次 Pit Lane Walk、賽車模擬器、精美禮品，官方清單沒有列。</div>
+
+          <div style="font-size:12px;letter-spacing:1.5px;color:#fcd34d;text-transform:uppercase;margin-top:18px">賽事日時程（週六、週日相同）</div>
+          <div class="sched">
+            <div><b>13:30–14:10</b>自由練習</div>
+            <div><b>14:30</b>EMOTION CLUB 開門</div>
+            <div><b>15:40–16:48</b>排位賽</div>
+            <div><b>17:05–19:00</b>Pit Lane Walk</div>
+            <div><b>18:10–18:25</b>車手見面會：六 Envision（Buemi、Eriksson）／日 Jaguar（Evans、da Costa）</div>
+            <div><b>20:05–21:00</b>決勝</div>
+            <div><b>21:00–21:30</b>頒獎</div>
+            <div><b>22:30</b>EMOTION CLUB 關門：頒獎後再開 1 小時，賓客不跟一般看台同時散場</div>
           </div>
           <div class="vip-foot">海外對照（Seat Unique）：柏林 EMOTION CLUB 約 €3,424／日、入門款待 Electric Lounge 約 €664／日；倫敦約 £3,240 起。東京以極少量一般發售強化稀缺與身份象徵。</div>
         </div>
@@ -615,10 +661,24 @@
         </div>
       </div>
     </div>
+    <!-- 海外購票 ＋ 票券形式（6/25 售票機制調查補充） -->
     <div class="risk-grid">
-      <div class="card risk red"><div class="t">退票政策</div><p>原則不接受「自己都合」退票，僅賽事中止／延期才退。盜刷依 e+ 服務條款第 7 條無條件免退並移交警方（反洗錢）。</p></div>
-      <div class="card risk red"><div class="t">防黃牛／二級市場</div><p>單一平台集中控管。慎用二級市場（如 Ticket Jam）；2025 曾現 2 日通票每張掛價約 ¥80,000 轉售。e+ 設官方「定価リセール」。</p></div>
-      <div class="card risk warn"><div class="t">秒殺與民怨</div><p>場場完售（2025 付費約 1 萬人）。社群批反黃牛法規不足、流傳「外國觀光客優先」陰謀論：稀缺是設計，也是公關風險。</p></div>
+      <div class="card side-card" style="border-top:3px solid var(--tk)">
+        <div class="k">海外／外國人購票（對台灣最具參考）</div>
+        <p style="font-size:13.5px;color:#cbd5e1;margin-bottom:8px">平台分流：海外居民走國際站 <code>eplus.tickets/fiaformulae/</code>（ib.eplus.jp），<span style="color:#67e8f9">免日本門號與地址</span>；國內 eplus.jp 需日本手機 SMS 認證，實質擋住非居民。</p>
+        <p style="font-size:13px;color:var(--muted)">付款：海外發行 VISA／Master ＋ <span style="color:#67e8f9">Alipay</span>，多幣別顯示（JPY／USD／CNY／TWD）。介面英文＋中文（簡／繁）。2026 先行抽選（4/11–4/20）即開放海外居民申請。</p>
+      </div>
+      <div class="card side-card" style="border-top:3px solid var(--violet)">
+        <div class="k">票券形式 · 交通</div>
+        <p style="font-size:13.5px;color:#cbd5e1;margin-bottom:8px">全面電子票：國內綁手機「スマチケ」App（QR）；海外為 Email-QR ＋ 現場領票（不需 App，部分支援 7-11，賽前約 2 天寄 13 碼）。入場有安檢。</p>
+        <p style="font-size:13px;color:var(--muted)">交通：會場<span style="color:#fca5a5">不提供停車</span>、不建議開車。搭電車：りんかい線「国際展示場」站徒步約 7 分、ゆりかもめ「東京ビッグサイト」站直結。</p>
+      </div>
+    </div>
+    <div class="risk-grid">
+      <div class="card risk red"><div class="t">退票 ＋ 官方定価リセール</div><p>原則不接受「自己都合」退票，僅賽事中止／延期才退。無法到場者可在 e+ 以「定價」轉售（官方リセール）：成立扣手續費退款、未成立則票券仍可自用。盜刷購票依 e+ 服務條款第 7 條不退款並移交警方。</p></div>
+      <div class="card risk red"><div class="t">禁止營利轉售（有法源）</div><p>適用日本《票券不正轉售禁止法》（2019/6 施行）；e+ 規約明禁無主辦同意的有償轉讓。第三方平台（チケット流通センター、Ticket Jam 等）掛單屬非官方，有入場失效風險；2025 曾有 GS A 兩日通票每張掛價約 ¥80,000。</p></div>
+      <div class="card risk" style="border-left-color:var(--violet)"><div class="t" style="color:#c4b5fd">防黃牛三件套</div><p>① 會員 Email＋SMS 2 段認證（2017 起）② 電子票綁手機、人氣場次導入顏認證本人確認 ③ 多階段抽選壓縮囤票空間。</p></div>
+      <div class="card risk warn"><div class="t">秒殺與民怨</div><p>2024 一般席開賣約 3 分鐘售罄；2026 週六完売、週日若干残（motorsport.com 2026-07-23）。社群批反黃牛法規不足、流傳「外國觀光客優先」陰謀論：稀缺是設計，也是公關風險。</p></div>
     </div>
   </div>
 </section>
@@ -632,15 +692,17 @@
       <p class="sec-lead">夜間賽轉型為核心敘事，疊加冠名 B2B 展演、網紅試駕、車廠遊戲化、政府政策行銷，層層綿密、半年發稿。</p>
     </div>
     <div class="mkt-grid">
-      <div class="card mkt b-violet"><span class="pill pill-violet">主敘事</span><h3>夜間賽轉型「Into the night」</h3><p>移至 7 月下旬夜間（練習 21:30／排位 23:40／20:05 起跑），規避酷暑熱失控，綁定東京夜經濟。Reddit 壓倒性正評，期待 Eurobeat／《頭文字 D》文化共鳴。</p></div>
+      <div class="card mkt b-violet"><span class="pill pill-violet">主敘事</span><h3>夜間賽轉型「Into the night」</h3><p>移至 7 月下旬夜間（練習 13:30／排位 15:40／決勝 20:05），規避日間柏油 60°C 以上高溫，綁定東京夜經濟；改制是小池知事的要求。電動車沒有引擎噪音，都心深夜封街辦賽才在法規上可行。夜賽對歐洲是午後、對美國是早餐時段轉播。Reddit 壓倒性正評，期待 Eurobeat／《頭文字 D》文化共鳴；賽後現場說「夜は意外と涼しかった」。</p></div>
       <div class="card mkt b-gold"><span class="pill pill-gold">冠名贊助</span><h3>TDK 冠名 · 活體實驗室</h3><p>總部在東京的電子零件巨頭首度冠名，自我定位「即時研發實驗室（Live R&amp;D Lab）／AI 生態系」，口號「In Everything, Better」，亦為 Porsche FE 技術夥伴。</p></div>
       <div class="card mkt b-pink"><span class="pill" style="background:rgba(236,72,153,.12);color:#f9a8d4">創作者經濟</span><h3>Evo Sessions 網紅試駕</h3><p>把 12 位網紅塞進 322km/h 的 Gen3 Evo，分兩隊代表 10 車隊（Vikkstar、Cleo Abrams、Supercar Blondie…）。吉達站隔日辦、YouTube 直播。Izzy Hammond 撞牆登頭條；硬核車迷批浪費賽道，價值觀兩極。</p></div>
       <div class="card mkt b-rose"><span class="pill pill-red">破壞式年輕化</span><h3>Feastables（MrBeast）</h3><p>官方合作夥伴，藉創作者經濟把傳統車迷拓展至 Z／Alpha 世代數位原住民。</p></div>
       <div class="card mkt b-sky"><span class="pill pill-tk">在地車廠 · 主場</span><h3>Nissan 8-bit 遊戲 ＋ 銀座策展</h3><p>與 Dark Horses＋插畫家 Kentaro 推復古街機遊戲「NISMO Electric Racer Tokyo」（櫻花塗裝）；NISSAN CROSSING 銀座實體展把 Gen3 Evo 與市售車並陳。</p></div>
-      <div class="card mkt b-green"><span class="pill pill-green">政府政策行銷</span><h3>TOKYO GX ACTION</h3><p>東京都把碳中和政策包進電動競速：小池百合子 4/14 都廳記者會；賽期同辦「GX ACTION MUSEUM」（GX FOOD／ART&amp;FASHION／LAB／DRIVE）；專屬帳號 @tokyo_gx_action。</p></div>
+      <div class="card mkt b-green"><span class="pill pill-green">政府政策行銷</span><h3>TOKYO GX ACTION</h3><p>東京都把碳中和政策包進電動競速：小池百合子 4/14 都廳記者會；賽期同辦「GX ACTION MUSEUM」（GX FOOD／ART&amp;FASHION／LAB／DRIVE）；專屬帳號 @tokyo_gx_action。永續訴求具體化：夜賽電力以 HVO（氫化植物油）供電，2025 較柴油減 <span style="color:#6ee7b7">21.3 噸 CO₂</span>。<a href="gx-action-museum.html">GX 展的前因後果與金流 ↗</a></p></div>
       <div class="card mkt b-orange"><span class="pill pill-orange">在地化 PR</span><h3>Jaguar × Juju Noda</h3><p>綁東京出身、Super Formula 史上首位女車手野田樹潤；參與官方 Women's Test、出席都廳記者會，搶下日媒大篇幅正面報導。</p></div>
       <div class="card mkt b-cyan"><span class="pill pill-tk">看台動員</span><h3>GS3 車廠應援席</h3><p>週六「日産応援席」、週日「ヤマハ発動機応援席」，DJ・MC＋巨型應援旗＋車手到看台訪問，把品牌忠誠轉為現場狂熱。</p></div>
       <div class="card mkt b-amber"><span class="pill pill-gold">名人勝過音樂巨星</span><h3>Sung Kang（歷屆實績）</h3><p>《玩命關頭》「Han」連兩年出席、揮旗、脫口秀＋職涯講座，進駐 CUPRA KIRO 車庫。「汽車文化名人×賽車」精準綁定，成本與話題效益高於請音樂巨星。</p></div>
+      <div class="card mkt b-rose"><span class="pill pill-red">賽事週落地</span><h3>特別塗裝＋東京限定周邊</h3><p>日產 NISMO 風一次性塗裝（灰黑＋NISMO 紅＋櫻花，7/22 發表，車手賽車服同步）；Andretti × Liberty Walk 特別塗裝（7/20 發表），把日本改裝文化接進賽事。Fan Store 賣 City Series 東京限定周邊；Fan Village 限定再生塑膠杯免費、GS3 應援席特典、TDK 展位 AR 貼紙。</p></div>
+      <div class="card mkt b-green"><span class="pill pill-green">社會授權</span><h3>先請在地居民來</h3><p>7/24 招待約 4,000 名在地居民；FIA Girls on Track 招待 120 名 12–25 歲女性參觀維修區；KYOJO CUP 女性車手 EV 卡丁計時賽。Yamaha 出借 22 台載具在場內使用。</p></div>
     </div>
 
     <div class="card tbl-card">
@@ -651,7 +713,8 @@
           <tbody>
             <tr style="cursor:default"><td class="seat-key" style="color:var(--gold)">TDK</td><td style="color:var(--muted)">電子零組件</td><td>冠名 · AI／電氣化活體實驗室</td><td style="color:var(--muted)">「In Everything, Better」· Porsche 技術交流</td></tr>
             <tr style="cursor:default"><td class="seat-key">Julius Baer</td><td style="color:var(--muted)">私人銀行</td><td>財富管理 × 永續前瞻</td><td style="color:var(--muted)">EMOTION CLUB 高淨值 B2B 社交</td></tr>
-            <tr style="cursor:default"><td class="seat-key">Allianz</td><td style="color:var(--muted)">金融保險</td><td>社群參與 · 家庭友善</td><td style="color:var(--muted)">冠名 Fan Village（電競區、兒童區）</td></tr>
+            <tr style="cursor:default"><td class="seat-key">Allianz</td><td style="color:var(--muted)">金融保險</td><td>社群參與 · 家庭友善</td><td style="color:var(--muted)">2024、2025 冠名 Fan Village；2026 改名 FORMULA E x TOKYO GX ACTION FAN VILLAGE，東京都政策品牌取代</td></tr>
+            <tr style="cursor:default"><td class="seat-key">Henkel Japan</td><td style="color:var(--muted)">黏著劑與消費品</td><td>經 Porsche 車隊贊助</td><td style="color:var(--muted)">賽後自費在日媒刊東京站業配稿（2026-08-26）</td></tr>
             <tr style="cursor:default"><td class="seat-key">Hankook</td><td style="color:var(--muted)">輪胎</td><td>全天候抓地 · 回收材料</td><td style="color:var(--muted)">獨家輪胎 · Girls on Track 冠名</td></tr>
             <tr style="cursor:default"><td class="seat-key">Alpine Tech</td><td style="color:var(--muted)">軟體／區塊鏈</td><td>極限環境數據處理</td><td style="color:var(--muted)">Nissan 車隊塗裝／賽車服曝光</td></tr>
             <tr style="cursor:default"><td class="seat-key" style="color:var(--red)">Feastables</td><td style="color:var(--muted)">快消（MrBeast）</td><td>破壞式年輕化</td><td style="color:var(--muted)">創作者經濟綁定 Z／Alpha 世代</td></tr>
@@ -662,26 +725,114 @@
 
     <div class="card mkt b-cyan" style="margin-top:20px">
       <h3 style="color:#a5f3fc;margin-top:0">娛樂定位：免費粉絲村的「配角」</h3>
-      <p>音樂以 J-pop／搖滾／R&amp;B／和太鼓為主，<span style="color:#cffafe">從未用 K-pop 或偶像團體當頭牌</span>；2024 票秒殺後 Fan Village 全面免費（無票也能看演出）。截至 2026/6 初，<span style="color:#fca5a5">2026 現場藝人陣容、日產夜賽塗裝、聯名周邊均尚未公布</span>（官方僅稱「著名アーティスト · 近日公開」）。賽事另綑綁「Change. Accelerated. Live」思想領導峰會（FE 主辦、TDK 官方夥伴）。</p>
+      <p>音樂以 J-pop／搖滾／R&amp;B／和太鼓為主，<span style="color:#cffafe">從未用 K-pop 或偶像團體當頭牌</span>；2024 票秒殺後 Fan Village 全面免費（無票也能看演出）。2026 主舞台：<span style="color:#6ee7b7">7/25 銀座たけ内（RIP SLYME 的 DJ FUMIYA 與 SU）、7/26 ONE OR EIGHT</span>，陣容到 6 月才公布，晚於 4 月開賣；東京都 GX STAGE 的演出陣容始終沒有完整公布。歷屆名人含佐藤琢磨、Sung Kang。賽事另綑綁「Change. Accelerated. Live」思想領導峰會（FE 主辦、TDK 官方夥伴）。</p>
     </div>
   </div>
 </section>
 
-<!-- ===== TAKEAWAY ===== -->
-<section id="takeaway">
+<!-- ===== AFTER ===== -->
+<section id="after">
   <div class="wrap">
     <div class="sec-head">
-      <div class="sec-tag gold">★ FE14TW / WONDER CHARGE 對標</div>
-      <h2>五點可移植的營運邏輯</h2>
-      <p class="sec-lead">東京模式＝「稀缺保證完售 ＋ 陡峭金字塔篩出高消費客 ＋ 少量超高 VIP 拉 ARPU ＋ 節慶化擴客」。對「賽車 Showrun＋K-pop」的複合定位高度適配。</p>
+      <div class="sec-tag">⑦ RACE WEEK &amp; AFTERMATH</div>
+      <h2>賽事週實況與賽後：票幾乎賣完，收支仍未轉正</h2>
+      <p class="sec-lead">資料截至 2026-09-25（賽後第 61 天）。</p>
+    </div>
+
+    <div class="stat-grid" style="margin-top:0">
+      <div class="stat t-green"><div class="k">2026 售況</div><div class="v green" style="font-size:22px">六 完売／日 若干残</div><div class="s">motorsport.com 2026-07-23</div></div>
+      <div class="stat t-gold"><div class="k">2026 官方觀眾數</div><div class="v gold" style="font-size:22px">未公布</div><div class="s">主辦方與東京都至 2026-09-25 皆無</div></div>
+      <div class="stat t-tk"><div class="k">看台上限</div><div class="v tk" style="font-size:22px">約 1 萬席</div><div class="s">Longo：公道臨時賽道難再增席</div></div>
+      <div class="stat t-violet"><div class="k">下一屆</div><div class="v violet" style="font-size:22px">2027-07-24／25</div><div class="s">S13 最終戰 · 票務未公布</div></div>
+    </div>
+
+    <div class="after-grid">
+      <div class="card after" style="border-top:3px solid var(--gold)">
+        <span class="pill pill-gold">主辦方自己的說法</span>
+        <h3>收支未轉正，因為席次加不上去</h3>
+        <ul>
+          <li>主辦者是 Formula E 本身，不是東京都、東京 Big Sight 或日本推廣商。</li>
+          <li>FE 共同創辦人 Alberto Longo：東京站收支尚未轉正；公道臨時賽道約 1 萬席的看台難再增加，所以難以獲利；收益比首屆改善，期待「下一份合約期末」轉正。</li>
+          <li>已與東京都續約，未來數年在同一地點辦；擬以夜間演唱會等新收益來源補赤字；GEN4 導入不會讓東京停辦。</li>
+        </ul>
+        <div class="src-line">jp.motorsport.com 專訪（2026-07-24）、日刊自動車新聞（2026-07-25）、jp.motorsport.com 田中健一專欄（2026-08-02）</div>
+      </div>
+
+      <div class="card after" style="border-top:3px solid var(--tk)">
+        <span class="pill pill-tk">場域分工</span>
+        <h3>一個會場，兩本帳</h3>
+        <ul>
+          <li>FAN VILLAGE：東 1–3 館，FE 主辦，7/25、7/26 14:00–22:00 免費入場。</li>
+          <li>TOKYO GX ACTION MUSEUM：西 1–4 館＋中庭，東京都政策展，11:00–20:00，營運委託博報堂 6.215 億円。</li>
+          <li>東京都的 GX 執行委員會以指名、不經競標的契約付給 FE 營運公司兩筆：Fan Village 合辦 GX 宣傳 4.2 億円、賽道與轉播上的東京標誌廣告 2 億円。Fan Village 改名「FORMULA E x TOKYO GX ACTION」就是這筆的內容。</li>
+          <li>這些金額只在執行委員會議事資料裡；都議會 2024 年起 18 則提到 FE 的發言、2026-09 公布的都年度決算與監查報告，都沒有 FE 的金額。</li>
+        </ul>
+        <div class="src-line">TOKYO GX ACTION2026 執行委員會第 4、5 回資料（2025-12-24、2026-06-08）、東京都議會會議錄、令和 7 年度東京都年次財務報告書（2026-09-15） · <a href="gx-action-museum.html">GX 展的前因後果 ↗</a></div>
+      </div>
+
+      <div class="card after" style="border-top:3px solid var(--green)">
+        <span class="pill pill-green">現場體驗</span>
+        <h3>雨備與散場做成加值</h3>
+        <ul>
+          <li>7/26 午後雷雨，FP3 中止、發室內避難指示，決勝照常 20:05 起跑。</li>
+          <li>Fan Village 室內 Live Viewing：冷氣場館看賽，Pierre 北川日語實況；看台沒有屋頂，這是雨天替代去處。</li>
+          <li>兩天頒獎後開放 Track Walk，觀眾走上賽道看胎痕、縁石與撤收中的維修區。</li>
+          <li>GEN4 實車在 Fan Village 展示。</li>
+          <li>賽果：R14 Ticktum 最終圈超越 Dennis；R15 紅旗後以 1 圈衝刺由 de Vries 奪勝。Porsche 在東京鎖定製造商冠軍。</li>
+        </ul>
+        <div class="src-line">東京週報賽後日報（2026-07-29），出處 as-web、RacingNews365、Porsche Newsroom</div>
+      </div>
+
+      <div class="card after" style="border-top:3px solid var(--violet)">
+        <span class="pill pill-violet">2027</span>
+        <h3>收官戰，票務還沒動</h3>
+        <ul>
+          <li>S13 東京為第 20、21 戰兼賽季最終戰，東京首次承辦收官。</li>
+          <li>票務開賣、宣傳啟動、賽道是否因 GEN4 調整，自 2026-07-11 起追蹤至 09-25 皆未公布；主辦方 09-24 新聞稿只寫新日文官網之後會發售票消息。</li>
+          <li>與 F1 比利時站同一週末；東京夜賽開跑約在比利時排位賽前 3 小時、正賽前 2 小時。</li>
+          <li>對照：鈴鹿 F1 日本 GP 2027 觀戰票 2026-11-15 開賣。</li>
+          <li>轉播：S13 起 Disney+ 全球串流，涵蓋 144 個市場（美國為 ESPN+）。</li>
+        </ul>
+        <div class="src-line">PR TIMES 主辦方稿（2026-09-24）、RacingNews365（2026-09-17）、Car Watch、FE 官方稿（2026-08-11）</div>
+      </div>
+    </div>
+
+    <div class="card tbl-card" style="margin-top:20px">
+      <div style="padding:18px 22px;border-bottom:1px solid var(--line)"><h3>三屆入場數：只有第一屆有帶口徑的數字</h3></div>
+      <div class="scrolling">
+        <table class="tk" style="min-width:640px">
+          <thead><tr><th>年</th><th>場次</th><th>數字</th><th>誰講的</th></tr></thead>
+          <tbody>
+            <tr style="cursor:default"><td class="seat-key">2024（S10）</td><td style="color:var(--muted)">單場，日間</td><td class="p-main">約 2 萬人（含免費區）</td><td style="color:var(--muted)">主辦方公布。座位原上限約 8,500，獲准增席後的來場數</td></tr>
+            <tr style="cursor:default"><td class="seat-key">2025（S11）</td><td style="color:var(--muted)">兩場</td><td class="p-main">4 萬人以上</td><td style="color:var(--muted)">FE 共同創辦人 Longo 口頭說法，經日媒引述；是否含免費區未說明</td></tr>
+            <tr style="cursor:default"><td class="seat-key">2026（S12）</td><td style="color:var(--muted)">兩場，夜間</td><td class="p-main" style="color:var(--gold)">未公布</td><td style="color:var(--muted)">賽後 61 天，主辦方與東京都皆無</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+    <p class="tbl-note">2024 單場與 2025 兩場分母不同，算不出成長率，只能說改兩場後總量至少翻倍。Yahoo!ニュース專欄（2026-09-15）寫「各日約 2 萬人」，未附出處，不採用。</p>
+  </div>
+</section>
+
+<!-- ===== TAKEAWAY ===== -->
+<section id="takeaway" class="alt">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="sec-tag gold">★ 台灣辦賽對標</div>
+      <h2>十點可移植的營運邏輯</h2>
+      <p class="sec-lead">東京模式＝「稀缺保證完售 ＋ 陡峭金字塔篩出高消費客 ＋ 少量超高 VIP 拉 ARPU ＋ 節慶化擴客」。賽後補上的是它的上限：票幾乎賣完，收支仍未轉正。</p>
     </div>
     <div class="tk-grid">
-      <div class="card tkc"><span class="pill pill-gold">價格分層</span><h3>設 5–8 階票，入門壓低、頂層拉高</h3><p>入門票衝人數與聲量；頂層 1–2 款超高 VIP（賽車 Pit＋藝人見面）拉至入門 15–30 倍 ARPU。</p></div>
-      <div class="card tkc"><span class="pill pill-gold">稀缺驅動</span><h3>限量釋出＋公開完售進度</h3><p>複製「残りわずか」訊號製造緊迫，特別適合 K-pop 粉絲經濟。</p></div>
+      <div class="card tkc"><span class="pill pill-gold">價格分層</span><h3>設 5–8 階票，入門壓低、頂層拉高</h3><p>入門票衝人數與聲量；頂層 1–2 款超高價款待（維修區＋車手見面）拉至入門 15–30 倍 ARPU。</p></div>
+      <div class="card tkc"><span class="pill pill-gold">稀缺驅動</span><h3>限量釋出＋公開完售進度</h3><p>複製「残りわずか」訊號製造緊迫。</p></div>
       <div class="card tkc"><span class="pill pill-gold">通路集中</span><h3>單一主力平台＋官方轉售</h3><p>對標 e+ 獨家：台灣可評估拓元／KKTIX／ibon，集中數據、防黃牛、保留定價轉售。</p></div>
-      <div class="card tkc"><span class="pill pill-gold">免費引流</span><h3>免費體驗村導入付費</h3><p>板橋場周邊設免費區（模擬器、Showrun 觀賞、品牌互動），把免費客群導入演唱會與論壇。</p></div>
-      <div class="card tkc"><span class="pill pill-gold">政府綁定</span><h3>城市行銷換公部門支持</h3><p>對標東京都 GX：與新北市綁永續／城市行銷，換場地、交通、宣傳；論壇對標「Change. Accelerated. Live」招商。</p></div>
-      <div class="card tkc red"><span class="pill pill-red">⚠ 需升級</span><h3>卡司咖位與公布時程</h3><p>東京到賽前一個多月仍未公布藝人，對「演唱會為主秀」過慢。K-pop 頭牌應於開賣前 3–6 個月鎖定。</p></div>
+      <div class="card tkc"><span class="pill pill-gold">免費引流</span><h3>免費體驗村導入付費</h3><p>場邊設無票可進的體驗區（模擬器、Live Viewing、品牌互動），把免費客群導入付費看台與款待。</p></div>
+      <div class="card tkc"><span class="pill pill-gold">政府綁定</span><h3>政府的錢用委託與廣告的名目進來</h3><p>東京都的錢分兩路：自辦 GX 展（委託博報堂），以及付給 FE 的宣傳委託與廣告刊登共 6.2 億円，交付項逐條寫在契約裡。台灣可比照把粉絲區冠名、賽道廣告位做成可驗收的清單；政府若出資，預算書要有獨立科目，議會才問得到成本。</p></div>
+      <div class="card tkc"><span class="pill pill-gold">差異化空白</span><h3>官方旅遊套票（東京沒做）</h3><p>東京查無官方「門票＋住宿＋交通」綑綁，OTA 也未官方售票。台灣可與 KKday／Klook／航空／飯店做官方套票，主攻日韓港澳客。</p></div>
+      <div class="card tkc"><span class="pill pill-gold">雨備與散場</span><h3>把天候與散場做成體驗</h3><p>室內 Live Viewing、頒獎後 Track Walk、款待區頒獎後再開 1 小時。台灣夏季同樣有午後雷雨，可直接沿用。</p></div>
+      <div class="card tkc red"><span class="pill pill-red">⚠ 席次上限</span><h3>看台上限就是票房上限</h3><p>東京票幾乎賣完仍未轉正，主辦方歸因於公道臨時賽道約 1 萬席加不上去。場地要先算清楚可擴到幾席、擴席成本由誰出。</p></div>
+      <div class="card tkc red"><span class="pill pill-red">⚠ 揭露條款</span><h3>入場數誰公布、何時公布，寫進合約</h3><p>東京三屆只有第一屆有帶口徑的數字。合約要寫明公布方、依據哪套票務統計、含不含免費區、賽後幾天內公布。</p></div>
+      <div class="card tkc red"><span class="pill pill-red">⚠ 資訊一致</span><h3>售票端與官方用同一份資料</h3><p>東京 e+ 售票頁寫 20:00 起跑、實際 20:05，賽道長度也有 2.575 與 2.582 km 兩種。開賣前把時刻、票種、場地數字定在單一來源。演出陣容若是賣點，要在開賣前公布，東京到 6 月才公布。</p></div>
     </div>
   </div>
 </section>
@@ -700,20 +851,28 @@
         <div class="src"><div class="k">結構化筆記（行銷／娛樂）</div><code>03_structured_notes/FE14TW_batch_32-33_東京FE行銷與娛樂_20260607_notes.md</code></div>
         <div class="src"><div class="k">結構化筆記（宣傳／票務補充）</div><code>03_structured_notes/FE14TW_batch_37-39_東京FE宣傳與票務_20260607_notes.md</code></div>
         <div class="src"><div class="k">原始報告（票價全表／行銷全景／娛樂）</div><code>02_raw_reports/FE14TW_31 · 37 · 33 · 38 · 39_20260607</code></div>
+        <div class="src"><div class="k">售票機制深度研究（9 面向 · 6/25 新增）</div><code>02_raw_reports/FE14TW_40_東京FE售票機制深度研究_20260625.md</code></div>
+        <div class="src"><div class="k">EMOTION CLUB 官方款待指南（主辦方發給賓客，19 頁）</div><code>02_raw_reports/FE14TW_41_東京EPrix款待區官方指南_20260724.pdf</code></div>
+        <div class="src"><div class="k">賽事週與賽後追蹤（2026-07-24 至 08-27）</div><code>02_raw_reports/FE14TW_58_東京賽後追蹤週報_20260821.md · FE14TW_62_東京賽後追蹤週報續期_20260829.md</code></div>
+        <div class="src"><div class="k">東京賽後追蹤週報（最新一期）</div><code>Formula E 週報/FormulaE_週報_2026-09-25.html</code></div>
+        <div class="src"><div class="k">東京都 TOKYO GX ACTION 一手文件（執行委員會資料、委託規格書、報道發表，30 份快照）</div><code>02_raw_reports/FE14TW_70_東京都GX_ACTION一手文件_20260925.md</code></div>
+        <div class="src"><div class="k">入場數口徑與合作夥伴結構</div><code>ventures/formula-e/race-intel/races/Tokyo.md §五、§六</code></div>
       </div>
       <div class="caveat">
         <div class="t">⚠ 口徑與時效</div>
         <ul>
-          <li><span style="color:#e2e8f0">EMOTION CLUB 票價</span>採 ¥675,000／¥1,282,500（官網 2026-06-10 擷取與報告 31/38/39 四方一致）；報告 37 另載「110,000 日圓起跳」，數量級不符，不採用。</li>
-          <li>金額為 JPY 原始定價；<span style="color:#e2e8f0">台幣換算為參考估算（¥1 ≈ NT$0.21）</span>，匯率每日波動，正式提案請查當日匯率。</li>
+          <li><span style="color:#e2e8f0">EMOTION CLUB 票價</span>採 2026 ¥675,000／¥1,282,500（官網與報告 31/38/39 多方一致；2025 為 ¥670,000）。報告 37 的「110,000 起跳」經 6/25 調查釐清：那是 <span style="color:#e2e8f0">2025 年「グランドスタンドA プレミアム」¥110,000</span> 此一中高階票種，並非 EMOTION CLUB，舊矛盾已解。</li>
+          <li>金額為 JPY 原始定價；<span style="color:#e2e8f0">台幣與美金是換算（<span id="fxNote"></span>）</span>，匯率每日波動，正式提案請查當日匯率。</li>
           <li>手續費官方未逐項公布（僅註「另收」，2024/25 EMOTION CLUB 約 ¥3,300）；2026 銷售僅見 4/11 抽選與 5/1 一般兩階段。</li>
-          <li>2026 現場藝人陣容、日產夜賽塗裝、聯名周邊截至 2026/6 初尚未公布，7 月賽前可能更新。觀眾數為估計（2024 約 2 萬含免費粉絲村、2025 付費約 1 萬）。</li>
+          <li>入場數以「賽後」段的三屆表為準。報告 31 記 2025「付費約 1 萬」、網傳 2025「週六約 13,000＋週日約 17,000」，兩者都找不到可開啟的出處，不採用。2024 併催的 E-Tokyo Festival 另約 5.6 萬人，是東京都活動，不是賽事觀眾。</li>
+          <li>起跑時間：e+ 售票頁標 20:00，官方、車隊與日媒為 20:05，實際 20:05 起跑。賽道長度來源間有 2.575 km 與 2.582 km 兩種，未統一。</li>
+          <li>EMOTION CLUB 交付內容以主辦方款待指南為準；研究報告寫的項目若不在官方清單，已在權益段註明。</li>
         </ul>
       </div>
       <div style="margin-top:14px">
         <div style="font-size:12px;color:#64748b;margin-bottom:6px">報告引用機構（原文）</div>
         <div class="org-chips">
-          <span>FIA Formula E (FEO)</span><span>イープラス e+</span><span>東京都 / TOKYO GX ACTION</span><span>TDK</span><span>Nissan / NISMO</span><span>Jaguar TCS Racing</span><span>The Race</span><span>Japan Times</span><span>PR TIMES</span><span>Reddit r/FormulaE</span>
+          <span>FIA Formula E (FEO)</span><span>イープラス e+</span><span>東京都 / TOKYO GX ACTION</span><span>TDK</span><span>Nissan / NISMO</span><span>Jaguar TCS Racing</span><span>The Race</span><span>Japan Times</span><span>PR TIMES</span><span>Car Watch</span><span>jp.motorsport.com</span><span>ja.Wikipedia</span><span>Reddit r/FormulaE</span>
         </div>
       </div>
     </details>
@@ -723,11 +882,16 @@
 <footer>
   <div>FE14TW Reference · 2026 TDK Tokyo E-Prix 票價 · 權益 · 購買 · 行銷視覺化</div>
   <div style="margin-top:4px">v2.0 / 2026-06-10：合併官網全文擷取版（圖＋座位圖＋看台文案）與分析版（權益／購買／行銷／對標）；新增單日／兩日、半價、台幣互動切換</div>
+  <div style="margin-top:4px">v2.1 / 2026-06-26：併入售票機制深度研究（6/25）：海外購票分流（Alipay／多幣別／免日本門號）、官方定価リセール與防黃牛三件套、票券形式與交通、票種逐年演進、HVO 減碳、2026 部分卡司、官方旅遊套票對標</div>
+  <div style="margin-top:4px">v2.2 / 2026-09-25：新增賽事週實況與賽後段（售況、三屆入場數、主辦方收支說法、東京都角色、2027 收官戰）；EMOTION CLUB 改用主辦方官方交付清單與賽事日時程；起跑時間改 20:05；Fan Village 冠名、演出陣容、特別塗裝更新；對標改十點；匯率改 2026-09-21；新增 GX 展分頁（gx-action-museum.html），東京都付給 FE 的兩筆委託寫進賽後段與對標</div>
 </footer>
 
 <script>
 /* ===== 票價資料（單一事實來源，階梯與表格共用） ===== */
-const RATE = 0.21;
+/* 匯率：抄自 ventures/formula-e/race-intel/_data.json 的 fx（open.er-api.com，2026-09-21 00:02 UTC），頁上所有換算只讀這三個值 */
+const RATE = 0.2029;        // 1 日圓 = 新台幣
+const TWD_PER_USD = 31.8583; // 1 美元 = 新台幣
+const FX_ASOF = '2026-09-21';
 const ROWS = [
   { key:'GS2', sub:'最上級', color:'#f59e0b', grad:'linear-gradient(90deg,#fbbf24,#f59e0b)', pos:'控制線正側、頒獎台正前方', up:26000, down:24000, half:false, halfNote:'唯一純成人溢價席', card:'card-gs2' },
   { key:'GS1', sub:'', color:'#22d3ee', grad:'linear-gradient(90deg,#67e8f9,#22d3ee)', pos:'主直線、1 號彎長視野', up:24000, down:22000, half:true, card:'card-gs1' },
@@ -742,7 +906,21 @@ const VIP = { d1:675000, d2:1282500 };
 const state = { day:1, u18:false, twd:false };
 const yen = n => '¥' + n.toLocaleString('ja-JP');
 const twd = n => '約 NT$' + Math.round(n * RATE).toLocaleString('zh-TW');
+const usd = n => Math.round(n * RATE / TWD_PER_USD).toLocaleString('en-US');
 const d2 = v => v * 1.6;
+
+/* 靜態文字裡的換算（hero、EMOTION CLUB 面板）也由同一組匯率算 */
+function renderFx() {
+  document.querySelectorAll('.fx').forEach(el => {
+    const jpy = Number(el.dataset.jpy);
+    if (el.dataset.cur === 'USD') { el.textContent = usd(jpy); return; }
+    const t = jpy * RATE;
+    el.textContent = t >= 100000 ? (t / 10000).toFixed(1) + ' 萬' : Math.round(t).toLocaleString('zh-TW');
+  });
+  const lbl = '¥1≈NT$' + RATE + '，' + FX_ASOF;
+  document.getElementById('fxLabel').textContent = lbl;
+  document.getElementById('fxNote').textContent = lbl + '；US$1≈NT$' + TWD_PER_USD;
+}
 const adj = (r, v) => (state.u18 && r.half) ? v / 2 : v;   // 半價只對適用席種生效
 
 function priceCell(r, day) {
@@ -769,7 +947,7 @@ function renderTable() {
   html += '<tr data-go="vipPanel">'
     + '<td><span class="seat-key" style="color:var(--gold)">EMOTION<br>CLUB</span><div class="seat-sub">VIP 款待</div></td>'
     + '<td style="color:#cbd5e1">露台觀賽 · 全套款待（見「權益」）</td>'
-    + '<td><span class="p-main" style="color:var(--gold)">' + yen(VIP.d1) + '</span>' + (state.twd ? '<div class="twd">' + twd(VIP.d1) + ' · US$3,988</div>' : '') + '</td>'
+    + '<td><span class="p-main" style="color:var(--gold)">' + yen(VIP.d1) + '</span>' + (state.twd ? '<div class="twd">' + twd(VIP.d1) + ' · US$' + usd(VIP.d1) + '</div>' : '') + '</td>'
     + '<td><span class="p-main" style="color:var(--gold)">' + yen(VIP.d2) + '</span>' + (state.twd ? '<div class="twd">' + twd(VIP.d2) + ' · 省 ≈5%</div>' : '') + '</td>'
     + '<td>—</td></tr>';
   html += '<tr data-go="card-wheel">'
@@ -835,7 +1013,7 @@ window.addEventListener('load', () => {
     root.style.scrollBehavior = prev;
   }
 });
-const SECTIONS = ['overview', 'map', 'price', 'stands', 'benefit', 'buy', 'marketing', 'takeaway'];
+const SECTIONS = ['overview', 'map', 'price', 'stands', 'benefit', 'buy', 'marketing', 'after', 'takeaway'];
 const navLinks = document.querySelectorAll('.nav-links a');
 window.addEventListener('scroll', () => {
   let cur = SECTIONS[0];
@@ -846,8 +1024,11 @@ window.addEventListener('scroll', () => {
   navLinks.forEach(l => l.classList.toggle('active', l.getAttribute('href') === '#' + cur));
 });
 
+renderFx();
 renderAll();
 </script>
 
+<!--mv-pagecount v1-->
+<script>(function(){try{var K="mv_device_id",i=localStorage.getItem(K);if(!i){i=(window.crypto&&crypto.randomUUID)?crypto.randomUUID():String(Date.now())+Math.random().toString(36).slice(2);localStorage.setItem(K,i);}var u="https://mv-count.tatujinx.workers.dev/hit?p=FE-Tokyo-ticketing&d="+encodeURIComponent(i);if(navigator.sendBeacon){navigator.sendBeacon(u);}else{fetch(u,{mode:"no-cors",keepalive:true});}}catch(e){}})();</script>
 </body>
 </html>
